@@ -11,7 +11,7 @@ class EateriesController < ApplicationController
 
     def show
         eatery = user_eateries.find(params[:id])
-        render json: eatery, serialzier: EateryWithVisitsSerializer , status: :ok
+        render json: eatery, serialzier: EateryWithVisitsSerializer, status: :ok
     end
 
     def create

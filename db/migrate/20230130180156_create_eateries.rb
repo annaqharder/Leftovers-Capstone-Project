@@ -3,7 +3,10 @@ class CreateEateries < ActiveRecord::Migration[7.0]
     create_table :eateries do |t|
       t.string :eatery_name
       t.string :eatery_address
-      t.string :eatery_location
+      t.string :eatery_neighborhood
+      t.string :eatery_category
+      t.string :eatery_type
+      t.integer :user_id
 
       t.timestamps
     end

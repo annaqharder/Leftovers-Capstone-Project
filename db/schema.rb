@@ -17,7 +17,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_30_180735) do
   create_table "eateries", force: :cascade do |t|
     t.string "eatery_name"
     t.string "eatery_address"
-    t.string "eatery_location"
+    t.string "eatery_neighborhood"
+    t.string "eatery_category"
+    t.string "eatery_type"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -37,7 +40,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_30_180735) do
   create_table "visits", force: :cascade do |t|
     t.date "date"
     t.string "occasion"
-    t.string "category"
     t.text "notes"
     t.text "drink"
     t.text "appetizer"

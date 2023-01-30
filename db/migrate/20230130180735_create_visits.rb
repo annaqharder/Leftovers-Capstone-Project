@@ -3,7 +3,6 @@ class CreateVisits < ActiveRecord::Migration[7.0]
     create_table :visits do |t|
       t.date :date
       t.string :occasion
-      t.string :category
       t.text :notes
       t.text :drink
       t.text :appetizer

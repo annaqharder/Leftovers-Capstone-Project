@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
 
-    before_action, only: [:destroy]
+    # before_action: only: [:destroy]
 
     # "/login" route
     def create

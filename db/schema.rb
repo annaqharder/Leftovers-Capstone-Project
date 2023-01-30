@@ -20,9 +20,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_30_180735) do
     t.string "eatery_neighborhood"
     t.string "eatery_category"
     t.string "eatery_type"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_eateries_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -6,7 +6,7 @@ class CreateEateries < ActiveRecord::Migration[7.0]
       t.string :eatery_neighborhood
       t.string :eatery_category
       t.string :eatery_type
-      t.integer :user_id
+      t.belongs_to :user
 
       t.timestamps
     end

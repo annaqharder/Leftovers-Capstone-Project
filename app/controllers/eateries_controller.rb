@@ -39,7 +39,7 @@ private
 
     # shows just the eateries made by the user that is logged in
     def eatery_params
-        params.permit(:eatery_location, :eatery_name, :eatery_address, :eatery_category)
+        params.permit(:eatery_location, :eatery_name, :eatery_address, :eatery_category, :eatery_type, :user_id)
     end
 
 end

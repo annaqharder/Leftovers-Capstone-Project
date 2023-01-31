@@ -10,18 +10,18 @@ function Coffee() {
 
     return (
         <div>
-        <div>
-            <h1>My Cafes & Coffee Shops</h1>
             <div>
-                <button>Add Cafe/Coffee Shop</button>
+                <h1>My Cafes & Coffee Shops</h1>
+                <div>
+                    <button>Add Cafe/Coffee Shop</button>
+                </div>
+            </div>
+            <div>
+                <CoffeeList
+                eateries={eateries}
+                />
             </div>
         </div>
-        <div>
-            <CoffeeList
-            eateries={eateries}
-            />
-        </div>
-    </div>
     );
 }
 

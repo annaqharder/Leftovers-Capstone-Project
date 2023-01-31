@@ -14,6 +14,7 @@ import WantToVisit from './pages/WantToVisit';
 import Profile from './pages/Profile';
 import { RestaurantProvider } from "./context/RestaurantProvider";
 import { CoffeeProvider } from "./context/CoffeeProvider";
+import { BarProvider } from "./context/BarProvider";
 
 
 function App() {
@@ -29,13 +30,14 @@ function App() {
             <Login />
           </Route>
           <RestaurantProvider>
-          <CoffeeProvider>
           <Route path="/all-restaurants">
             <Restaurants />
           </Route>
+          <CoffeeProvider>
           <Route path="/all-coffee">
             <Coffee />
           </Route>
+          <BarProvider>
           <Route path="/all-bars">
             <Bars />
           </Route>
@@ -51,6 +53,7 @@ function App() {
           <Route path="/profile">
             <Profile />
           </Route>
+          </BarProvider>
           </CoffeeProvider>
           </RestaurantProvider>
         </Switch>

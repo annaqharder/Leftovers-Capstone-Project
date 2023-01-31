@@ -4,7 +4,7 @@ function CoffeeCard({ coffee }) {
     return (
         <div>
             <div>
-                <Link to={`/coffee-shops/${coffee.eatery_name}`} >
+                <Link to={`/coffee-shops/${coffee.id}`} >
                     <h2>{coffee.eatery_name}</h2>
                 </Link>
                 <h3>{coffee.eatery_type}</h3>

@@ -105,3 +105,9 @@
 }
 
 
+.profileAvatar {
+  max-height: 180px;
+  border-radius: 100px;
+}
+
+

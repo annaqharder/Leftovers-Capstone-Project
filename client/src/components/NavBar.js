@@ -7,6 +7,7 @@ const NavBar = () => {
 
     let { user, setUser } = useContext(UserContext);
     let history = useHistory();
+    // console.log(user)
 
     function handleLogoutClick(){
         fetch("/logout", {

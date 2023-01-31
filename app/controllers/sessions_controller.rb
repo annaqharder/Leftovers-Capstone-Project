@@ -1,7 +1,5 @@
 class SessionsController < ApplicationController
 
-    # before_action: only: [:destroy]
-
     # "/login" route
     def create
         user = User.find_by(email: params[:email])
@@ -18,8 +16,6 @@ class SessionsController < ApplicationController
         if current_user
             session.delete :user_id
             head :no_content
-        else
-            render json: { errors: ["Please Login"] }, status: :unauthorized
         end
     end
 

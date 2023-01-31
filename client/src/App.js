@@ -19,6 +19,14 @@ import { BarProvider } from "./context/BarProvider";
 
 function App() {
 
+  const [user, setUser] = useState()
+
+  useEffect(() => {
+    fetch(`/me`)
+      .then((r) => r.json())
+      .then((user) => setUser(user))
+  }, [])
+
   return (
     <UserProvider>
       <NavBar />
@@ -51,7 +59,9 @@ function App() {
             <WantToVisit />
           </Route>
           <Route path="/profile">
-            <Profile />
+            <Profile
+              user={user}
+            />
           </Route>
           </BarProvider>
           </CoffeeProvider>

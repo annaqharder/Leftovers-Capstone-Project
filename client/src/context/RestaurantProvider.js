@@ -6,18 +6,20 @@ const RestaurantContext = createContext();
 function RestaurantProvider({ children }) {
     const { user } = useContext(UserContext);
 
-    const [restaurants, setRestaurants] = useState([])
+    const [eateries, setEateries] = useState([])
 
     useEffect(() => {
         if (user) {
-            fetch(`/restaurants`)
+            fetch(`/eateries`)
                 .then((r) => r.json())
-                .then((restaurants) => setRestaurants(restaurants))
-        }
+                .then((eateries) => (
+                    setEateries(eateries.filter((eatery) => eatery.eatery_category === "Restaurant"))
+                ))
+            }
     }, [user])
 
     return (
-        <RestaurantContext.Provider value={{restaurants, setRestaurants}}>
+        <RestaurantContext.Provider value={{eateries, setEateries}}>
             { children }
         </RestaurantContext.Provider>
     )

@@ -6,8 +6,6 @@ function Home() {
     let { user, setUser } = useContext(UserContext);
     let history = useHistory();
 
-    console.log(user)
-
     return (
         <>
         </>

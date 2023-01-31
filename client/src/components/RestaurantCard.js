@@ -1,13 +1,10 @@
 import { Link } from 'react-router-dom';
 
 function RestaurantCard({ restaurant }) {
-
-    console.log(restaurant)
-
     return (
         <div>
             <div>
-                <Link to={`/restaurants/${restaurant.id}`} >
+                <Link to={`/restaurants/${restaurant.eatery_name}`} >
                     <h2>{restaurant.eatery_name}</h2>
                 </Link>
                 <h3>{restaurant.eatery_type}</h3>

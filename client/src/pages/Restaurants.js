@@ -5,7 +5,7 @@ import RestaurantList from '../components/RestaurantList';
 
 function Restaurants() {
 
-    const { eateries, setEateries } = useContext(RestaurantContext)
+    const { eateries } = useContext(RestaurantContext)
     let history = useHistory();
 
 

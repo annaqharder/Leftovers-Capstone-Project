@@ -13,6 +13,7 @@ import Map from './pages/Map';
 import WantToVisit from './pages/WantToVisit';
 import Profile from './pages/Profile';
 import { RestaurantProvider } from "./context/RestaurantProvider";
+import { CoffeeProvider } from "./context/CoffeeProvider";
 
 
 function App() {
@@ -28,9 +29,7 @@ function App() {
             <Login />
           </Route>
           <RestaurantProvider>
-          <Route path="/home" >
-            <Home />
-          </Route>
+          <CoffeeProvider>
           <Route path="/all-restaurants">
             <Restaurants />
           </Route>
@@ -43,12 +42,16 @@ function App() {
           <Route path="/map">
             <Map />
           </Route>
+          <Route path="/home" >
+            <Home />
+          </Route>
           <Route path="/want-to-visit">
             <WantToVisit />
           </Route>
           <Route path="/profile">
             <Profile />
           </Route>
+          </CoffeeProvider>
           </RestaurantProvider>
         </Switch>
     </UserProvider>

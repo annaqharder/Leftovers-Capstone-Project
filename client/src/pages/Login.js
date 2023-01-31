@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { UserContext } from '../context/UserProvider';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 function Login() {
     const [errors, setErrors] = useState([]);
@@ -70,6 +70,7 @@ function Login() {
                             placeholder="enter your password..."
                             value={credentials.password}
                             onChange={handleChange}
+                            autoComplete="current-password"
                         />
                     </div>
 
@@ -79,7 +80,7 @@ function Login() {
             <br></br>
             <div>
                 <label>Don't have an account?</label>
-                <button onClick={handleToSignupPage}>Sign up</button>
+                <Link onClick={handleToSignupPage}>Sign up</Link>
             </div>
 
             <div>

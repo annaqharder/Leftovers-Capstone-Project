@@ -5,8 +5,8 @@ Visit.destroy_all
 
 puts "Creating users..."
 anna = User.create!(first_name: "Anna", last_name: "Harder", email: "annaqharder@gmail.com", password: "123", location: "Denver, CO", bio: "", avatar: "https://static.vecteezy.com/system/resources/thumbnails/006/962/403/small/stylish-colorful-portrait-of-a-beautiful-woman-with-glasses-in-front-flat-illustration-vector.jpg")
-johnny = User.create!(first_name: "Johnny", last_name: "Turco", email: "johnnyturco@me.com", password: "123", location: "Omaha, NE", bio: "Enjoyer of fine cocktails, specifically the whiskey sour", avatar: "" )
-rachel = User.create!(first_name: "Rachel", last_name: "Humes", email: "racheljhumes@gmail.com", password: "123", location: "Denver, CO", bio: "", avatar: "" )
+johnny = User.create!(first_name: "Johnny", last_name: "Turco", email: "johnnyturco@me.com", password: "123", location: "Omaha, NE", bio: "Enjoyer of fine cocktails, specifically the whiskey sour", avatar: "https://ca.slack-edge.com/T0266FRGM-U2Q173U05-g863c2a865d7-512" )
+rachel = User.create!(first_name: "Rachel", last_name: "Humes", email: "racheljhumes@gmail.com", password: "123", location: "Denver, CO", bio: "", avatar: "https://ca.slack-edge.com/T0266FRGM-U2Q173U05-g863c2a865d7-512" )
 
 puts "Creating eateries..."
 E1 = Eatery.create!(eatery_name: "Hop Alley", eatery_address: "3500 Larimer St. Denver, CO 80205", eatery_neighborhood: "RiNo", eatery_category: "Restaurant", eatery_type: "Modern Chinese", user_id: anna.id)

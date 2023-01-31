@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-    before_action :authorize, only: [:update, :destroy]
+    # before_action :authorize, only: [:update, :destroy]
 
     # testing purposes to see users
     def index
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
 private
 
     def user_signup_params
-        params.permit(:email, :password, :password_confirmation)
+        params.permit(:first_name, :last_name, :email, :password, :password_confirmation)
     end
 
     def user_params

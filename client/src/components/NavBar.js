@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { UserContext } from "../context/UserProvider";
 import { NavLink, useHistory } from "react-router-dom";
+import NavImg from "../components/default-user.png"
 
 const NavBar = () => {
 
@@ -54,7 +55,7 @@ const NavBar = () => {
                 </div>
                 <div className="dropdownNavBar">
                     <div className="dropdown">
-                        <img className="NavBarDropdownBtn" src={user.avatar}/>
+                        <img className="NavBarDropdownBtn" src={user.avatar ? user.avatar : NavImg }/>
                         <nav className="dropdown-content">
                             <NavLink className="NavRoute" exact to="/want-to-visit">Want to Visit</NavLink>
                             <NavLink className="NavRoute" exact to="/profile">Profile</NavLink>

@@ -10,8 +10,9 @@ import Restaurants from './pages/Restaurants';
 import Coffee from './pages/Coffee';
 import Bars from './pages/Bars';
 import Map from './pages/Map';
-import WantToVisit from './pages/WantToVisit'
-import Profile from './pages/Profile'
+import WantToVisit from './pages/WantToVisit';
+import Profile from './pages/Profile';
+import { RestaurantProvider } from "./context/RestaurantProvider";
 
 
 function App() {
@@ -20,14 +21,15 @@ function App() {
     <UserProvider>
       <NavBar />
         <Switch>
-          <Route path="/home" >
-            <Home />
-          </Route>
           <Route path="/signup">
             <Signup />
           </Route>
           <Route exact path="/">
             <Login />
+          </Route>
+          <RestaurantProvider>
+          <Route path="/home" >
+            <Home />
           </Route>
           <Route path="/all-restaurants">
             <Restaurants />
@@ -47,6 +49,7 @@ function App() {
           <Route path="/profile">
             <Profile />
           </Route>
+          </RestaurantProvider>
         </Switch>
     </UserProvider>
   );

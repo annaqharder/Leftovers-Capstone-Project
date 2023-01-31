@@ -4,13 +4,13 @@ import { useHistory, Link } from 'react-router-dom';
 
 function Signup() {
     const [errors, setErrors] = useState([]);
-    const [ setIsLoading] = useState(false);
-
 
     let { user, setUser } = useContext(UserContext);
     let history = useHistory();
 
     const [credentials, setCredentials] = useState({
+        first_name: "",
+        last_name: "",
         email: "",
         password: "",
         password_confirmation: ""
@@ -28,16 +28,14 @@ function Signup() {
     function handleSignup(e) {
         e.preventDefault();
         setErrors([]);
-        setIsLoading(true);
 
-        fetch(`/signup`, {
+        fetch("/signup", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
             },
             body: JSON.stringify(credentials)
         }).then((r) => {
-            setIsLoading(false);
             if (r.ok) {
                 r.json().then((user) => setUser(user));
                 history.push("/home");
@@ -56,13 +54,37 @@ function Signup() {
             <div>
                 <h1>create your account</h1>
                 <form onSubmit={handleSignup}>
+                <div>
+                        <label>First Name: </label>
+                            <br></br>
+                        <input
+                            type="text"
+                            name="first_name"
+                            // placeholder="enter your first name..."
+                            value={credentials.first_name}
+                            onChange={handleChange}
+                        />
+                    </div>
+
+                    <div>
+                        <label>Last Name: </label>
+                            <br></br>
+                        <input
+                            type="text"
+                            name="last_name"
+                            // placeholder="enter your last name..."
+                            value={credentials.last_name}
+                            onChange={handleChange}
+                        />
+                    </div>
+
                     <div>
                         <label>Email: </label>
                             <br></br>
                         <input
                             type="text"
                             name="email"
-                            placeholder="enter your email..."
+                            // placeholder="enter your email..."
                             value={credentials.email}
                             onChange={handleChange}
                         />

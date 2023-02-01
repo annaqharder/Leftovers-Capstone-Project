@@ -15,19 +15,30 @@ import Profile from './pages/Profile';
 import { RestaurantProvider } from "./context/RestaurantProvider";
 import { CoffeeProvider } from "./context/CoffeeProvider";
 import { BarProvider } from "./context/BarProvider";
-
+import { useHistory } from "react-router-dom";
+import { QueryClient, QueryClientProvider, useQuery } from "@tanstack/react-query";
+import Axios from "axios";
 
 function App() {
+  const [user, setUser] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    location: "",
+    bio: "",
+    avatar: "",
+    password_digest: ""
+  })
+  const history = useHistory();
 
-  const [user, setUser] = useState()
+  const {data} = useQuery(["user"], () => {
+    fetch("/me").then((res) => res.json()).then((res) => setUser(res))
+  })
 
-  useEffect(() => {
-    fetch(`/me`)
-      .then((r) => r.json())
-      .then((user) => setUser(user))
-  }, [])
+  // console.log(user)
 
   return (
+
     <UserProvider>
       <NavBar />
         <Switch>
@@ -60,7 +71,7 @@ function App() {
           </Route>
           <Route path="/profile">
             <Profile
-              user={user}
+            user={user}
             />
           </Route>
           </BarProvider>

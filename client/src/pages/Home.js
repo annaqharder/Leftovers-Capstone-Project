@@ -8,6 +8,7 @@ function Home() {
 
     return (
         <>
+        <h1>Recent: </h1>
         </>
     );
 }

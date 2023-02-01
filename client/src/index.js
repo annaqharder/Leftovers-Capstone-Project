@@ -4,13 +4,26 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { QueryClient, QueryClientProvider, useQuery } from "@tanstack/react-query";
+
+const client = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      cacheTime: 1000 * 60 * 60 * 24
+    },
+  }
+});
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+        <QueryClientProvider client={client}>
     <BrowserRouter>
       <App />
     </BrowserRouter>
+    </QueryClientProvider>
   </React.StrictMode>
 );
 

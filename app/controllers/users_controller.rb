@@ -20,8 +20,9 @@ class UsersController < ApplicationController
     end
 
     def update
-        user = logged_in_user.find(params[:id])
-        user.update!(user_params)
+        puts params[:email]
+        user = User.find(params[:id])
+        user.update!(first_name: params[:first_name], last_name: params[:last_name], location: params[:location], bio: params[:bio], avatar: params[:avatar], email: params[:email], password: params[:password])
     end
 
     def destroy
@@ -37,7 +38,7 @@ private
     end
 
     def user_params
-        params.permit(:first_name, :last_name, :email, :password, :password_confirmation, :location, :bio, :avatar)
+        params.permit(:first_name, :last_name, :email, :password, :location, :bio, :avatar, :id)
     end
 
     def logged_in_user

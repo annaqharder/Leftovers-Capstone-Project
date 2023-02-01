@@ -1,4 +1,4 @@
-import RestaurantVisits from "../pages/RestaurantVisits";
+import RestaurantVisits from "./Visits";
 import RestaurantCard from "./RestaurantCard";
 
 function RestaurantList({ eateries }) {
@@ -9,6 +9,7 @@ function RestaurantList({ eateries }) {
             restaurant={restaurant}
         />
     ))
+
     return (
         <div>
             <div>

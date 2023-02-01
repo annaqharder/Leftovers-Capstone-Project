@@ -6,9 +6,7 @@ function VisitEntry({visit}) {
 
     return (
         <div>
-            <p>
-                {date}
-            </p>
+            <p>{date}</p>
             <p>Occasion: {occasion}</p>
             <p>Drink: {drink}</p>
             <p>Appetizer: {appetizer}</p>

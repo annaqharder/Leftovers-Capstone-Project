@@ -2,8 +2,6 @@ import { Link } from 'react-router-dom';
 
 function RestaurantCard({ restaurant }) {
 
-    console.log(restaurant)
-
     return (
         <div>
             <div>

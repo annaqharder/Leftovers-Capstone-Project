@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext } from 'react';
 import { useParams, useHistory, Link } from 'react-router-dom';
-import VisitEntry from '../components/VisitEntry';
+import VisitEntry from './VisitEntry';
 
 
 function RestaurantVisits(){
@@ -15,16 +15,12 @@ function RestaurantVisits(){
         visits: []
     })
 
-    // const [eatery, setEatery] = useState([])
-
     useEffect(() => {
         fetch(`/eateries/${id}`)
             .then((r) => r.json())
             .then((eatery) => (
                 setEatery(eatery))
     )}, [])
-
-    console.log(eatery)
 
     const array = eatery.visits.map((visit) => (
             <VisitEntry
@@ -37,8 +33,7 @@ function RestaurantVisits(){
         <div>
             <h1>{eatery.eatery_name}</h1>
             <h3>{eatery.eatery_address}</h3>
-
-            <h1>{array}</h1>
+            <div>{array}</div>
         </div>
     );
 }

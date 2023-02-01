@@ -12,7 +12,7 @@ import Bars from './pages/Bars';
 import Map from './pages/Map';
 import WantToVisit from './pages/WantToVisit';
 import Profile from './pages/Profile';
-import RestaurantVisits from "./pages/RestaurantVisits";
+import Visits from "./components/Visits";
 import { RestaurantProvider } from "./context/RestaurantProvider";
 import { CoffeeProvider } from "./context/CoffeeProvider";
 import { BarProvider } from "./context/BarProvider";
@@ -54,15 +54,21 @@ function App() {
             <Restaurants />
           </Route>
           <Route exact path="/restaurants/:id">
-            <RestaurantVisits/>
+            <Visits/>
           </Route>
           <CoffeeProvider>
           <Route path="/all-coffee">
             <Coffee />
           </Route>
+          <Route exact path="/coffee-shops/:id">
+            <Visits/>
+          </Route>
           <BarProvider>
           <Route path="/all-bars">
             <Bars />
+          </Route>
+          <Route exact path="/bars/:id">
+            <Visits/>
           </Route>
           <Route path="/map">
             <Map />

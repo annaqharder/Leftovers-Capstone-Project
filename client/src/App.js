@@ -12,6 +12,7 @@ import Bars from './pages/Bars';
 import Map from './pages/Map';
 import WantToVisit from './pages/WantToVisit';
 import Profile from './pages/Profile';
+import RestaurantVisits from "./pages/RestaurantVisits";
 import { RestaurantProvider } from "./context/RestaurantProvider";
 import { CoffeeProvider } from "./context/CoffeeProvider";
 import { BarProvider } from "./context/BarProvider";
@@ -20,22 +21,22 @@ import { QueryClient, QueryClientProvider, useQuery } from "@tanstack/react-quer
 import Axios from "axios";
 
 function App() {
-  const [user, setUser] = useState({
-    first_name: "",
-    last_name: "",
-    email: "",
-    location: "",
-    bio: "",
-    avatar: "",
-    password_digest: ""
-  })
   const history = useHistory();
+  // const [user, setUser] = useState({
+  //   first_name: "",
+  //   last_name: "",
+  //   email: "",
+  //   location: "",
+  //   bio: "",
+  //   avatar: "",
+  //   password_digest: ""
+  // })
+
+  const [user, setUser] = useState([])
 
   const {data} = useQuery(["user"], () => {
     fetch("/me").then((res) => res.json()).then((res) => setUser(res))
   })
-
-  // console.log(user)
 
   return (
 
@@ -51,6 +52,9 @@ function App() {
           <RestaurantProvider>
           <Route path="/all-restaurants">
             <Restaurants />
+          </Route>
+          <Route exact path="/restaurants/:id">
+            <RestaurantVisits/>
           </Route>
           <CoffeeProvider>
           <Route path="/all-coffee">

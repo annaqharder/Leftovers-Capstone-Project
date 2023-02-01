@@ -1,17 +1,18 @@
+import RestaurantVisits from "../pages/RestaurantVisits";
 import RestaurantCard from "./RestaurantCard";
 
 function RestaurantList({ eateries }) {
+
+    const restaurantArray = eateries.map(restaurant => (
+        <RestaurantCard
+            key-={restaurant.id}
+            restaurant={restaurant}
+        />
+    ))
     return (
         <div>
             <div>
-                {eateries.map(restaurant => (
-                    <div>
-                        <RestaurantCard
-                            key={restaurant.id}
-                            restaurant={restaurant}
-                        />
-                    </div>
-                ))}
+                {restaurantArray}
             </div>
         </div>
     );

@@ -13,6 +13,7 @@ class EateryWithVisitsSerializer < ActiveModel::Serializer
         food: visit.food,
         dessert: visit.dessert,
         other_consumables: visit.other_consumables,
+        rating: visit.rating,
         visit_img: visit.visit_img,
         user: {
           id: item.user.id,

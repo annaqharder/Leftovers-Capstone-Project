@@ -10,6 +10,7 @@ class CreateVisits < ActiveRecord::Migration[7.0]
       t.text :dessert
       t.text :other_consumables
       t.string :visit_img
+      t.integer :rating
       t.belongs_to :user, null: false, foreign_key: true
       t.belongs_to :eatery, null: false, foreign_key: true
 

@@ -1,7 +1,9 @@
 
 function VisitEntry({visit}) {
 
-    const {date, occasion, notes, drink, appetizer, food, dessert, other_consumables, visit_img } = visit
+    console.log(visit)
+
+    const {date, occasion, notes, drink, appetizer, food, dessert, other_consumables, visit_img, rating } = visit
 
 
     return (
@@ -14,6 +16,7 @@ function VisitEntry({visit}) {
             <p>Dessert: {dessert}</p>
             <p>Other Consumables: {other_consumables}</p>
             <p>Notes: {notes}</p>
+            <p>Rating: {rating} ⭐</p>
         </div>
     );
 }

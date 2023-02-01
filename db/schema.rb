@@ -48,6 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_30_180735) do
     t.text "dessert"
     t.text "other_consumables"
     t.string "visit_img"
+    t.integer "rating"
     t.bigint "user_id", null: false
     t.bigint "eatery_id", null: false
     t.datetime "created_at", null: false

@@ -6,8 +6,8 @@ import { useQuery } from '@tanstack/react-query';
 import Axios from 'axios';
 
 function Profile({user}) {
-
     const history = useHistory()
+    const [showForm, setShowForm] = useState(false)
 
     // if (!user) {
     //     history.push("/home")
@@ -21,7 +21,7 @@ function Profile({user}) {
 
 
     console.log(user)
-    const [profile, setProfile] = useState(null)
+    const [setProfile] = useState(null)
     const [first_name, setFirst_name] = useState(user.first_name)
     const [last_name, setLast_name] = useState(user.last_name)
     const [email, setEmail] = useState(user.email)
@@ -38,7 +38,7 @@ function Profile({user}) {
             first_name: first_name,
             last_name: last_name,
             email: email,
-            password: user.password,
+            password: password,
             location: location,
             bio: bio,
             avatar: avatar
@@ -77,9 +77,9 @@ function Profile({user}) {
                 </div>
             </div>
 
-            <div>
-                <h1>Update Profile</h1>
+            {showForm ? (
                 <form onSubmit={handleEditProfile}>
+                    <h1>Edit Your Profile</h1>
                     <div>
                         <label>First Name: </label>
                         <input
@@ -152,9 +152,16 @@ function Profile({user}) {
                         />
                     </div>
                         <br></br>
-                    <button type="submit">Update Profile</button>
+                    <button type="submit">Save Profile</button>
                 </form>
-            </div>
+            ) : <div>
+                    <button onClick={() => setShowForm(true)}> Update Profile</button>
+                </div>}
+
+        {showForm ?
+            (<button onClick={() => setShowForm(false)}>Cancel</button>)
+        : null}
+
         </div>
     );
 }

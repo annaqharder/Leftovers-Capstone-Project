@@ -10,6 +10,9 @@ function RestaurantCard({ restaurant }) {
                 </Link>
                 <h3>{restaurant.eatery_type}</h3>
                 <h4>{restaurant.eatery_address}</h4>
+                <div>
+                    <button>Delete Restaurant</button>
+                </div>
             </div>
         </div>
     );

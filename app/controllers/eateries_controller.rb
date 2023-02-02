@@ -15,7 +15,7 @@ class EateriesController < ApplicationController
     end
 
     def create
-        eatery = Eatery.create!(eatery_params)
+        eatery = Eatery.create!(user_id: current_user.id, eatery_name: params[:eatery_name], eatery_address: params[:eatery_address], eatery_neighborhood:params[:eatery_neighborhood], eatery_category:params[:eatery_category], eatery_type:params[:eatery_type])
         render json: eatery, status: :created
     end
 

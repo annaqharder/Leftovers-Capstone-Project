@@ -6,20 +6,20 @@ const BarContext = createContext();
 function BarProvider({ children }) {
     const { user } = useContext(UserContext);
 
-    const [eateries, setEateries] = useState([])
+    const [bars, setBars] = useState([])
 
     useEffect(() => {
         if (user) {
             fetch(`/eateries`)
                 .then((r) => r.json())
                 .then((eateries) => (
-                    setEateries(eateries.filter((eatery) => eatery.eatery_category === "Bar"))
+                    setBars(eateries.filter((eatery) => eatery.eatery_category === "Bar"))
                 ))
             }
     }, [user])
 
     return (
-        <BarContext.Provider value={{eateries, setEateries}}>
+        <BarContext.Provider value={{bars, setBars}}>
             { children }
         </BarContext.Provider>
     )

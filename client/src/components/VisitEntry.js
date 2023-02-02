@@ -1,8 +1,6 @@
 
 function VisitEntry({visit}) {
 
-    console.log(visit)
-
     const {date, occasion, notes, drink, appetizer, food, dessert, other_consumables, visit_img, rating } = visit
 
 

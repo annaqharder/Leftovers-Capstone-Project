@@ -1,9 +1,9 @@
 import RestaurantVisits from "./Visits";
 import RestaurantCard from "./RestaurantCard";
 
-function RestaurantList({ eateries }) {
+function RestaurantList({ restaurants }) {
 
-    const restaurantArray = eateries.map(restaurant => (
+    const restaurantArray = restaurants.map(restaurant => (
         <RestaurantCard
             key-={restaurant.id}
             restaurant={restaurant}

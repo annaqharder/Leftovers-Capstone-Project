@@ -6,20 +6,20 @@ const CoffeeContext = createContext();
 function CoffeeProvider({ children }) {
     const { user } = useContext(UserContext);
 
-    const [eateries, setEateries] = useState([])
+    const [coffees, setCoffees] = useState([])
 
     useEffect(() => {
         if (user) {
             fetch(`/eateries`)
                 .then((r) => r.json())
                 .then((eateries) => (
-                    setEateries(eateries.filter((eatery) => eatery.eatery_category === "Coffee/Cafe"))
+                    setCoffees(eateries.filter((eatery) => eatery.eatery_category === "Coffee/Cafe"))
                 ))
             }
     }, [user])
 
     return (
-        <CoffeeContext.Provider value={{eateries, setEateries}}>
+        <CoffeeContext.Provider value={{coffees, setCoffees}}>
             { children }
         </CoffeeContext.Provider>
     )

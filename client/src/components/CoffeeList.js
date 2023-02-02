@@ -1,10 +1,10 @@
 import CoffeeCard from "./CoffeeCard";
 
-function CoffeeList({ eateries }) {
+function CoffeeList({ coffees }) {
     return (
         <div>
             <div>
-                {eateries.map(coffee => (
+                {coffees.map(coffee => (
                     <div>
                         <CoffeeCard
                             key={coffee.id}

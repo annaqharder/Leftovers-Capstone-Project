@@ -19,8 +19,6 @@ function Profile({user}) {
 
     // const {user} = useContext(UserContext)
 
-
-    console.log(user)
     const [setProfile] = useState(null)
     const [first_name, setFirst_name] = useState(user.first_name)
     const [last_name, setLast_name] = useState(user.last_name)

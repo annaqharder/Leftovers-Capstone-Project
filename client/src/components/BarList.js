@@ -1,10 +1,10 @@
 import BarCard from './BarCard'
 
-function BarList({ eateries }) {
+function BarList({ bars }) {
     return (
         <div>
             <div>
-                {eateries.map(bar => (
+                {bars.map(bar => (
                     <div>
                         <BarCard
                             key={bar.id}

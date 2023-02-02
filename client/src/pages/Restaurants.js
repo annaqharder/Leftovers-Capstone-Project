@@ -2,10 +2,11 @@ import React, { useContext, useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { RestaurantContext } from '../context/RestaurantProvider';
 import RestaurantList from '../components/RestaurantList';
+import NewEateryForm from '../components/NewRestaurantForm';
 
 function Restaurants() {
 
-    const { eateries } = useContext(RestaurantContext)
+    const { restaurants } = useContext(RestaurantContext)
     let history = useHistory();
 
 
@@ -31,8 +32,11 @@ function Restaurants() {
             <div>
                 <RestaurantList
                 // eateries={filteredForRestaurants}
-                eateries={eateries}
+                restaurants={restaurants}
                 />
+            </div>
+            <div>
+                <NewEateryForm />
             </div>
         </div>
     );

@@ -2,10 +2,11 @@ import React, { useContext, useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { CoffeeContext } from '../context/CoffeeProvider';
 import CoffeeList from '../components/CoffeeList';
+import NewCoffeeForm from '../components/NewCoffeeForm';
 
 function Coffee() {
 
-    const { eateries } = useContext(CoffeeContext);
+    const { coffees } = useContext(CoffeeContext);
     let history = useHistory();
 
     return (
@@ -18,8 +19,11 @@ function Coffee() {
             </div>
             <div>
                 <CoffeeList
-                eateries={eateries}
+                    coffees={coffees}
                 />
+            </div>
+            <div>
+                <NewCoffeeForm />
             </div>
         </div>
     );

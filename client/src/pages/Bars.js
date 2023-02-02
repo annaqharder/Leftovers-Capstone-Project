@@ -2,10 +2,11 @@ import React, { useContext, useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { BarContext } from '../context/BarProvider';
 import BarList from '../components/BarList';
+import NewBarForm from '../components/NewBarForm';
 
 function Bars() {
 
-    const { eateries } = useContext(BarContext);
+    const { bars } = useContext(BarContext);
     let history = useHistory();
 
     return (
@@ -19,9 +20,10 @@ function Bars() {
             </div>
             <div>
                 <BarList
-                eateries={eateries}
+                bars={bars}
                 />
             </div>
+            <NewBarForm />
         </div>
     )
 }

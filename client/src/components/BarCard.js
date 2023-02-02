@@ -1,6 +1,26 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { BarContext } from '../context/BarProvider';
 
 function BarCard({ bar }) {
+
+    let {bars, setBars} = useContext(BarContext)
+
+    function handleDelete(){
+        fetch(`/eateries/${restaurant.id}`, {
+            method: "DELETE"
+        })
+        deletedRestaurant()
+    }
+
+    function deletedRestaurant() {
+        const updatedRestaurantList = restaurants.filter(deletedRestaurant => {
+            return deletedRestaurant.id !== restaurant.id
+        })
+
+        setRestaurants(updatedRestaurantList)
+    }
+
     return (
         <div>
             <div>

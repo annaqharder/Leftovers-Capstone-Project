@@ -26,7 +26,7 @@ class EateriesController < ApplicationController
     end
 
     def destroy
-        eatery = user_eateries.find(params[:id])
+        eatery = Eatery.find(params[:id])
         eatery.destroy
         head :no_content
     end

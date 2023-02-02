@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams} from 'react-router-dom';
 import { RestaurantContext } from '../context/RestaurantProvider';
 import RestaurantList from '../components/RestaurantList';
 import NewEateryForm from '../components/NewRestaurantForm';
@@ -31,7 +31,6 @@ function Restaurants() {
             </div>
             <div>
                 <RestaurantList
-                // eateries={filteredForRestaurants}
                 restaurants={restaurants}
                 />
             </div>

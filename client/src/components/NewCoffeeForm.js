@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import { UserContext } from '../context/UserProvider';
 import { CoffeeContext } from '../context/CoffeeProvider';
+import { RestaurantContext } from '../context/RestaurantProvider';
 
 function NewEateryForm() {
 

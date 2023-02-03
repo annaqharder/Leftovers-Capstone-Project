@@ -36,7 +36,7 @@ private
     end
 
     def visit_params
-        params.permit(:date, :occasion, :notes, :drink, :appetizer, :food, :dessert, :other_consumables, :visit_img, :rating)
+        params.permit(:date, :occasion, :notes, :drink, :appetizer, :food, :dessert, :other_consumables, :visit_img, :rating, :eatery_id, :user_id)
     end
 
 end

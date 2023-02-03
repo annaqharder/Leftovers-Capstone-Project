@@ -7,18 +7,18 @@ function BarCard({ bar }) {
     let {bars, setBars} = useContext(BarContext)
 
     function handleDelete(){
-        fetch(`/eateries/${restaurant.id}`, {
+        fetch(`/eateries/${bar.id}`, {
             method: "DELETE"
         })
-        deletedRestaurant()
+        deletedBars()
     }
 
-    function deletedRestaurant() {
-        const updatedRestaurantList = restaurants.filter(deletedRestaurant => {
-            return deletedRestaurant.id !== restaurant.id
+    function deletedBars() {
+        const updatedBarList = bars.filter(deletedBar => {
+            return deletedBar.id !== bar.id
         })
 
-        setRestaurants(updatedRestaurantList)
+        setBars(updatedBarList)
     }
 
     return (
@@ -29,6 +29,12 @@ function BarCard({ bar }) {
                 </Link>
                 <h3>{bar.eatery_type}</h3>
                 <h4>{bar.eatery_address}</h4>
+                <div>
+                    <button
+                    onClick={() => { window.confirm( `Are you sure you want to delete ${bar.eatery_name}?`, ) && handleDelete(bar.id)}}>
+                        Delete 🗑️
+                    </button>
+                </div>
             </div>
         </div>
     );

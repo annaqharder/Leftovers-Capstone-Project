@@ -16,21 +16,14 @@ import Visits from "./components/Visits";
 import { RestaurantProvider } from "./context/RestaurantProvider";
 import { CoffeeProvider } from "./context/CoffeeProvider";
 import { BarProvider } from "./context/BarProvider";
+import { VisitProvider } from "./context/VisitProvider";
 import { useHistory } from "react-router-dom";
 import { QueryClient, QueryClientProvider, useQuery } from "@tanstack/react-query";
-import Axios from "axios";
+import NewVisitForm from "./components/NewVisitForm";
+import { EateryProvider } from "./context/EateryProvider";
 
 function App() {
   const history = useHistory();
-  // const [user, setUser] = useState({
-  //   first_name: "",
-  //   last_name: "",
-  //   email: "",
-  //   location: "",
-  //   bio: "",
-  //   avatar: "",
-  //   password_digest: ""
-  // })
 
   const [user, setUser] = useState([])
 
@@ -41,6 +34,7 @@ function App() {
   return (
 
     <UserProvider>
+      <EateryProvider >
       <NavBar />
         <Switch>
           <Route path="/signup">
@@ -53,6 +47,7 @@ function App() {
           <Route path="/all-restaurants">
             <Restaurants />
           </Route>
+          <VisitProvider >
           <Route exact path="/restaurants/:id">
             <Visits/>
           </Route>
@@ -86,8 +81,10 @@ function App() {
           </Route>
           </BarProvider>
           </CoffeeProvider>
+          </VisitProvider>
           </RestaurantProvider>
         </Switch>
+        </EateryProvider>
     </UserProvider>
   );
 }

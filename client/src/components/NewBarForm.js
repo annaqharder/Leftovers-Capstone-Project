@@ -77,7 +77,7 @@ return (
                     <input
                         type="text"
                         name="eatery_type"
-                        placeholder="= Cocktail, Speakeasy, Dive..."
+                        placeholder="ex: Cocktail, Speakeasy, Dive..."
                         value={eateryType}
                         onChange={(e) => setEateryType(e.target.value)}
                     />

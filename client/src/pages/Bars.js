@@ -5,7 +5,7 @@ import BarList from '../components/BarList';
 import NewBarForm from '../components/NewBarForm';
 
 function Bars() {
-
+    const [showForm, setShowForm] = useState(false)
     const { bars } = useContext(BarContext);
     let history = useHistory();
 
@@ -14,16 +14,28 @@ function Bars() {
         <div>
             <div>
                 <h1>My Bars</h1>
+
                 <div>
-                    <button>Add Bar</button>
-                </div>
+                {showForm? (
+                    <div>
+                        <NewBarForm />
+                    </div>) : (
+                    <div>
+                        <button onClick={() => setShowForm(true)}> Add Bar</button>
+                    </div>
+                )}
+            </div>
+        <div>
+            {showForm ?
+                (<button onClick={() => setShowForm(false)}>Cancel</button>)
+            : null}
+        </div>
             </div>
             <div>
                 <BarList
                 bars={bars}
                 />
             </div>
-            <NewBarForm />
         </div>
     )
 }

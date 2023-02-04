@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { RestaurantContext } from '../context/RestaurantProvider';
 
@@ -6,7 +6,7 @@ function RestaurantCard({ restaurant }) {
 
     let {restaurants, setRestaurants} = useContext(RestaurantContext)
 
-    //console.log(restaurant.id)
+    
 
     function handleDelete(){
         fetch(`/eateries/${restaurant.id}`, {

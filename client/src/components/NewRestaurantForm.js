@@ -3,11 +3,13 @@ import { useHistory } from 'react-router-dom';
 import { UserContext } from '../context/UserProvider';
 import { RestaurantContext } from '../context/RestaurantProvider';
 
-function NewEateryForm() {
+function NewRestaurantForm() {
 
     let {user} = useContext(UserContext)
 
-    let {setRestaurants} = useContext(RestaurantContext)
+    let {setRestaurants} = useContext(RestaurantContext);
+
+    const [showForm, setShowForm] = useState(false)
 
     const [eateryName, setEateryName] = useState("");
     const [eateryAddress, setEateryAddress] =useState("");
@@ -90,4 +92,4 @@ return (
     );
 }
 
-export default NewEateryForm;
+export default NewRestaurantForm;

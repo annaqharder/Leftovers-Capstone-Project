@@ -9,8 +9,6 @@ function NewVisitForm() {
     const {visits, setVisits} = useContext(VisitContext);
     const { id } = useParams();
 
-    // console.log(visits)
-
     const [date, setDate] = useState("");
     const [occasion, setOccasion] = useState("");
     const [notes, setNotes] = useState("");
@@ -57,9 +55,9 @@ function NewVisitForm() {
 
     return (
         <div>
+            <h1>Add Visit</h1>
             <div>
-                <form onSubmit={handleNewVisit}>
-
+                    <form onSubmit={handleNewVisit}>
                     <div>
                         <label>Visit Date: </label>
                         <input

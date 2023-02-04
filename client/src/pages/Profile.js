@@ -9,16 +9,6 @@ function Profile({user}) {
     const history = useHistory()
     const [showForm, setShowForm] = useState(false)
 
-    // if (!user) {
-    //     history.push("/home")
-    // }
-
-    // const {} = useQuery(["user"], () => {
-    //     Axios.get("/me").then((res) => res.data)
-    // })
-
-    // const {user} = useContext(UserContext)
-
     const [setProfile] = useState(null)
     const [first_name, setFirst_name] = useState(user.first_name)
     const [last_name, setLast_name] = useState(user.last_name)
@@ -41,7 +31,7 @@ function Profile({user}) {
             bio: bio,
             avatar: avatar
         }
-        console.log(editProfile)
+
         fetch(`/users/${user.id}`, {
             method: "PATCH",
             headers: {

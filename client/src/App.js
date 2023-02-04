@@ -26,6 +26,7 @@ function App() {
   const history = useHistory();
 
   const [user, setUser] = useState([])
+  // const [visits, setVisits] = useState([])
 
   const {data} = useQuery(["user"], () => {
     fetch("/me").then((res) => res.json()).then((res) => setUser(res))
@@ -49,7 +50,9 @@ function App() {
           </Route>
           <VisitProvider >
           <Route exact path="/restaurants/:id">
-            <Visits/>
+            <Visits
+            // visits={visits}
+            />
           </Route>
           <CoffeeProvider>
           <Route path="/all-coffee">
@@ -77,6 +80,7 @@ function App() {
           <Route path="/profile">
             <Profile
             user={user}
+            setUser={setUser}
             />
           </Route>
           </BarProvider>

@@ -6,6 +6,7 @@ import NewCoffeeForm from '../components/NewCoffeeForm';
 
 function Coffee() {
 
+    const [showForm, setShowForm] = useState(false);
     const { coffees } = useContext(CoffeeContext);
     let history = useHistory();
 
@@ -14,16 +15,25 @@ function Coffee() {
             <div>
                 <h1>My Cafes & Coffee Shops</h1>
                 <div>
-                    <button>Add Cafe/Coffee Shop</button>
-                </div>
+                {showForm? (
+                    <div>
+                        <NewCoffeeForm />
+                    </div>) : (
+                    <div>
+                        <button onClick={() => setShowForm(true)}> Add Cafe/Coffee Shop</button>
+                    </div>
+                )}
+            </div>
+        <div>
+            {showForm ?
+                (<button onClick={() => setShowForm(false)}>Cancel</button>)
+            : null}
+        </div>
             </div>
             <div>
                 <CoffeeList
                     coffees={coffees}
                 />
-            </div>
-            <div>
-                <NewCoffeeForm />
             </div>
         </div>
     );

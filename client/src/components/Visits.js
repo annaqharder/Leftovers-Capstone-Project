@@ -9,6 +9,8 @@ function RestaurantVisits(){
 
     const {visits, setVisits} = useContext(VisitContext)
 
+    const [showForm, setShowForm] = useState(false)
+
     // console.log(visits[0].eatery.id)
 
     const { id } = useParams();
@@ -38,10 +40,29 @@ function RestaurantVisits(){
 
     return (
         <div>
-            <h1>{eatery.eatery_name}</h1>
-            <h3>{eatery.eatery_address}</h3>
-            <div>{mappedVisits}</div>
-            <NewVisitForm/>
+            <div>
+            {showForm ? (
+                <div>
+                    <NewVisitForm/>
+                </div>
+            ) : (
+                <div>
+                    <button onClick={() => setShowForm(true)}> Add Visit</button>
+                </div>
+            )}
+            </div>
+
+            <div>
+                {showForm ?
+                    (<button onClick={() => setShowForm(false)}>Cancel</button>)
+                : null}
+            </div>
+
+            <div>
+                <h1>{eatery.eatery_name}</h1>
+                <h3>{eatery.eatery_address}</h3>
+                <div>{mappedVisits}</div>
+            </div>
         </div>
     );
 }

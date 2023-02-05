@@ -6,7 +6,6 @@ function RestaurantCard({ restaurant }) {
 
     let {restaurants, setRestaurants} = useContext(RestaurantContext)
 
-    
 
     function handleDelete(){
         fetch(`/eateries/${restaurant.id}`, {

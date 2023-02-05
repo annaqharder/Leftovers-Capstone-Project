@@ -1,12 +1,18 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { UserContext } from '../context/UserProvider';
 import { useHistory, Link } from 'react-router-dom';
+import {Icon} from 'react-icons-kit';
+    import {eyeOff} from 'react-icons-kit/feather/eyeOff';
+    import {eye} from 'react-icons-kit/feather/eye'
 
 function Signup() {
     const [errors, setErrors] = useState([]);
 
     let { user, setUser } = useContext(UserContext);
     let history = useHistory();
+
+    const [type, setType] = useState('password');
+    const [icon, setIcon] = useState(eyeOff);
 
     const [credentials, setCredentials] = useState({
         first_name: "",
@@ -49,69 +55,100 @@ function Signup() {
         history.push("/")
     }
 
+    const handleToggle = () => {
+        if (type==='password'){
+            setIcon(eye);
+            setType('text')
+        } else {
+            setIcon(eyeOff)
+            setType('password')
+        }
+    }
+
     return (
         <div>
             <div>
                 <h1>create your account</h1>
                 <form onSubmit={handleSignup}>
                 <div>
-                        <label>First Name: </label>
-                            <br></br>
-                        <input
-                            type="text"
-                            name="first_name"
-                            // placeholder="enter your first name..."
-                            value={credentials.first_name}
-                            onChange={handleChange}
-                        />
+                        <div className="wrapper">
+                            <label>First Name: </label>
+                                <br></br>
+                            <div className="input-field">
+                                <input
+                                    type="text"
+                                    name="last_name"
+                                    // placeholder="enter your first name..."
+                                    value={credentials.first_name}
+                                    onChange={handleChange}
+                                />
+                            </div>
+                        </div>
                     </div>
-
+                    <br></br>
                     <div>
-                        <label>Last Name: </label>
-                            <br></br>
-                        <input
-                            type="text"
-                            name="last_name"
-                            // placeholder="enter your last name..."
-                            value={credentials.last_name}
-                            onChange={handleChange}
-                        />
+                        <div className="wrapper">
+                            <label>Last Name: </label>
+                                <br></br>
+                            <div className="input-field">
+                                <input
+                                    type="text"
+                                    name="last_name"
+                                    // placeholder="enter your last name..."
+                                    value={credentials.last_name}
+                                    onChange={handleChange}
+                                />
+                            </div>
+                        </div>
                     </div>
-
+                    <br></br>
                     <div>
-                        <label>Email: </label>
-                            <br></br>
-                        <input
-                            type="text"
-                            name="email"
-                            // placeholder="enter your email..."
-                            value={credentials.email}
-                            onChange={handleChange}
-                        />
+                        <div className="wrapper">
+                            <label>Email: </label>
+                            <div className="input-field">
+                                <input
+                                    type="text"
+                                    name="email"
+                                    // placeholder="enter your email..."
+                                    value={credentials.email}
+                                    onChange={handleChange}
+                                />
+                            </div>
+                        </div>
                     </div>
-
+                    <br></br>
                     <div>
-                        <label>Password: </label>
-                            <br></br>
-                        <input
-                            type="password"
-                            name="password"
-                            value={credentials.password}
-                            onChange={handleChange}
-                            autoComplete="current-password"
-                        />
+                            <div className="wrapper">
+                                <label>Password: </label>
+                            <div className='input-field'>
+                                <input
+                                    type={type}
+                                    name="password"
+                                    placeholder="enter password..."
+                                    value={credentials.password}
+                                    onChange={handleChange}
+                                    autoComplete="current-password"
+                                />
+                                <span onClick={handleToggle}><Icon icon={icon} size={25}/></span>
+                            </div>
+                        </div>
                     </div>
-
+                    <br></br>
                     <div>
-                        <label>Confirm Password: </label>
-                            <br></br>
-                        <input
-                            type="password"
-                            name="password_confirmation"
-                            value={credentials.password_confirmation}
-                            onChange={handleChange}
-                            autoComplete="current-password"
-                        />
+                            <div className="wrapper">
+                                <label>Confirm Password: </label>
+                            <div className='input-field'>
+                                <input
+                                    type={type}
+                                    name="password_confirmation"
+                                    placeholder="confirm password..."
+                                    value={credentials.password_confirmation}
+                                    onChange={handleChange}
+                                    autoComplete="current-password"
+                                />
+                                <span onClick={handleToggle}><Icon icon={icon} size={25}/></span>
+                            </div>
+                        </div>
                     </div>
 
                         <br></br>

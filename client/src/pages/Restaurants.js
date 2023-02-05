@@ -34,7 +34,6 @@ function Restaurants() {
             )
         })
 
-
     return (
         <div>
             <div>

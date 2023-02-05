@@ -7,9 +7,20 @@ function Home() {
     let history = useHistory();
 
     return (
-        <>
-        <h1>Recent: </h1>
-        </>
+        <div>
+            <div>
+                <h1>Restaurants</h1>
+
+            </div>
+
+            <div>
+                <h1>Cafes/Coffee Shops</h1>
+            </div>
+
+            <div>
+                <h1>Bars</h1>
+            </div>
+        </div>
     );
 }
 

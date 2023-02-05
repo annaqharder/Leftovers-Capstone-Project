@@ -108,6 +108,7 @@ function Signup() {
                             <div className="input-field">
                                 <input
                                     type="text"
+                                    inputMode='email'
                                     name="email"
                                     // placeholder="enter your email..."
                                     value={credentials.email}

@@ -103,7 +103,39 @@ function VisitEntry({visit}) {
 
 
     return (
-        <div>
+        <div className="visitContainer">
+
+        <div className="visitCard">
+            <div className="visitDetails">
+                {date ? (<p> {date} </p>) : null}
+                {occasion ? (<p><span className="visitDetailTitles">Occasion:</span> {occasion} </p>) : null}
+                {drink ? (<p><span className="visitDetailTitles">Drink:</span> {drink} </p>) : null}
+                {appetizer ? ( <p><span className="visitDetailTitles">Appetizer:</span> {appetizer} </p>) : null}
+                {food ? (<p><span className="visitDetailTitles">Food: </span>{food} </p>) : null}
+                {dessert ? (<p><span className="visitDetailTitles">Dessert:</span> {dessert} </p>) : null}
+                {other_consumables ? (<p><span className="visitDetailTitles">Other Consumables:</span> {other_consumables}</p>) : null}
+                {notes ? ( <p><span className="visitDetailTitles">Notes:</span> {notes}</p>) : null}
+                <div>
+                    <p><span className="visitDetailTitles">Rating: </span>{rating} Star</p>
+                        {stars.map((_, index) => {
+                            return (
+                                <FaStar
+                                    key={index}
+                                    size={24}
+                                    color={(hoverValue || rating) > index ? colors.orange : colors.grey}
+                                />
+                            )
+                        })}
+                </div>
+                <div>
+                    <img className="visitImg" src={image} />
+                </div>
+            </div>
+            <div>
+                <button onClick={() => {window.confirm( `Are you sure you want to delete this visit?`, ) && handleDeleteVisit(visit.id)}}> 
+                    Delete 🗑️
+                </button>
+            </div>
 
         {showForm ? (
                         <div>
@@ -209,49 +241,20 @@ function VisitEntry({visit}) {
                         <button>Update Visit</button>
                     </form>
                 </div>
-        ) : (
-            <div>
-            <button onClick={() => setShowForm(true)}> Update Visit</button>
-        </div>
-        )}
-
-        <div>
-            {showForm ?
-                (<button onClick={() => setShowForm(false)}>Cancel</button>)
-            : null}
-        </div>
-
-            <div>
-                <p>{date}</p>
-                <p>Occasion: {occasion}</p>
-                <p>Drink: {drink}</p>
-                <p>Appetizer: {appetizer}</p>
-                <p>Food: {food}</p>
-                <p>Dessert: {dessert}</p>
-                <p>Other Consumables: {other_consumables}</p>
-                <p>Notes: {notes}</p>
-                <p>Images: {image}</p>
+            ) : (
                 <div>
-                <p>Rating: {rating} Star</p>
-                    {stars.map((_, index) => {
-                        return (
-                            <FaStar
-                                key={index}
-                                size={24}
-                                color={(hoverValue || rating) > index ? colors.orange : colors.grey}
-                                // onClick={() => handleClickStar(index + 1)}
-                                // onMouseOver={() => handleMouseOverStar(index + 1)}
-                                // onMouseLeave={() => handleMouseLeaveStar}
-                            />
-                        )
-                    })}
-                </div>
+                <button onClick={() => setShowForm(true)}> Update Visit</button>
             </div>
+            )}
+
             <div>
-                <button onClick={() => {window.confirm( `Are you sure you want to delete this visit?`, ) && handleDeleteVisit(visit.id)}}> 
-                    Delete 🗑️
-                </button>
+                {showForm ?
+                    (<button onClick={() => setShowForm(false)}>Cancel</button>)
+                : null}
             </div>
+        </div>
+
+
             <div>
             {error
             ? error.map((err) => (

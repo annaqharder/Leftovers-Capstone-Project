@@ -1,6 +1,8 @@
 *{
   margin: 0;
-  padding: 0
+  padding: 0;
+  background-color: #E1DDC8;
+  /* color: #505050; */
 }
 
 
@@ -44,6 +46,10 @@
 }
 
 /* ------------------ */
+
+.appName {
+  font-size: 46px;
+}
 
 .NavBarDropdownBtn {
   border-radius: 100px;
@@ -149,5 +155,29 @@
   cursor: pointer;
 }
 
+.visitImg{
+  height: 180px;
+  width: auto;
+  border-radius: 24px;
+}
 
+.visitDetailTitles{
+  font-weight: 800;
+}
 
+.visitCard{
+  padding: 10px;
+  border: solid;
+  border-radius: 24px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.visitContainer{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+
+}

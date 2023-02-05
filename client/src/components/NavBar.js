@@ -37,7 +37,7 @@ const NavBar = () => {
                 </h3>
             ): (
                 <h3>
-                <span onClick={handleHome}>Leftovers</span>
+                <span className="appName" onClick={handleHome}>Leftovers</span>
                 </h3>
             )}
 

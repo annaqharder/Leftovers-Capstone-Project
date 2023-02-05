@@ -2,12 +2,20 @@ import React, {useState, useContext} from "react";
 import { useParams } from "react-router-dom";
 import { UserContext } from "../context/UserProvider";
 import { VisitContext } from "../context/VisitProvider";
+import { FaStar } from 'react-icons/fa'
+
+
+const colors = {
+    orange: "#F2C265",
+    grey: "a9a9a9"
+}
 
 function NewVisitForm() {
 
     const {user, setUser} = useContext(UserContext);
     const {visits, setVisits} = useContext(VisitContext);
     const { id } = useParams();
+    const [hoverValue, setHoverValue] = useState(undefined)
 
     const [date, setDate] = useState("");
     const [occasion, setOccasion] = useState("");
@@ -51,6 +59,20 @@ function NewVisitForm() {
             .then((newVisit) => {
                 setVisits((previousVisits) => [...previousVisits, newVisit])
             })
+    }
+
+    const stars = Array(5).fill(0)
+
+    const handleClickStar = value => {
+        setRating(value)
+    };
+
+    const handleMouseOverStar = value => {
+        setHoverValue(value)
+    };
+
+    const handleMouseLeaveStar = () => {
+        setHoverValue(undefined)
     }
 
     return (
@@ -132,13 +154,21 @@ function NewVisitForm() {
                     </div>
                     <div>
                         <label>Visit Rating: </label>
-                        <input
-                            type="number"
-                            name="rating"
-                            value={rating}
-                            onChange={(e) => setRating(e.target.value)}
-                        />
-                    </div>
+                        {stars.map((_, index) => {
+                                return (
+                                    <FaStar
+                                        key={index}
+                                        size={24}
+                                        value={rating}
+                                        onChange={(e) => setRating(e.target.value)}
+                                        color={(hoverValue || rating) > index ? colors.orange : colors.grey}
+                                        onClick={() => handleClickStar(index + 1)}
+                                        onMouseOver={() => handleMouseOverStar(index + 1)}
+                                        onMouseLeave={() => handleMouseLeaveStar}
+                                    />
+                                )
+                            })}
+                        </div>
                     <div>
                         <label>Visit Images: </label>
                         <input

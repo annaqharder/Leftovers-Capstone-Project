@@ -1,6 +1,12 @@
 import React, {useState, useContext} from "react";
 import { useParams } from "react-router-dom";
 import { VisitContext } from "../context/VisitProvider";
+import { FaStar } from 'react-icons/fa'
+
+const colors = {
+    orange: "#F2C265",
+    grey: "a9a9a9"
+}
 
 function VisitEntry({visit}) {
 
@@ -15,6 +21,8 @@ function VisitEntry({visit}) {
     const [other_consumables, setOther_consumables] = useState(visit.other_consumables)
     const [rating, setRating] = useState(visit.rating)
     const [image, setImage] = useState(visit.visit_img)
+
+    const [hoverValue, setHoverValue] = useState(undefined)
 
     const [showForm, setShowForm] = useState(false)
 
@@ -78,6 +86,21 @@ function VisitEntry({visit}) {
         })
         setVisits(updatedVisitList)
     }
+
+    const stars = Array(5).fill(0)
+
+    const handleClickStar = value => {
+        setRating(value)
+    };
+
+    const handleMouseOverStar = value => {
+        setHoverValue(value)
+    };
+
+    const handleMouseLeaveStar = () => {
+        setHoverValue(undefined)
+    }
+
 
     return (
         <div>
@@ -159,12 +182,20 @@ function VisitEntry({visit}) {
                         </div>
                         <div>
                             <label>Visit Rating: </label>
-                            <input
-                                type="number"
-                                name="rating"
-                                value={rating}
-                                onChange={(e) => setRating(e.target.value)}
-                            />
+                            {stars.map((_, index) => {
+                                    return (
+                                        <FaStar
+                                            key={index}
+                                            size={24}
+                                            value={rating}
+                                            onChange={(e) => setRating(e.target.value)}
+                                            color={(hoverValue || rating) > index ? colors.orange : colors.grey}
+                                            onClick={() => handleClickStar(index + 1)}
+                                            onMouseOver={() => handleMouseOverStar(index + 1)}
+                                            onMouseLeave={() => handleMouseLeaveStar}
+                                        />
+                                    )
+                                })}
                         </div>
                         <div>
                             <label>Visit Images: </label>
@@ -188,7 +219,7 @@ function VisitEntry({visit}) {
             {showForm ?
                 (<button onClick={() => setShowForm(false)}>Cancel</button>)
             : null}
-        </div> 
+        </div>
 
             <div>
                 <p>{date}</p>
@@ -200,7 +231,21 @@ function VisitEntry({visit}) {
                 <p>Other Consumables: {other_consumables}</p>
                 <p>Notes: {notes}</p>
                 <p>Images: {image}</p>
-                <p>Rating: {rating} ⭐</p>
+                <div>
+                <p>Rating: {rating} Star</p>
+                    {stars.map((_, index) => {
+                        return (
+                            <FaStar
+                                key={index}
+                                size={24}
+                                color={(hoverValue || rating) > index ? colors.orange : colors.grey}
+                                // onClick={() => handleClickStar(index + 1)}
+                                // onMouseOver={() => handleMouseOverStar(index + 1)}
+                                // onMouseLeave={() => handleMouseLeaveStar}
+                            />
+                        )
+                    })}
+                </div>
             </div>
             <div>
                 <button onClick={() => {window.confirm( `Are you sure you want to delete this visit?`, ) && handleDeleteVisit(visit.id)}}> 

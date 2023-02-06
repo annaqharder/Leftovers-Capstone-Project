@@ -5,7 +5,7 @@ function RestaurantList({ restaurants }) {
 
     const restaurantArray = restaurants.map(restaurant => (
         <RestaurantCard
-            key-={restaurant.id}
+            key={restaurant.id}
             restaurant={restaurant}
         />
     ))

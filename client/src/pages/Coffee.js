@@ -8,11 +8,11 @@ import EaterySearch from '../components/EaterySearch';
 function Coffee() {
     const [showForm, setShowForm] = useState(false);
     const { coffees } = useContext(CoffeeContext);
+    console.log(CoffeeContext)
     let history = useHistory();
     const [sortBy, setSortBy] = useState("");
     const [searchQuery, setSearchQuery] = useState("")
     const [filterBy, setFilterBy] = useState("All")
-
     const sortedCoffees = [...coffees].sort((coffee1, coffee2) => {
         if (sortBy === "Alphabetically") {
             return coffee1.eatery_name.localeCompare(coffee2.eatery_name);

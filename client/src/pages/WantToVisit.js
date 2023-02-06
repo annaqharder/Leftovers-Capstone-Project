@@ -4,7 +4,7 @@ import WantToVisitList from '../components/WantToVisitList';
 
 function WantToVisit() {
 
-    const [eateries, setEateries] = useState([])
+    // const [eateries, setEateries] = useState([])
 
     return (
         <div>

@@ -5,19 +5,21 @@ import { useParams } from 'react-router-dom';
 const VisitContext = createContext();
 
 function VisitProvider({ children }) {
+    const {eateries} = useContext(EateryContext)
 
-    const {eatery} = useContext(EateryContext)
     const [visits, setVisits] = useState([])
 
     useEffect(() => {
-        if(eatery) {
+        if(eateries) {
             fetch(`/visits`)
                 .then((r) => r.json())
                 .then((visits) => (
-                    setVisits(visits.filter((visit) => visit[eatery.id] === eatery.id))
+                    setVisits(visits.filter((visit) => visit[eateries.id] === eateries.id))
                 ))
             }
-    }, [eatery])
+    }, [eateries])
+
+    // console.log(visits)
 
     return (
         <VisitContext.Provider value={{visits, setVisits}}>

@@ -35,7 +35,7 @@ function App() {
   return (
 
     <UserProvider>
-    <EateryProvider >
+    <EateryProvider>
       <NavBar />
         <Switch>
           <Route path="/signup">

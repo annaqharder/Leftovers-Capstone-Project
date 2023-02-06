@@ -1,10 +1,12 @@
 import React, { useContext, createContext, useState, useEffect } from 'react';
 import { UserContext } from './UserProvider';
+import { EateryContext } from './EateryProvider';
 
 const CoffeeContext = createContext();
 
 function CoffeeProvider({ children }) {
     const { user } = useContext(UserContext);
+    const {eateries} = useContext(EateryContext)
 
     const [coffees, setCoffees] = useState([])
 
@@ -13,10 +15,12 @@ function CoffeeProvider({ children }) {
             fetch(`/eateries`)
                 .then((r) => r.json())
                 .then((eateries) => (
-                    setCoffees(eateries.filter((eatery) => eatery.eatery_category === "Coffee/Cafe"))
+                    setCoffees(eateries.filter((eatery) => (
+                        eatery.eatery_category === "Coffee/Cafe" && eatery.have_visited === true
+                    )))
                 ))
             }
-    }, [user])
+    }, [user, eateries])
 
     return (
         <CoffeeContext.Provider value={{coffees, setCoffees}}>

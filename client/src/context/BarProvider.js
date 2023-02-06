@@ -1,10 +1,12 @@
 import React, { useContext, createContext, useState, useEffect } from 'react';
 import { UserContext } from './UserProvider';
+import { EateryContext } from './EateryProvider';
 
 const BarContext = createContext();
 
 function BarProvider({ children }) {
     const { user } = useContext(UserContext);
+    const { eateries } = useContext(EateryContext)
 
     const [bars, setBars] = useState([])
 
@@ -18,7 +20,7 @@ function BarProvider({ children }) {
                     )))
                 ))
             }
-    }, [user])
+    }, [user, eateries])
 
     return (
         <BarContext.Provider value={{bars, setBars}}>

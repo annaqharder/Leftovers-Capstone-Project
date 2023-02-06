@@ -6,7 +6,8 @@ import { EateryContext } from '../context/EateryProvider';
 function WantToVisitForm() {
     let {user} = useContext(UserContext)
     let {setEateries} = useContext(EateryContext);
-    const [showForm, setShowForm] = useState(false)
+    const [showForm, setShowForm] = useState(false);
+    const history = useHistory()
 
     const [eateryName, setEateryName] = useState("");
     const [eateryAddress, setEateryAddress] =useState("");

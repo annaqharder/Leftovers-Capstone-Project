@@ -1,10 +1,12 @@
 import React, {useContext, useState} from "react";
 import { EateryContext } from "../context/EateryProvider";
+import { useHistory } from "react-router-dom";
 
 function WantToVisitCard({eatery}) {
 
     const {setEateries} = useContext(EateryContext)
     const [error, setError] = useState("")
+    const history = useHistory()
 
     const [haveVisited, setHaveVisited] = useState(eatery.have_visited)
 
@@ -26,6 +28,8 @@ function WantToVisitCard({eatery}) {
                 res.json().then((error) => setError(error.errors))
             }
         })
+
+        history.push(`/all-${eatery.eatery_category}s`)
 
     }
 

@@ -4,7 +4,7 @@ const EateryContext = createContext();
 
 function EateryProvider({ children }) {
 
-    const [eateries, setEateries] = useState(null);
+    const [eateries, setEateries] = useState([]);
 
     useEffect(() => {
         fetch(`/eateries`)
@@ -12,9 +12,7 @@ function EateryProvider({ children }) {
         .then((eateries) => (
             setEateries(eateries.filter((eatery) => eatery.have_visited === false)))
         );
-    }, [])
-
-    // console.log(eateries)
+    }, [eateries])
 
     return (
         <EateryContext.Provider value={{eateries, setEateries}}>

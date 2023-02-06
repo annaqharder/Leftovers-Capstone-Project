@@ -1,19 +1,19 @@
 import { useState, useEffect, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import { UserContext } from '../context/UserProvider';
-import { CoffeeContext } from '../context/CoffeeProvider';
-import { RestaurantContext } from '../context/RestaurantProvider';
+import { EateryContext } from '../context/EateryProvider';
 
-function NewEateryForm() {
-
+function WantToVisitForm() {
     let {user} = useContext(UserContext)
-
-    let {setCoffees} = useContext(CoffeeContext)
+    let {setEateries} = useContext(EateryContext);
+    const [showForm, setShowForm] = useState(false)
 
     const [eateryName, setEateryName] = useState("");
     const [eateryAddress, setEateryAddress] =useState("");
     const [eateryNeighborhood, setEateryNeighborhood] = useState("");
+    const [eateryCategory, setEateryCategory] = useState("");
     const [eateryType, setEateryType] = useState("");
+    const [haveVisited, setHaveVisited] = useState(false);
 
     function handleNewEatery(e) {
         e.preventDefault();
@@ -22,10 +22,10 @@ function NewEateryForm() {
             eatery_name: eateryName,
             eatery_address: eateryAddress,
             eatery_neighborhood: eateryNeighborhood,
-            eatery_category: "Coffee/Cafe",
+            eatery_category: eateryCategory,
             eatery_type: eateryType,
             user_id: user.id,
-            have_visited: true
+            have_visited: false
         }
 
         fetch(`/eateries`, {
@@ -37,16 +37,16 @@ function NewEateryForm() {
         })
             .then((r) => r.json())
             .then((newEatery) => {
-                setCoffees((prevEateries) => [...prevEateries, newEatery])
+                setEateries((prevEateries) => [...prevEateries, newEatery])
             })
     }
 
 return (
         <div>
-            <h1>New Cafe/Coffee Shop</h1>
+            <h1>Add Want to Visit</h1>
             <form onSubmit={handleNewEatery}>
                 <div>
-                    <label>Cafe/Coffee Shop Name: </label>
+                    <label>Eatery Name: </label>
                     <input
                         type="text"
                         name="eatery_name"
@@ -56,7 +56,7 @@ return (
                 </div>
 
                 <div>
-                    <label>Cafe/Coffee Shop Address: </label>
+                    <label>Eatery Address: </label>
                     <input
                         type="text"
                         name="eatery_address"
@@ -66,7 +66,7 @@ return (
                 </div>
 
                 <div>
-                    <label>Cafe/Coffee Shop Neighborhood: </label>
+                    <label>Eatery Neighborhood: </label>
                     <input
                         type="text"
                         name="eatery_neighborhood"
@@ -74,21 +74,33 @@ return (
                         onChange={(e) => setEateryNeighborhood(e.target.value)}
                     />
                 </div>
+
                 <div>
-                    <label>Cafe/Coffee Shop Type: </label>
+                    <label>Eatery Category: </label>
+                    <select onChange={(e) => setEateryCategory(e.target.value)}>
+                        <option>Select a Category</option>
+                        <option value="Restaurant">Restaurant</option>
+                        <option value="Coffee/Cafe">Cafe/Coffee Shop</option>
+                        <option value="Bar">Bar</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Eatery Type: </label>
                     <input
                         type="text"
                         name="eatery_type"
-                        placeholder="Drive Thru, French Cafe, Tea House..."
+                        placeholder="Modern Chinese, Italian, Mexican, etc..."
                         value={eateryType}
                         onChange={(e) => setEateryType(e.target.value)}
                     />
                 </div>
-                <button>Add Cafe/Coffee Shop</button>
+                <button>Add Eatery</button>
             </form>
 
         </div>
     );
+
 }
 
-export default NewEateryForm;
+export default WantToVisitForm;

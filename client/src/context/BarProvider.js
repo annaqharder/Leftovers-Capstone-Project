@@ -13,7 +13,9 @@ function BarProvider({ children }) {
             fetch(`/eateries`)
                 .then((r) => r.json())
                 .then((eateries) => (
-                    setBars(eateries.filter((eatery) => eatery.eatery_category === "Bar"))
+                    setBars(eateries.filter((eatery) => (
+                        eatery.eatery_category === "Bar" && eatery.have_visited === true
+                    )))
                 ))
             }
     }, [user])

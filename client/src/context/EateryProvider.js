@@ -4,16 +4,20 @@ const EateryContext = createContext();
 
 function EateryProvider({ children }) {
 
-    const [eatery, setEatery] = useState(null);
+    const [eateries, setEateries] = useState(null);
 
     useEffect(() => {
         fetch(`/eateries`)
         .then((r) => r.json())
-        .then((eatery) => setEatery(eatery));
+        .then((eateries) => (
+            setEateries(eateries.filter((eatery) => eatery.have_visited === false)))
+        );
     }, [])
 
+    // console.log(eateries)
+
     return (
-        <EateryContext.Provider value={{eatery, setEatery}}>
+        <EateryContext.Provider value={{eateries, setEateries}}>
         { children }
         </EateryContext.Provider>
     )

@@ -33,9 +33,7 @@ function Bars() {
             )
         })
 
-
-
-
+console.log(bars)
     return (
         <div>
             <div>

@@ -1,5 +1,5 @@
 class EateryWithVisitsSerializer < ActiveModel::Serializer
-  attributes :id, :eatery_name, :eatery_address, :eatery_neighborhood, :eatery_type, :eatery_category, :user_id, :visits
+  attributes :id, :eatery_name, :eatery_address, :eatery_neighborhood, :eatery_type, :eatery_category, :user_id, :have_visited, :visits
 
   def visits
     object.visits.map do |items|

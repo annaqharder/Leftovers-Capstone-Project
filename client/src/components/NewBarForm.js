@@ -23,7 +23,8 @@ function NewEateryForm() {
             eatery_neighborhood: eateryNeighborhood,
             eatery_category: "Bar",
             eatery_type: eateryType,
-            user_id: user.id
+            user_id: user.id,
+            have_visited: true
         }
 
         fetch(`/eateries`, {

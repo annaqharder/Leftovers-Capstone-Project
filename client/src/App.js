@@ -35,7 +35,7 @@ function App() {
   return (
 
     <UserProvider>
-      <EateryProvider >
+    <EateryProvider >
       <NavBar />
         <Switch>
           <Route path="/signup">
@@ -50,9 +50,7 @@ function App() {
           </Route>
           <VisitProvider >
           <Route exact path="/restaurants/:id">
-            <Visits
-            // visits={visits}
-            />
+            <Visits/>
           </Route>
           <CoffeeProvider>
           <Route path="/all-coffee">
@@ -88,7 +86,7 @@ function App() {
           </VisitProvider>
           </RestaurantProvider>
         </Switch>
-        </EateryProvider>
+    </EateryProvider>
     </UserProvider>
   );
 }

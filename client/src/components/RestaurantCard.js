@@ -4,7 +4,7 @@ import { RestaurantContext } from '../context/RestaurantProvider';
 
 function RestaurantCard({ restaurant }) {
 
-    console.log(restaurant)
+    //console.log(restaurant)
 
     let {restaurants, setRestaurants} = useContext(RestaurantContext)
 

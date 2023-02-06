@@ -10,7 +10,6 @@ const colors = {
 
 function VisitEntry({visit}) {
 
-    console.log(visit)
 
     const [error, setError] = useState("");
     const [date, setDate] = useState(visit.date)

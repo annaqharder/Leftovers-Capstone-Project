@@ -19,7 +19,7 @@ function RestaurantProvider({ children }) {
                     )))
                 ))
             }
-    }, [user, eateries])
+    }, [user,eateries])
 
 
     return (

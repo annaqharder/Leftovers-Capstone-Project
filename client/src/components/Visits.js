@@ -8,15 +8,11 @@ import VisitSearch from './VisitSearch';
 
 function Visits(){
 
-    
-
     const {visits, setVisits} = useContext(VisitContext)
     const [showForm, setShowForm] = useState(false)
     const [searchQuery, setSearchQuery] = useState("")
     const [filterBy, setFilterBy] = useState("All")
     const [sortBy, setSortBy] = useState("");
-
-    //console.log(visits)
 
     const { id } = useParams();
     const [eatery, setEatery] = useState({

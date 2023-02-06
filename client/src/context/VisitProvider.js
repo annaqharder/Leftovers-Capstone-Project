@@ -6,7 +6,6 @@ const VisitContext = createContext();
 
 function VisitProvider({ children }) {
     const {eateries} = useContext(EateryContext)
-
     const [visits, setVisits] = useState([])
 
     useEffect(() => {
@@ -14,12 +13,11 @@ function VisitProvider({ children }) {
             fetch(`/visits`)
                 .then((r) => r.json())
                 .then((visits) => (
-                    setVisits(visits.filter((visit) => visit[eateries.id] === eateries.id))
+                    setVisits(visits)
                 ))
             }
     }, [eateries])
 
-    // console.log(visits)
 
     return (
         <VisitContext.Provider value={{visits, setVisits}}>

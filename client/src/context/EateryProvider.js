@@ -11,7 +11,7 @@ function EateryProvider({ children }) {
         .then((r) => r.json())
         .then((eateries) => (
             setEateries(eateries.filter((eatery) => eatery.have_visited === false))
-        ));
+        ))
     }, [])
 
     return (

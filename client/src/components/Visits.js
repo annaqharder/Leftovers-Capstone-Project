@@ -107,7 +107,7 @@ function Visits(){
             <div>
                 <h1>{eatery.eatery_name}</h1>
                 <h3>{eatery.eatery_address}</h3>
-                <div>{mappedVisits}</div>
+                <div className='visitContainer'>{mappedVisits}</div>
             </div>
 
         </div>

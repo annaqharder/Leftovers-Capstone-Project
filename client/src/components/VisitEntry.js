@@ -103,7 +103,7 @@ function VisitEntry({visit}) {
 
 
     return (
-        <div className="visitContainer">
+        <div>
 
         <div className="visitCard">
             <div className="visitDetails">

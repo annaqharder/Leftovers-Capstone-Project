@@ -9,11 +9,13 @@ johnny = User.create!(first_name: "Johnny", last_name: "Turco", email: "johnnytu
 rachel = User.create!(first_name: "Rachel", last_name: "Humes", email: "racheljhumes@gmail.com", password: "123", location: "Denver, CO", bio: "", avatar: "https://ca.slack-edge.com/T0266FRGM-U2Q173U05-g863c2a865d7-512" )
 
 puts "Creating eateries..."
-E1 = Eatery.create!(eatery_name: "Hop Alley", eatery_address: "3500 Larimer St. Denver, CO 80205", eatery_neighborhood: "RiNo", eatery_category: "Restaurant", eatery_type: "Modern Chinese", user_id: anna.id, have_visited: true)
-E2 = Eatery.create!(eatery_name: "Spuntino", eatery_address: "2639 W 32nd Ave. Denver, CO 80201", eatery_neighborhood: "Highlands", eatery_category: "Restaurant", eatery_type: "Italian", user_id: anna.id, have_visited: true)
-E3 = Eatery.create!(eatery_name: "Dandy Lion Coffee Co.", eatery_address: "5225 E 38th Ave. Denver, CO 80207", eatery_neighborhood: "North Park Hill", eatery_category: "Coffee/Cafe", eatery_type: "", user_id: anna.id, have_visited: true)
-E4 = Eatery.create!(eatery_name: "9th Door", eatery_address: "925 Lincoln St. Denver, CO 80203", eatery_neighborhood: "Capitol Hill", eatery_category: "Restaurant", eatery_type: "Spanish Tapas", user_id: johnny.id, have_visited: true)
-E5 = Eatery.create!(eatery_name: "Death & Co.", eatery_address: "1280 25th St, Denver, CO 80205", eatery_neighborhood: "RiNo", eatery_category: "Bar", eatery_type: "Cocktail", user_id: johnny.id, have_visited: false)
+E1 = Eatery.create!(eatery_name: "Hop Alley", eatery_address: "3500 Larimer St. Denver, CO 80205", eatery_neighborhood: "RiNo", eatery_category: "Restaurant", eatery_type: "Modern Chinese", user_id: anna.id, have_visited: true, eatery_img: "https://goop-img.com/wp-content/uploads/2017/02/Hop-Alley-.jpg")
+E2 = Eatery.create!(eatery_name: "Spuntino", eatery_address: "2639 W 32nd Ave. Denver, CO 80201", eatery_neighborhood: "Highlands", eatery_category: "Restaurant", eatery_type: "Italian", user_id: anna.id, have_visited: true, eatery_img: "http://static1.squarespace.com/static/5ed41749a35bb1242ef90d3e/t/5ee24efe3dba006e9bec1625/1591889665475/Spuntino_Denver.jpg?format=1500w")
+E3 = Eatery.create!(eatery_name: "Dandy Lion Coffee Co.", eatery_address: "5225 E 38th Ave. Denver, CO 80207", eatery_neighborhood: "North Park Hill", eatery_category: "Coffee/Cafe", eatery_type: "", user_id: anna.id, have_visited: true, eatery_img: "https://travellemming.com/wp-content/uploads/Dandy-Lion-Coffee-Co.-Counter.jpg")
+E4 = Eatery.create!(eatery_name: "9th Door", eatery_address: "925 Lincoln St. Denver, CO 80203", eatery_neighborhood: "Capitol Hill", eatery_category: "Restaurant", eatery_type: "Spanish Tapas", user_id: johnny.id, have_visited: true, eatery_img: "https://b.zmtcdn.com/data/pictures/1/16966801/12ae914b127ecea7969ac4aa604291c8.jpg?fit=around|750:500&crop=750:500;*,*")
+E5 = Eatery.create!(eatery_name: "Death & Co.", eatery_address: "1280 25th St, Denver, CO 80205", eatery_neighborhood: "RiNo", eatery_category: "Bar", eatery_type: "Cocktail", user_id: johnny.id, have_visited: false, eatery_img: "https://static01.nyt.com/images/2016/08/19/dining/19DEATH-WEB/19DEATH-WEB-superJumbo.jpg")
+E6 = Eatery.create!(eatery_name: "Devoción Coffee Shop", eatery_address: "25 E 20th St, New York, NY 10003", eatery_neighborhood: "Brooklyn", eatery_category: "Coffee/Cafe", eatery_type: "", user_id: anna.id, have_visited: false, eatery_img: "https://assets.yellowtrace.com.au/wp-content/uploads/2018/06/Devocion-Coffee-Shop-Brooklyn-NYC-by-LOT-Office-for-Architecture-Design-Yellowtrace-03-1500x1001.jpg")
+
 
 
 puts "Creating visits..."

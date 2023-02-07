@@ -15,7 +15,7 @@ class EateriesController < ApplicationController
     end
 
     def create
-        eatery = Eatery.create!(user_id: current_user.id, eatery_name: params[:eatery_name], eatery_address: params[:eatery_address], eatery_neighborhood:params[:eatery_neighborhood], eatery_category:params[:eatery_category], eatery_type:params[:eatery_type], have_visited:params[:have_visited])
+        eatery = Eatery.create!(user_id: current_user.id, eatery_name: params[:eatery_name], eatery_address: params[:eatery_address], eatery_neighborhood:params[:eatery_neighborhood], eatery_category:params[:eatery_category], eatery_type:params[:eatery_type], have_visited:params[:have_visited], eatery_img:params[:eatery_img])
         render json: eatery, status: :created
     end
 
@@ -38,7 +38,7 @@ private
     end
 
     def eatery_params
-        params.permit(:eatery_location, :eatery_name, :eatery_address, :eatery_category, :eatery_type, :have_visited, :user_id, :id)
+        params.permit(:eatery_location, :eatery_name, :eatery_address, :eatery_category, :eatery_type, :have_visited, :user_id, :id, :eatery_img)
     end
 
 end

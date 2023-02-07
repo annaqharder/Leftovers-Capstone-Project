@@ -8,7 +8,7 @@ const colors = {
     grey: "a9a9a9"
 }
 
-function EditVisitEntry({visit, onClose, editVisit}) {
+function EditVisitEntry({visit, onClose, onEditVisit}) {
 
     const [error, setError] = useState("");
     const [date, setDate] = useState(visit.date)
@@ -24,9 +24,6 @@ function EditVisitEntry({visit, onClose, editVisit}) {
 
     const [hoverValue, setHoverValue] = useState(undefined)
 
-    let {visits, setVisits} = useContext(VisitContext)
-
-
     const stars = Array(5).fill(0)
 
     const handleClickStar = value => {
@@ -40,8 +37,6 @@ function EditVisitEntry({visit, onClose, editVisit}) {
     const handleMouseLeaveStar = () => {
         setHoverValue(undefined)
     }
-
-
 
     function handleUpdateVisit(e){
         e.preventDefault();
@@ -67,8 +62,8 @@ function EditVisitEntry({visit, onClose, editVisit}) {
             body: JSON.stringify(formData)
         }).then((res) => {
             if (res.ok) {
-                res.json().then((data) => {
-                    editVisit(data)
+                res.json().then((updatedData) => {
+                    onEditVisit(updatedData)
                 })
             } else {
                 res.json().then((error) => setError(error.errors))
@@ -183,7 +178,7 @@ function EditVisitEntry({visit, onClose, editVisit}) {
                         </div>
                     <div className='dialog-buttons'>
                         <button className="secondary-button" onClick={onClose}>Cancel</button>
-                        <button>Update Visit</button>
+                        <button onSubmit={handleUpdateVisit}>Update Visit</button>
                     </div>
                     </form>
                 </div>

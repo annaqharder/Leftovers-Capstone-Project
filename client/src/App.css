@@ -205,7 +205,7 @@
 }
 
 .restaurantImg{
-  max-height: 700px;
+  max-height: 80%;
 }
 
 .coffeeContainer{
@@ -234,4 +234,9 @@
 .dialog-buttons {
   display: flex;
   gap: 20px;
+}
+
+.eateryImg{
+  max-width: 300px;
+  border-radius: 20px;
 }

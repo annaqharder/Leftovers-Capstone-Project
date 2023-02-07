@@ -30,6 +30,7 @@ function CoffeeCard({ coffee }) {
                 </Link>
                 <h3>{coffee.eatery_type}</h3>
                 <h4>{coffee.eatery_address}</h4>
+                <img className="eateryImg" src={coffee.eatery_img} alt="eateryImg" />
             </div>
             <div>
                 <button onClick={() => {window.confirm( `Are you sure you want to delete ${coffee.eatery_name}?`, ) && handleDelete(coffee.id)}}> 

@@ -29,6 +29,7 @@ function BarCard({ bar }) {
                 </Link>
                 <h3>{bar.eatery_type}</h3>
                 <h4>{bar.eatery_address}</h4>
+                <img className="eateryImg" src={bar.eatery_img} alt="eateryImg"/>
                 <div>
                     <button
                     onClick={() => { window.confirm( `Are you sure you want to delete ${bar.eatery_name}?`, ) && handleDelete(bar.id)}}>

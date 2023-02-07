@@ -7,7 +7,7 @@ function WantToVisitCard({eatery}) {
 
     const {setEateries} = useContext(EateryContext)
 
-    const [error, setError] = useState("")
+    const [setError] = useState("")
     const history = useHistory()
 
     const [haveVisited, setHaveVisited] = useState(eatery.have_visited)
@@ -40,6 +40,7 @@ function WantToVisitCard({eatery}) {
             <h1>{eatery.eatery_name}</h1>
             <h3>{eatery.eatery_category} - {eatery.eatery_type}</h3>
             <h4>{eatery.eatery_address}</h4>
+            <img className="eateryImg" src={eatery.eatery_img} alt="eateryImg" />
             <form onSubmit={handleUpdate}>
                 <input
                     type="checkbox"

@@ -1,8 +1,7 @@
-import { useState, useEffect, useContext } from 'react';
+import { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import { UserContext } from '../context/UserProvider';
 import { CoffeeContext } from '../context/CoffeeProvider';
-import { RestaurantContext } from '../context/RestaurantProvider';
 
 function NewEateryForm({onClose}) {
 
@@ -14,6 +13,7 @@ function NewEateryForm({onClose}) {
     const [eateryAddress, setEateryAddress] =useState("");
     const [eateryNeighborhood, setEateryNeighborhood] = useState("");
     const [eateryType, setEateryType] = useState("");
+    const [eateryImg, setEateryImg] = useState("")
 
     function handleNewEatery(e) {
         e.preventDefault();
@@ -25,7 +25,8 @@ function NewEateryForm({onClose}) {
             eatery_category: "Coffee/Cafe",
             eatery_type: eateryType,
             user_id: user.id,
-            have_visited: true
+            have_visited: true,
+            eatery_img: eateryImg
         }
 
         fetch(`/eateries`, {
@@ -84,6 +85,16 @@ return (
                         placeholder="Drive Thru, French Cafe, Tea House..."
                         value={eateryType}
                         onChange={(e) => setEateryType(e.target.value)}
+                    />
+                </div>
+
+                <div>
+                    <label>Restaurant Image: </label>
+                    <input
+                        type="text"
+                        name="eatery_img"
+                        value={eateryImg}
+                        onChange={(e) => setEateryImg(e.target.value)}
                     />
                 </div>
 

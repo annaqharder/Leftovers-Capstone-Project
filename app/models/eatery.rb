@@ -6,4 +6,7 @@ class Eatery < ApplicationRecord
 
     validates_presence_of :eatery_name
 
+    geocoded_by :eatery_address
+    after_validation :geocode
+
 end

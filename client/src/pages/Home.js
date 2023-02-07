@@ -6,7 +6,7 @@ import CoffeeImg from "../images/coffee-image.jpg";
 import BarImg from "../images/Bar-image.webp";
 import BarPic from "../images/bar-pic.png"
 import CoffeeShop from "../images/coffee-shop.jpeg"
-
+//Home
 function Home() {
     let { user, setUser } = useContext(UserContext);
     let history = useHistory();

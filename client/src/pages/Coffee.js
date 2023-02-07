@@ -4,15 +4,20 @@ import { CoffeeContext } from '../context/CoffeeProvider';
 import CoffeeList from '../components/CoffeeList';
 import NewCoffeeForm from '../components/NewCoffeeForm';
 import EaterySearch from '../components/EaterySearch';
+import CoffeeImage from "../images/cafe2.webp"
 
 function Coffee() {
     const [showForm, setShowForm] = useState(false);
     const { coffees } = useContext(CoffeeContext);
-    console.log(CoffeeContext)
     let history = useHistory();
     const [sortBy, setSortBy] = useState("");
-    const [searchQuery, setSearchQuery] = useState("")
-    const [filterBy, setFilterBy] = useState("All")
+    const [searchQuery, setSearchQuery] = useState("");
+    const [filterBy, setFilterBy] = useState("All");
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+
+
+
     const sortedCoffees = [...coffees].sort((coffee1, coffee2) => {
         if (sortBy === "Alphabetically") {
             return coffee1.eatery_name.localeCompare(coffee2.eatery_name);
@@ -49,9 +54,37 @@ function Coffee() {
                         sortBy={sortBy}
                         setSortBy={setSortBy}
                     />
-                </div>
-        <div>
+            </div>
+
+            <button
+                type="button"
+                className="secondary-button"
+                onClick={() => setIsPopupOpen(true)}
+            >
+                New Cafe/Coffee Shop
+            </button>
+
             <div>
+                {isPopupOpen ? (
+                    <NewCoffeeForm
+                        onClose={() => setIsPopupOpen(false)}
+                    />
+                ) : null}
+            </div>
+
+            <div className="coffeeContainer">
+                <div>
+                    <img className="restaurantImg" src={CoffeeImage} />
+                </div>
+                <div>
+                <CoffeeList
+                    coffees={filteredCoffees}
+                />
+            </div>
+            </div>
+        <div>
+
+            {/* <div>
                 {showForm? (
                     <div>
                         <NewCoffeeForm />
@@ -65,14 +98,10 @@ function Coffee() {
             {showForm ?
                 (<button onClick={() => setShowForm(false)}>Cancel</button>)
             : null}
-        </div>
+        </div> */}
             </div>
 
-            <div>
-                <CoffeeList
-                    coffees={filteredCoffees}
-                />
-            </div>
+
         </div>
     );
 }

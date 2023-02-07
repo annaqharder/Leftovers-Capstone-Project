@@ -10,7 +10,7 @@ rachel = User.create!(first_name: "Rachel", last_name: "Humes", email: "racheljh
 
 puts "Creating eateries..."
 E1 = Eatery.create!(eatery_name: "Hop Alley", eatery_address: "3500 Larimer St. Denver, CO 80205", eatery_neighborhood: "RiNo", eatery_category: "Restaurant", eatery_type: "Modern Chinese", user_id: anna.id, have_visited: true)
-E2 = Eatery.create!(eatery_name: "Spuntino", eatery_address: "2639 W 32nd Ave. Denver, CO 802011", eatery_neighborhood: "Highlands", eatery_category: "Restaurant", eatery_type: "Italian", user_id: anna.id, have_visited: true)
+E2 = Eatery.create!(eatery_name: "Spuntino", eatery_address: "2639 W 32nd Ave. Denver, CO 80201", eatery_neighborhood: "Highlands", eatery_category: "Restaurant", eatery_type: "Italian", user_id: anna.id, have_visited: true)
 E3 = Eatery.create!(eatery_name: "Dandy Lion Coffee Co.", eatery_address: "5225 E 38th Ave. Denver, CO 80207", eatery_neighborhood: "North Park Hill", eatery_category: "Coffee/Cafe", eatery_type: "", user_id: anna.id, have_visited: true)
 E4 = Eatery.create!(eatery_name: "9th Door", eatery_address: "925 Lincoln St. Denver, CO 80203", eatery_neighborhood: "Capitol Hill", eatery_category: "Restaurant", eatery_type: "Spanish Tapas", user_id: johnny.id, have_visited: true)
 E5 = Eatery.create!(eatery_name: "Death & Co.", eatery_address: "1280 25th St, Denver, CO 80205", eatery_neighborhood: "RiNo", eatery_category: "Bar", eatery_type: "Cocktail", user_id: johnny.id, have_visited: false)

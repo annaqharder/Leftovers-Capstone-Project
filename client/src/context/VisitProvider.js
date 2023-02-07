@@ -18,7 +18,6 @@ function VisitProvider({ children }) {
             }
     }, [eateries])
 
-
     return (
         <VisitContext.Provider value={{visits, setVisits}}>
             { children }

@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { UserContext } from '../context/UserProvider';
 import { EateryContext } from '../context/EateryProvider';
 
-function WantToVisitForm() {
+function WantToVisitForm({onClose}) {
     let {user} = useContext(UserContext)
     let {setEateries} = useContext(EateryContext);
     const [showForm, setShowForm] = useState(false);
@@ -40,10 +40,12 @@ function WantToVisitForm() {
             .then((newEatery) => {
                 setEateries((prevEateries) => [...prevEateries, newEatery])
             })
+        onClose()
     }
 
 return (
-        <div>
+        <div className="back-drop">
+            <div className="dialog">
             <h1>Add Want to Visit</h1>
             <form onSubmit={handleNewEatery}>
                 <div>
@@ -96,9 +98,12 @@ return (
                         onChange={(e) => setEateryType(e.target.value)}
                     />
                 </div>
-                <button>Add Eatery</button>
+                <div className='dialog-buttons'>
+                    <button className="secondary-button" onClick={onClose}>Cancel</button>
+                    <button>Add Eatery</button>
+                </div>
             </form>
-
+            </div>
         </div>
     );
 

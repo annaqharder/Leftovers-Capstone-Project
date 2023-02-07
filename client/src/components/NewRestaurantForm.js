@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { UserContext } from '../context/UserProvider';
 import { RestaurantContext } from '../context/RestaurantProvider';
 
-function NewRestaurantForm() {
+function NewRestaurantForm({onClose}) {
 
     let {user} = useContext(UserContext)
 
@@ -40,10 +40,12 @@ function NewRestaurantForm() {
             .then((newEatery) => {
                 setRestaurants((prevEateries) => [...prevEateries, newEatery])
             })
+            onClose()
     }
 
 return (
-        <div>
+        <div className="back-drop">
+            <div className="dialog">
             <h1>New Restaurant</h1>
             <form onSubmit={handleNewEatery}>
                 <div>
@@ -86,9 +88,12 @@ return (
                         onChange={(e) => setEateryType(e.target.value)}
                     />
                 </div>
-                <button>Add Restaurant</button>
+                <div className='dialog-buttons'>
+                    <button className="secondary-button" onClick={onClose}>Cancel</button>
+                    <button>Add Restaurant</button>
+                </div>
             </form>
-
+            </div>
         </div>
     );
 }

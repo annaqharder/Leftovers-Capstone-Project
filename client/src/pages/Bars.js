@@ -12,6 +12,7 @@ function Bars() {
     const [searchQuery, setSearchQuery] = useState("")
     const [filterBy, setFilterBy] = useState("All")
     const [sortBy, setSortBy] = useState("");
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
 
     const sortedBars = [...bars].sort((bar1, bar2) => {
         if (sortBy === "Alphabetically") {
@@ -50,7 +51,23 @@ function Bars() {
                 />
             </div>
 
-        <div>
+            <button
+                type="button"
+                className="secondary-button"
+                onClick={() => setIsPopupOpen(true)}
+            >
+                New Bar
+            </button>
+
+            <div>
+                {isPopupOpen ? (
+                    <NewBarForm
+                        onClose={() => setIsPopupOpen(false)}
+                    />
+                ) : null}
+            </div>
+
+        {/* <div>
                 <div>
                 {showForm? (
                     <div>
@@ -66,7 +83,8 @@ function Bars() {
                 (<button onClick={() => setShowForm(false)}>Cancel</button>)
             : null}
         </div>
-            </div>
+            </div> */}
+
             <div>
                 <BarList
                 bars={filteredBars}

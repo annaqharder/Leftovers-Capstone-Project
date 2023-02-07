@@ -6,6 +6,8 @@ function WantToVisit() {
 
     // const [eateries, setEateries] = useState([])
 
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
+
     return (
         <div>
             <div>
@@ -15,8 +17,20 @@ function WantToVisit() {
                 <WantToVisitList/>
             </div>
 
+            <button
+                type="button"
+                className="secondary-button"
+                onClick={() => setIsPopupOpen(true)}
+            >
+                Add Eatery
+            </button>
+
             <div>
-                <WantToVisitForm />
+                {isPopupOpen? (
+                    <WantToVisitForm
+                        onClose={() => setIsPopupOpen(false)}
+                    />
+                ) : null}
             </div>
         </div>
     );

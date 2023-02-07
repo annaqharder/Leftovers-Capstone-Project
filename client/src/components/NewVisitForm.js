@@ -10,7 +10,7 @@ const colors = {
     grey: "a9a9a9"
 }
 
-function NewVisitForm() {
+function NewVisitForm({onClose}) {
 
     const {user, setUser} = useContext(UserContext);
     const {visits, setVisits} = useContext(VisitContext);
@@ -59,6 +59,7 @@ function NewVisitForm() {
             .then((newVisit) => {
                 setVisits((previousVisits) => [...previousVisits, newVisit])
             })
+            onClose()
     }
 
     const stars = Array(5).fill(0)
@@ -76,7 +77,8 @@ function NewVisitForm() {
     }
 
     return (
-        <div>
+        <div className="back-drop">
+            <div className="dialog">
             <h1>Add Visit</h1>
             <div>
                     <form onSubmit={handleNewVisit}>
@@ -100,8 +102,10 @@ function NewVisitForm() {
                     </div>
                     <div>
                         <label>Visit Notes: </label>
-                        <input
-                            type="text"
+                        <textarea
+                            type="textarea"
+                            rows="6"
+                            cols="40"
                             name="notes"
                             value={notes}
                             onChange={(e) => setNotes(e.target.value)}
@@ -179,8 +183,13 @@ function NewVisitForm() {
                         />
                     </div>
 
+                <div className='dialog-buttons'>
+                    <button className="secondary-button" onClick={onClose}>Cancel</button>
                     <button>Create Visit</button>
+                </div>
+
                 </form>
+            </div>
             </div>
         </div>
     );

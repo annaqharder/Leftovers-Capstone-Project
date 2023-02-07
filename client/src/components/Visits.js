@@ -13,6 +13,7 @@ function Visits(){
     const [searchQuery, setSearchQuery] = useState("")
     const [filterBy, setFilterBy] = useState("All")
     const [sortBy, setSortBy] = useState("");
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
 
     const { id } = useParams();
     const [eatery, setEatery] = useState({
@@ -85,7 +86,23 @@ function Visits(){
                 />
             </div>
 
+            <button
+                type="button"
+                className="secondary-button"
+                onClick={() => setIsPopupOpen(true)}
+            >
+                New Visit
+            </button>
+
             <div>
+                {isPopupOpen ? (
+                    <NewVisitForm
+                        onClose={() => setIsPopupOpen(false)}
+                    />
+                ) : null}
+            </div>
+
+            {/* <div>
             {showForm ? (
                 <div>
                     <NewVisitForm/>
@@ -101,7 +118,7 @@ function Visits(){
                 {showForm ?
                     (<button onClick={() => setShowForm(false)}>Cancel</button>)
                 : null}
-            </div>
+            </div> */}
 
             <div>
                 <h1>{eatery.eatery_name}</h1>

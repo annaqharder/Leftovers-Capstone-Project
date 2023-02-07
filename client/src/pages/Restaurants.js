@@ -4,6 +4,7 @@ import { RestaurantContext } from '../context/RestaurantProvider';
 import RestaurantList from '../components/RestaurantList';
 import NewRestaurantForm from '../components/NewRestaurantForm';
 import EaterySearch from '../components/EaterySearch';
+import RestaurantImage from "../images/restaurant5.webp"
 
 function Restaurants() {
     const { restaurants } = useContext(RestaurantContext)
@@ -12,6 +13,8 @@ function Restaurants() {
     const [filterBy, setFilterBy] = useState("All")
     const [showForm, setShowForm] = useState(false)
     const [sortBy, setSortBy] = useState("");
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
+
 
 
     const sortedRestaurants = [...restaurants].sort((restaurant1, restaurant2) => {
@@ -50,8 +53,34 @@ function Restaurants() {
                         setSortBy={setSortBy}
                     />
                 </div>
+            <button
+                type="button"
+                className="secondary-button"
+                onClick={() => setIsPopupOpen(true)}
+            >
+                New Restaurant
+            </button>
 
             <div>
+                {isPopupOpen ? (
+                    <NewRestaurantForm
+                        onClose={() => setIsPopupOpen(false)}
+                    />
+                ) : null}
+            </div>
+
+        <div className="restaurantContainer">
+            <div>
+                <img className="restaurantImg" src={RestaurantImage} />
+            </div>
+            <div>
+                <RestaurantList
+                restaurants={filteredEateries}
+                />
+            </div>
+        </div>
+
+            {/* <div>
                 {showForm? (
                     <div>
                         <NewRestaurantForm />
@@ -60,18 +89,13 @@ function Restaurants() {
                         <button onClick={() => setShowForm(true)}> Add Restaurant</button>
                     </div>
                 )}
-            </div>
-        <div>
+            </div> */}
+        {/* <div>
             {showForm ?
                 (<button onClick={() => setShowForm(false)}>Cancel</button>)
             : null}
-        </div>
+        </div> */}
 
-            <div>
-                <RestaurantList
-                restaurants={filteredEateries}
-                />
-            </div>
 
         </div>
     );

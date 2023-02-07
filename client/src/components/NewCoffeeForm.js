@@ -4,7 +4,7 @@ import { UserContext } from '../context/UserProvider';
 import { CoffeeContext } from '../context/CoffeeProvider';
 import { RestaurantContext } from '../context/RestaurantProvider';
 
-function NewEateryForm() {
+function NewEateryForm({onClose}) {
 
     let {user} = useContext(UserContext)
 
@@ -39,10 +39,12 @@ function NewEateryForm() {
             .then((newEatery) => {
                 setCoffees((prevEateries) => [...prevEateries, newEatery])
             })
+            onClose()
     }
 
 return (
-        <div>
+        <div className="back-drop">
+            <div className="dialog">
             <h1>New Cafe/Coffee Shop</h1>
             <form onSubmit={handleNewEatery}>
                 <div>
@@ -84,9 +86,14 @@ return (
                         onChange={(e) => setEateryType(e.target.value)}
                     />
                 </div>
-                <button>Add Cafe/Coffee Shop</button>
-            </form>
 
+                <div className='dialog-buttons'>
+                    <button className="secondary-button" onClick={onClose}>Cancel</button>
+                    <button>Add Cafe/Coffee Shop</button>
+                </div>
+
+            </form>
+            </div>
         </div>
     );
 }

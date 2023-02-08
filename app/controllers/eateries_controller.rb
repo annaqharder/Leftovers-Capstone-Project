@@ -6,6 +6,16 @@ class EateriesController < ApplicationController
 
     def index
         eateries = user_eateries
+
+        # @markers = eateries.geocoded.map do |place|
+        #     {
+        #         id: eateries.id,
+        #         lat: eateries.latitude,
+        #         lng: eateries.longitude,
+        #         name: eateries.eatery_name,
+        #         address: eateries.eatery_address
+        #     }
+
         render json: eateries, status: :ok
     end
 

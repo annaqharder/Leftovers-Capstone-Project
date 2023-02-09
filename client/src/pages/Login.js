@@ -64,7 +64,6 @@ function Login() {
 
     return (
         <div>
-            <h1> Leftovers </h1>
             <form onSubmit={handleSubmit}>
                 <h2>welcome back!</h2>
 

@@ -33,35 +33,35 @@ const NavBar = () => {
         <div className="NavBar">
             {!user ? (
                 <h3>
-                    <span>Leftovers</span>
+                    <span className="appName">LEFTOVERS</span>
                 </h3>
             ): (
                 <h3>
-                <span className="appName" onClick={handleHome}>Leftovers</span>
+                <span className="appName" onClick={handleHome}>LEFTOVERS</span>
                 </h3>
             )}
 
             {!user ? (
             <div>
-                <NavLink exact to="/" onClick={handleToLoginClick}>Login</NavLink>
+                <NavLink exact to="/" onClick={handleToLoginClick}>LOGIN</NavLink>
             </div>)
             : (
             <div className="NavBarRoutes">
                 <div className="displayNavBar">
                     <nav className="display">
-                        <NavLink className="displayNavRoute" exact to="/all-restaurants">Restaurants</NavLink>
-                        <NavLink className="displayNavRoute" exact to="/all-coffee">Coffee</NavLink>
-                        <NavLink className="displayNavRoute" exact to="/all-bars">Bars</NavLink>
-                        <NavLink className="displayNavRoute" exact to="/map">Map</NavLink>
+                        <NavLink className="displayNavRoute" exact to="/all-restaurants">RESTAURANTS</NavLink>
+                        <NavLink className="displayNavRoute" exact to="/all-coffee">CAFES & COFFEE SHOPS</NavLink>
+                        <NavLink className="displayNavRoute" exact to="/all-bars">BARS</NavLink>
+                        <NavLink className="displayNavRoute" exact to="/map">MAP</NavLink>
                     </nav>
                 </div>
                 <div className="dropdownNavBar">
                     <div className="dropdown">
                         <img className="NavBarDropdownBtn" src={user.avatar ? user.avatar : NavImg }/>
                         <nav className="dropdown-content">
-                            <NavLink className="NavRoute" exact to="/want-to-visit">Want to Visit</NavLink>
-                            <NavLink className="NavRoute" exact to="/profile">Profile</NavLink>
-                            <NavLink className="NavRoute" exact to="/" onClick={handleLogoutClick}>Logout</NavLink>
+                            <NavLink className="NavRoute" exact to="/want-to-visit">WANT TO VISIT</NavLink>
+                            <NavLink className="NavRoute" exact to="/profile">PROFILE</NavLink>
+                            <NavLink className="NavRoute" exact to="/" onClick={handleLogoutClick}>LOGOUT</NavLink>
                         </nav>
                     </div>
                     <div>

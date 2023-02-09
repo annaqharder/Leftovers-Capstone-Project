@@ -1,8 +1,9 @@
 *{
   margin: 0;
   padding: 0;
-  /* background-color: #E1DDC8; */
-  /* color: #505050; */
+  color: #505050;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 1.5px;
 }
 
 
@@ -48,7 +49,10 @@
 /* ------------------ */
 
 .appName {
-  font-size: 46px;
+  font-size: 80px;
+  font-family: 'DM Serif Display', serif;
+  font-weight: 100;
+  letter-spacing: 4px;
 }
 
 .NavBarDropdownBtn {
@@ -95,11 +99,13 @@
 .NavBarRoutes {
   display: flex;
   justify-content: space-between;
+  font-size: 20px;
 }
 
 .displayNavBar {
   display: flex;
   justify-content: space-evenly;
+  font-size: 20px;
 }
 
 .display{
@@ -253,4 +259,12 @@
 .eateryImg{
   max-width: 300px;
   border-radius: 20px;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }

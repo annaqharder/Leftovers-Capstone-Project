@@ -32,12 +32,17 @@ function Home() {
         "/images/cafe9.jpg",
         "/images/bar9.jpg",
         "/images/restaurant10.webp",
+        "/images/cafe10.webp",
         "/images/bar10.png",
         "/images/restaurant11.webp",
+        "/images/cafe11.webp",
         "/images/bar11.webp",
         "/images/restaurant12.webp",
+        "/images/bar12.jpg",
         "/images/restaurant13.webp",
+        "/images/bar13.webp",
         "/images/restaurant14.webp",
+        "/images/bar14.webp",
     ]
 
     const [imageIndex, setImageIndex] = useState(0);

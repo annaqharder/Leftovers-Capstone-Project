@@ -88,7 +88,7 @@ return (
                     />
                 </div>
 
-                <div>
+                {/* <div>
                     <label>Restaurant Image: </label>
                     <input
                         type="text"
@@ -96,7 +96,7 @@ return (
                         value={eateryImg}
                         onChange={(e) => setEateryImg(e.target.value)}
                     />
-                </div>
+                </div> */}
 
                 <div className='dialog-buttons'>
                     <button className="secondary-button" onClick={onClose}>Cancel</button>

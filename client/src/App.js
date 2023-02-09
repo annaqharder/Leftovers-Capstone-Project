@@ -18,22 +18,12 @@ import { CoffeeProvider } from "./context/CoffeeProvider";
 import { BarProvider } from "./context/BarProvider";
 import { VisitProvider } from "./context/VisitProvider";
 import { useHistory } from "react-router-dom";
-import { QueryClient, QueryClientProvider, useQuery } from "@tanstack/react-query";
 import NewVisitForm from "./components/NewVisitForm";
 import { EateryProvider } from "./context/EateryProvider";
 
 function App() {
-  const history = useHistory();
-
-  const [user, setUser] = useState([])
-  // const [visits, setVisits] = useState([])
-
-  const {data} = useQuery(["user"], () => {
-    fetch("/me").then((res) => res.json()).then((res) => setUser(res))
-  })
 
   return (
-
     <UserProvider>
     <EateryProvider>
       <NavBar />
@@ -56,7 +46,7 @@ function App() {
           <Route path="/all-coffee">
             <Coffee />
           </Route>
-          <Route exact path="/coffee-shops/:id">
+          <Route exact path="/coffee/cafes/:id">
             <Visits/>
           </Route>
           <BarProvider>
@@ -76,10 +66,7 @@ function App() {
             <WantToVisit />
           </Route>
           <Route path="/profile">
-            <Profile
-            user={user}
-            setUser={setUser}
-            />
+            <Profile />
           </Route>
           </BarProvider>
           </CoffeeProvider>

@@ -6,6 +6,7 @@ function WantToVisitList() {
     const {eateries} = useContext(EateryContext)
 
     let eateryArray = null;
+
     if (eateries) {
         eateryArray = eateries.map(eatery => (
             <WantToVisitCard

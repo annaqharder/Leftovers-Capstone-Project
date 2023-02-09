@@ -28,6 +28,11 @@ function VisitEntry({visit}) {
 
     let {visits, setVisits} = useContext(VisitContext)
 
+    const formattedDate = new Date(date).toLocaleString("en-US", {
+        day: "numeric",
+        year: "numeric",
+        month: "long",
+    })
 
     function editVisit(editedVisit){
         let updatedVisit = visits.map((visit) => {
@@ -108,7 +113,7 @@ function VisitEntry({visit}) {
 
         <div className="visitCard">
             <div className="visitDetails">
-                {date ? (<p> {date} </p>) : null}
+                {date ? (<h2> {formattedDate} </h2>) : null}
                 {occasion ? (<p><span className="visitDetailTitles">Occasion:</span> {occasion} </p>) : null}
                 {drink ? (<p><span className="visitDetailTitles">Drink:</span> {drink} </p>) : null}
                 {appetizer ? ( <p><span className="visitDetailTitles">Appetizer:</span> {appetizer} </p>) : null}
@@ -129,7 +134,7 @@ function VisitEntry({visit}) {
                         })}
                 </div>
                 <div>
-                    <img className="visitImg" src={image} />
+                    {image ? (<img className="visitImg" src={image} />) : null}
                 </div>
             </div>
             <div>

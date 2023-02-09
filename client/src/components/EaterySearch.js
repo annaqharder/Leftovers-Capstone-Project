@@ -56,9 +56,9 @@ function EaterySearch({searchQuery, setSearchQuery, filterBy, setFilterBy, sortB
             <label>
                 <input
                 type="radio"
-                value="Country"
+                value="Neighborhood"
                 name="sort"
-                checked={sortBy === "Country"}
+                checked={sortBy === "Neighborhood"}
                 onChange={handleSortChange}
                 />
                 Neighborhood

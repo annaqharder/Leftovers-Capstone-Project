@@ -22,6 +22,7 @@ function Visits(){
         eatery_neighorhood: "",
         eatery_category: "",
         eatery_type: "",
+        eatery_notes: "",
         visits: []
     })
 
@@ -123,6 +124,7 @@ function Visits(){
             <div>
                 <h1>{eatery.eatery_name}</h1>
                 <h3>{eatery.eatery_address}</h3>
+                <p> {eatery.eatery_notes} </p>
                 <div className='visitContainer'>{mappedVisits}</div>
             </div>
 

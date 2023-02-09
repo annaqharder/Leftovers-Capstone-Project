@@ -1,56 +1,69 @@
 import { useState, useEffect, useContext } from 'react';
-// import { UserContext } from '../context/UserProvider';
+import { UserContext } from '../context/UserProvider';
 import { useHistory } from 'react-router-dom';
 import NavImg from "../components/default-user.png";
-import { useQuery } from '@tanstack/react-query';
-import Axios from 'axios';
 
-function Profile({user}) {
+function Profile() {
+
+    let {user, setUser} = useContext(UserContext)
     const history = useHistory()
     const [showForm, setShowForm] = useState(false)
 
-    const [setProfile] = useState(null)
-    const [first_name, setFirst_name] = useState(user.first_name)
-    const [last_name, setLast_name] = useState(user.last_name)
-    const [email, setEmail] = useState(user.email)
-    const [bio, setBio] = useState(user.bio)
-    const [password, setPassword] = useState("")
-    const [location, setLocation] = useState(user.location)
-    const [avatar, setAvatar] = useState(user.avatar)
+    const [profile, setProfile] = useState({
+        first_name: user.first_name,
+        last_name: user.last_name,
+        email: user.email,
+        password: "",
+        location: user.location,
+        bio: user.bio,
+        avatar: user.avatar
+    })
+
+    console.log(profile)
+    // const [first_name, setFirst_name] = useState(user.first_name)
+    // const [last_name, setLast_name] = useState(user.last_name)
+    // const [email, setEmail] = useState(user.email)
+    // const [bio, setBio] = useState(user.bio)
+    // const [password, setPassword] = useState("")
+    // const [location, setLocation] = useState(user.location)
+    // const [avatar, setAvatar] = useState(user.avatar)
+
+    // console.log(profile)
 
     function handleEditProfile(e) {
 
         e.preventDefault();
 
-        const editProfile = {
-            first_name: first_name,
-            last_name: last_name,
-            email: email,
-            password: password,
-            location: location,
-            bio: bio,
-            avatar: avatar
-        }
+        // const editProfile = {
+        //     first_name: first_name,
+        //     last_name: last_name,
+        //     email: email,
+        //     password: password,
+        //     location: location,
+        //     bio: bio,
+        //     avatar: avatar
+        // }
 
         fetch(`/users/${user.id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(editProfile)
+            body: JSON.stringify(profile)
         })
             .then((r) => r.json())
-            .then((editedProfile) => (
-                console.log(editedProfile),
-                setProfile(editedProfile),
-                setFirst_name(editedProfile.first_name),
-                setLast_name(editedProfile.last_name),
-                setEmail(editedProfile.email),
-                setLocation(editedProfile.location),
-                setBio(editedProfile.bio),
-                setAvatar(editedProfile.avatar),
-                setPassword(editedProfile.password)
-            ))
+            .then((editedProfile) => setProfile(editedProfile))
+
+            history.push('/home')
+    }
+
+    function handleChange(e) {
+        setProfile((prev) => {
+            return {
+                ...prev,
+                [e.target.name]: e.target.value
+            }
+        })
     }
 
     return (
@@ -72,9 +85,9 @@ function Profile({user}) {
                         <label>First Name: </label>
                         <input
                             type="text"
-                            name="firstName"
-                            value={first_name}
-                            onChange={(e) => setFirst_name(e.target.value)}
+                            name="first_name"
+                            value={profile.first_name}
+                            onChange={handleChange}
                         />
                     </div>
 
@@ -82,9 +95,9 @@ function Profile({user}) {
                         <label>Last Name: </label>
                         <input
                             type="text"
-                            name="lastName"
-                            value={last_name}
-                            onChange={(e) => setLast_name(e.target.value)}
+                            name="last_name"
+                            value={profile.last_name}
+                            onChange={handleChange}
                         />
                     </div>
 
@@ -93,8 +106,8 @@ function Profile({user}) {
                         <input
                             type="text"
                             name="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
+                            value={profile.email}
+                            onChange={handleChange}
                         />
                     </div>
 
@@ -103,8 +116,8 @@ function Profile({user}) {
                         <input
                             type="text"
                             name="location"
-                            value={location}
-                            onChange={(e) => setLocation(e.target.value)}
+                            value={profile.location}
+                            onChange={handleChange}
                         />
                     </div>
 
@@ -115,8 +128,8 @@ function Profile({user}) {
                             cols="20"
                             type="text"
                             name="bio"
-                            value={bio}
-                            onChange={(e) => setBio(e.target.value)}
+                            value={profile.bio}
+                            onChange={handleChange}
                         />
                     </div>
 
@@ -125,8 +138,8 @@ function Profile({user}) {
                         <input
                             type="text"
                             name="avatar"
-                            value={avatar}
-                            onChange={(e) => setAvatar(e.target.value)}
+                            value={profile.avatar}
+                            onChange={handleChange}
                         />
                     </div>
 
@@ -135,8 +148,8 @@ function Profile({user}) {
                         <input
                             type="new-password"
                             name="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
+                            value={profile.password}
+                            onChange={handleChange}
                         />
                     </div>
                         <br></br>

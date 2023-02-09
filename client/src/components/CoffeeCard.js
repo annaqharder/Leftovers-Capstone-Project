@@ -21,16 +21,15 @@ function CoffeeCard({ coffee }) {
         setCoffees(updatedCoffeeList)
     }
 
-
     return (
         <div>
             <div>
-                <Link to={`/coffee-shops/${coffee.id}`} >
+                <Link to={`/coffee/cafes/${coffee.id}`} >
                     <h2>{coffee.eatery_name}</h2>
                 </Link>
                 <h3>{coffee.eatery_type}</h3>
                 <h4>{coffee.eatery_address}</h4>
-                <img className="eateryImg" src={coffee.eatery_img} alt="eateryImg" />
+                <img className="eateryImg" src={coffee.eatery_img}  />
             </div>
             <div>
                 <button onClick={() => {window.confirm( `Are you sure you want to delete ${coffee.eatery_name}?`, ) && handleDelete(coffee.id)}}> 

@@ -4,7 +4,6 @@ import { RestaurantContext } from '../context/RestaurantProvider';
 import RestaurantList from '../components/RestaurantList';
 import NewRestaurantForm from '../components/NewRestaurantForm';
 import EaterySearch from '../components/EaterySearch';
-import RestaurantImage from "../images/restaurant5.webp"
 
 function Restaurants() {
     const { restaurants } = useContext(RestaurantContext)
@@ -71,7 +70,6 @@ function Restaurants() {
 
         <div className="restaurantContainer">
             <div>
-                <img className="restaurantImg" src={RestaurantImage} />
             </div>
             <div>
                 <RestaurantList

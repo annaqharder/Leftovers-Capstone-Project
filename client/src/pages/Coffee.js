@@ -4,7 +4,6 @@ import { CoffeeContext } from '../context/CoffeeProvider';
 import CoffeeList from '../components/CoffeeList';
 import NewCoffeeForm from '../components/NewCoffeeForm';
 import EaterySearch from '../components/EaterySearch';
-import CoffeeImage from "../images/cafe2.webp"
 
 function Coffee() {
     const [showForm, setShowForm] = useState(false);
@@ -74,7 +73,6 @@ function Coffee() {
 
             <div className="coffeeContainer">
                 <div>
-                    <img className="restaurantImg" src={CoffeeImage} />
                 </div>
                 <div>
                 <CoffeeList

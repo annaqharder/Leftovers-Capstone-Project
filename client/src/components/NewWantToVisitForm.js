@@ -14,6 +14,7 @@ function WantToVisitForm({onClose}) {
     const [eateryNeighborhood, setEateryNeighborhood] = useState("");
     const [eateryCategory, setEateryCategory] = useState("");
     const [eateryType, setEateryType] = useState("");
+    const [eateryNotes, setEateryNotes] = useState("")
     const [haveVisited, setHaveVisited] = useState(false);
 
     function handleNewEatery(e) {
@@ -25,6 +26,7 @@ function WantToVisitForm({onClose}) {
             eatery_neighborhood: eateryNeighborhood,
             eatery_category: eateryCategory,
             eatery_type: eateryType,
+            eatery_notes: eateryNotes,
             user_id: user.id,
             have_visited: false
         }
@@ -96,6 +98,18 @@ return (
                         placeholder="Modern Chinese, Italian, Mexican, etc..."
                         value={eateryType}
                         onChange={(e) => setEateryType(e.target.value)}
+                    />
+                </div>
+
+                <div>
+                    <label>Notes: </label>
+                    <textarea
+                        type="textarea"
+                        rows="6"
+                        cols="40"
+                        name="eatery_notes"
+                        value={eateryNotes}
+                        onChange={(e) => setEateryNotes(e.target.value)}
                     />
                 </div>
                 <div className='dialog-buttons'>

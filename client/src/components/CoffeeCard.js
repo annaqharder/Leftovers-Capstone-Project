@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { CoffeeContext } from '../context/CoffeeProvider';
+import CoffeeStockImg from "../images/cafe-stock.jpeg"
 
 function CoffeeCard({ coffee }) {
 
@@ -29,7 +30,7 @@ function CoffeeCard({ coffee }) {
                 </Link>
                 <h3>{coffee.eatery_type}</h3>
                 <h4>{coffee.eatery_address}</h4>
-                <img className="eateryImg" src={coffee.eatery_img}  />
+                <img className="eateryImg" src={CoffeeStockImg}  />
             </div>
             <div>
                 <button onClick={() => {window.confirm( `Are you sure you want to delete ${coffee.eatery_name}?`, ) && handleDelete(coffee.id)}}> 

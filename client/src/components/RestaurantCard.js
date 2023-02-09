@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { RestaurantContext } from '../context/RestaurantProvider';
-import RestaurantStock from "../images/restaurant-stock.jpg"
+import RestaurantStockImg from "../images/restaurant-stock.jpg"
 
 function RestaurantCard({ restaurant }) {
     const [image] = useState("")
@@ -33,7 +33,7 @@ function RestaurantCard({ restaurant }) {
                 <h3>{restaurant.eatery_type}</h3>
                 <h4>{restaurant.eatery_address}</h4>
                 {/* <p>Notes: {restaurant.eatery_notes}</p> */}
-                <img className="eateryImg" src={RestaurantStock} alt="eateryImg"/>
+                <img className="eateryImg" src={RestaurantStockImg} alt="eateryImg"/>
                 <div>
                     <button
                     onClick={() => { window.confirm( `Are you sure you want to delete ${restaurant.eatery_name}?`, ) && handleDelete(restaurant.id)}}>

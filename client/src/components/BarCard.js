@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { BarContext } from '../context/BarProvider';
+import BarStockImg from '../images/bar-stock.jpeg'
 
 function BarCard({ bar }) {
 
@@ -29,8 +30,8 @@ function BarCard({ bar }) {
                 </Link>
                 <h3>{bar.eatery_type}</h3>
                 <h4>{bar.eatery_address}</h4>
-                <p>Notes: {bar.eatery_notes}</p>
-                <img className="eateryImg" src={bar.eatery_img} alt="eateryImg"/>
+                {/* <p>Notes: {bar.eatery_notes}</p> */}
+                <img className="eateryImg" src={BarStockImg} alt="eateryImg"/>
                 <div>
                     <button
                     onClick={() => { window.confirm( `Are you sure you want to delete ${bar.eatery_name}?`, ) && handleDelete(bar.id)}}>

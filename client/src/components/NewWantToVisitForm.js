@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { UserContext } from '../context/UserProvider';
 import { EateryContext } from '../context/EateryProvider';
 
-function WantToVisitForm({onClose}) {
+function NewWantToVisitForm({onClose}) {
     let {user} = useContext(UserContext)
     let {setEateries} = useContext(EateryContext);
     const [showForm, setShowForm] = useState(false);
@@ -123,4 +123,4 @@ return (
 
 }
 
-export default WantToVisitForm;
+export default NewWantToVisitForm;

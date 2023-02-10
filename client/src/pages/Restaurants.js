@@ -78,22 +78,6 @@ function Restaurants() {
             </div>
         </div>
 
-            {/* <div>
-                {showForm? (
-                    <div>
-                        <NewRestaurantForm />
-                    </div>) : (
-                    <div>
-                        <button onClick={() => setShowForm(true)}> Add Restaurant</button>
-                    </div>
-                )}
-            </div> */}
-        {/* <div>
-            {showForm ?
-                (<button onClick={() => setShowForm(false)}>Cancel</button>)
-            : null}
-        </div> */}
-
 
         </div>
     );

@@ -7,7 +7,7 @@ import { BarContext} from '../context/BarProvider';
 import { EateryContext} from '../context/EateryProvider'
 
 const containerStyle = {
-    width: '80vw',
+    width: '60vw',
     height: '80vh'
 };
 

@@ -35,18 +35,18 @@ function RestaurantCard({ restaurant }) {
                 <img className="eateryImg" src={RestaurantStockImg} alt="eateryImg"/>
                 <div>
                     <button
+                    type="button"
+                    className="secondary-button"
+                    onClick={() => setIsPopupOpen(true)}
+                    >
+                        Edit
+                    </button>
+
+                    <button
                     onClick={() => { window.confirm( `Are you sure you want to delete ${restaurant.eatery_name}?`, ) && handleDelete(restaurant.id)}}>
                         Delete 🗑️
                     </button>
                 </div>
-
-                <button
-                type="button"
-                className="secondary-button"
-                onClick={() => setIsPopupOpen(true)}
-                >
-                    Edit
-                </button>
 
             <div>
                 {isPopupOpen ? (

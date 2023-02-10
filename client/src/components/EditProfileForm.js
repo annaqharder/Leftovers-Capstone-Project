@@ -49,7 +49,7 @@ function EditProfileForm({onClose}) {
             <div className="dialog">
             <h1>Edit Your Profile</h1>
                 <form onSubmit={handleEditProfile}>
-                    <div>
+                <div>
                         <label>First Name: </label>
                         <input
                             type="text"

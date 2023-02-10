@@ -77,7 +77,7 @@ function Signup() {
                             <div className="input-field">
                                 <input
                                     type="text"
-                                    name="last_name"
+                                    name="first_name"
                                     // placeholder="enter your first name..."
                                     value={credentials.first_name}
                                     onChange={handleChange}

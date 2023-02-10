@@ -63,7 +63,7 @@ const NavBar = () => {
                         </nav>
                     </div>
                     <div>
-                        <h2>Hello, {user.first_name}!</h2>
+                        <h2>HELLO, {user.first_name}!</h2>
                     </div>
                 </div>
             </div>

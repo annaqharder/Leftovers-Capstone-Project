@@ -35,19 +35,17 @@ function BarCard({ bar }) {
                 <img className="eateryImg" src={BarStockImg} alt="eateryImg"/>
                 <div>
                     <button
+                        type="button"
+                        className="secondary-button"
+                        onClick={() => setIsPopupOpen(true)}
+                    >
+                        Edit
+                    </button>
+                    <button
                     onClick={() => { window.confirm( `Are you sure you want to delete ${bar.eatery_name}?`, ) && handleDelete(bar.id)}}>
                         Delete 🗑️
                     </button>
                 </div>
-
-                <button
-                type="button"
-                className="secondary-button"
-                onClick={() => setIsPopupOpen(true)}
-                >
-                    Edit
-                </button>
-
             <div>
                 {isPopupOpen ? (
                     <EditBarCard

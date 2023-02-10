@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { UserContext } from '../context/UserProvider';
 import { useHistory, Link } from 'react-router-dom';
 import {Icon} from 'react-icons-kit';
@@ -8,7 +8,7 @@ import {Icon} from 'react-icons-kit';
 function Signup() {
     const [errors, setErrors] = useState([]);
 
-    let { user, setUser } = useContext(UserContext);
+    let { setUser } = useContext(UserContext);
     let history = useHistory();
 
     const [type, setType] = useState('password');

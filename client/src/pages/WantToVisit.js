@@ -4,8 +4,6 @@ import WantToVisitList from '../components/WantToVisitList';
 
 function WantToVisit() {
 
-    // const [eateries, setEateries] = useState([])
-
     const [isPopupOpen, setIsPopupOpen] = useState(false);
 
     return (

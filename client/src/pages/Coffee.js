@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { CoffeeContext } from '../context/CoffeeProvider';
 import CoffeeList from '../components/CoffeeList';

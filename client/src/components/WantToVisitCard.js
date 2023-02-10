@@ -1,19 +1,19 @@
 import React, {useContext, useState} from "react";
 import { EateryContext} from "../context/EateryProvider";
 import { useHistory } from "react-router-dom";
-import RestaurantStock from "../images/restaurant-stock.jpg";
-import CafeStock from "../images/cafe-stock.jpeg";
-import BarStock from "../images/bar-stock.jpeg"
+import BarStockImg from '../images/bar-stock.jpeg';
+import CoffeeStockImg from "../images/cafe-stock.jpeg";
+import RestaurantStockImg from "../images/restaurant-stock.jpg"
 
 function WantToVisitCard({eatery}) {
 
     const {setEateries} = useContext(EateryContext)
     const [notes] = useState(eatery.eatery_notes)
+    const [haveVisited, setHaveVisited] = useState(eatery.have_visited)
 
     const [setError] = useState("")
     const history = useHistory()
 
-    const [haveVisited, setHaveVisited] = useState(eatery.have_visited)
 
     function handleUpdate(e){
         e.preventDefault();
@@ -42,11 +42,11 @@ function WantToVisitCard({eatery}) {
         if (eatery.eatery_img) {
             imagesrc = eatery.eatery_img
         } else if (eatery.eatery_category === "Restaurant") {
-            imagesrc = RestaurantStock
+            imagesrc = RestaurantStockImg
         } else if (eatery.eatery_category === "Coffee/Cafe") {
-            imagesrc = CafeStock
+            imagesrc = CoffeeStockImg
         } else if (eatery.eatery_category === "Bar") {
-            imagesrc = BarStock
+            imagesrc = BarStockImg
         }
     }
     restaurantImg()

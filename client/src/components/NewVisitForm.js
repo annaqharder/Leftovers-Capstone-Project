@@ -161,6 +161,7 @@ function NewVisitForm({onClose}) {
                         {stars.map((_, index) => {
                                 return (
                                     <FaStar
+                                        className="stars"
                                         key={index}
                                         size={24}
                                         value={rating}

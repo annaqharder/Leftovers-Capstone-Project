@@ -22,6 +22,8 @@ function EditVisitEntry({visit, onClose, onEditVisit}) {
     const [rating, setRating] = useState(visit.rating)
     const [image, setImage] = useState(visit.visit_img)
 
+    const {visits, setVisits} = useContext(VisitContext)
+
     const [hoverValue, setHoverValue] = useState(undefined)
 
     const stars = Array(5).fill(0)
@@ -63,7 +65,7 @@ function EditVisitEntry({visit, onClose, onEditVisit}) {
         }).then((res) => {
             if (res.ok) {
                 res.json().then((updatedData) => {
-                    onEditVisit(updatedData)
+                    setVisits(updatedData)
                 })
             } else {
                 res.json().then((error) => setError(error.errors))

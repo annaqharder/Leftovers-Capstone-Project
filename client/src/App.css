@@ -1,11 +1,10 @@
 *{
   margin: 0;
   padding: 0;
-  color: #505050;
+  /* color: #505050; */
   font-family: 'Raleway', sans-serif;
   letter-spacing: 1.5px;
 }
-
 
 .App {
   text-align: center;
@@ -267,4 +266,8 @@ a:link {
 
 a:hover {
   text-decoration: underline;
+}
+
+a:visited {
+  color: black
 }

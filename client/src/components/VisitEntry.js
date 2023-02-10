@@ -3,13 +3,12 @@ import { useParams } from "react-router-dom";
 import { VisitContext } from "../context/VisitProvider";
 import { FaStar } from 'react-icons/fa'
 
-const colors = {
-    orange: "#F2C265",
-    grey: "a9a9a9"
-}
-
 function VisitEntry({visit}) {
 
+    const colors = {
+        orange: "#F2C265",
+        grey: "a9a9a9"
+    }
 
     const [error, setError] = useState("");
     const [date, setDate] = useState(visit.date)
@@ -126,6 +125,7 @@ function VisitEntry({visit}) {
                         {stars.map((_, index) => {
                             return (
                                 <FaStar
+                                    className="stars"
                                     key={index}
                                     size={24}
                                     color={(hoverValue || rating) > index ? colors.orange : colors.grey}

@@ -9,7 +9,6 @@ import VisitSearch from './VisitSearch';
 function Visits(){
 
     const {visits, setVisits} = useContext(VisitContext)
-    const [showForm, setShowForm] = useState(false)
     const [searchQuery, setSearchQuery] = useState("")
     const [filterBy, setFilterBy] = useState("All")
     const [sortBy, setSortBy] = useState("");
@@ -102,24 +101,6 @@ function Visits(){
                     />
                 ) : null}
             </div>
-
-            {/* <div>
-            {showForm ? (
-                <div>
-                    <NewVisitForm/>
-                </div>
-            ) : (
-                <div>
-                    <button onClick={() => setShowForm(true)}> Add Visit</button>
-                </div>
-            )}
-            </div>
-
-            <div>
-                {showForm ?
-                    (<button onClick={() => setShowForm(false)}>Cancel</button>)
-                : null}
-            </div> */}
 
             <div>
                 <h1>{eatery.eatery_name}</h1>

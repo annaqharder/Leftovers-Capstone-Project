@@ -1,16 +1,15 @@
-import React, { useContext, useState, useEffect } from 'react';
-import { useHistory, useParams} from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { RestaurantContext } from '../context/RestaurantProvider';
 import RestaurantList from '../components/RestaurantList';
 import NewRestaurantForm from '../components/NewRestaurantForm';
 import EaterySearch from '../components/EaterySearch';
 
 function Restaurants() {
-    const { restaurants } = useContext(RestaurantContext)
+    const {restaurants} = useContext(RestaurantContext)
     let history = useHistory();
     const [searchQuery, setSearchQuery] = useState("")
     const [filterBy, setFilterBy] = useState("All")
-    const [showForm, setShowForm] = useState(false)
     const [sortBy, setSortBy] = useState("");
     const [isPopupOpen, setIsPopupOpen] = useState(false);
 
@@ -69,8 +68,6 @@ function Restaurants() {
             </div>
 
         <div className="restaurantContainer">
-            <div>
-            </div>
             <div>
                 <RestaurantList
                 restaurants={filteredEateries}

@@ -1,4 +1,3 @@
-import Visits from "./Visits";
 import RestaurantCard from "./RestaurantCard";
 
 function RestaurantList({ restaurants }) {

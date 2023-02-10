@@ -1,53 +1,68 @@
-import { useState, useContext } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useContext, useState } from 'react';
+import { CoffeeContext } from '../context/CoffeeProvider';
 import { UserContext } from '../context/UserProvider';
-import { RestaurantContext } from '../context/RestaurantProvider';
 
-function NewRestaurantForm({onClose}) {
-
+function EditCoffeeCard({coffee, onClose}) {
     let {user} = useContext(UserContext)
+    let {coffees, setCoffees} = useContext(CoffeeContext)
 
-    let {setRestaurants} = useContext(RestaurantContext);
+    const [eateryName, setEateryName] = useState(coffee.eatery_name);
+    const [eateryAddress, setEateryAddress] =useState(coffee.eatery_address);
+    const [eateryNeighborhood, setEateryNeighborhood] = useState(coffee.eatery_neighborhood);
+    const [eateryType, setEateryType] = useState(coffee.eatery_type);
 
-    const [eateryName, setEateryName] = useState("");
-    const [eateryAddress, setEateryAddress] =useState("");
-    const [eateryNeighborhood, setEateryNeighborhood] = useState("");
-    const [eateryType, setEateryType] = useState("");
+    // function editedArray(updatedEatery) {
+    //     setCoffees((prev) => {
+    //         const filtered = prev.filter(
+    //             (coffee) =>  coffee.id !== updatedEatery.id
+    //         )
+    //         return [...filtered, updatedEatery]
+    //     })
+    // }
 
-    function handleNewEatery(e) {
+    function editedArray(updatedEatery){
+        const updatedArray = coffees.map((eatery) => {
+            if(eatery.id === updatedEatery.id) {
+                return updatedEatery
+            } else {
+                return eatery
+            }
+        })
+        setCoffees(updatedArray)
+    }
+
+    function handleEdit(e){
         e.preventDefault();
 
-        const formData ={
+        const formData = {
             eatery_name: eateryName,
             eatery_address: eateryAddress,
             eatery_neighborhood: eateryNeighborhood,
-            eatery_category: "Restaurant",
+            eatery_category: "Coffee/Cafe",
             eatery_type: eateryType,
             user_id: user.id,
-            have_visited: true
         }
 
-        fetch(`/eateries`, {
-            method: "POST",
+        fetch(`/eateries/${coffee.id}`, {
+            method: "PATCH",
             headers: {
-                "Content-Type": "application/json",
+                "Content-Type": "application/json"
             },
             body: JSON.stringify(formData)
         })
             .then((r) => r.json())
-            .then((newEatery) => {
-                setRestaurants((prevEateries) => [...prevEateries, newEatery])
-            })
+            .then((updatedData) => editedArray(updatedData))
+
             onClose()
     }
 
-return (
-        <div className="back-drop">
-            <div className="dialog">
-            <h1>New Restaurant</h1>
-            <form onSubmit={handleNewEatery}>
+    return (
+            <div className="back-drop">
+                <div className="dialog">
+                <h1>Edit Form</h1>
+                <form onSubmit={handleEdit}>
                 <div>
-                    <label>Restaurant Name: </label>
+                    <label>Coffee Name: </label>
                     <input
                         type="text"
                         name="eatery_name"
@@ -57,7 +72,7 @@ return (
                 </div>
 
                 <div>
-                    <label>Restaurant Address: </label>
+                    <label>Coffee Address: </label>
                     <input
                         type="text"
                         name="eatery_address"
@@ -67,7 +82,7 @@ return (
                 </div>
 
                 <div>
-                    <label>Restaurant Neighborhood: </label>
+                    <label>Coffee Neighborhood: </label>
                     <input
                         type="text"
                         name="eatery_neighborhood"
@@ -77,7 +92,7 @@ return (
                 </div>
 
                 <div>
-                    <label>Restaurant Type: </label>
+                    <label>Coffee Type: </label>
                     <input
                         type="text"
                         name="eatery_type"
@@ -89,12 +104,12 @@ return (
 
                 <div className='dialog-buttons'>
                     <button className="secondary-button" onClick={onClose}>Cancel</button>
-                    <button>Add Restaurant</button>
+                    <button>Update</button>
                 </div>
             </form>
             </div>
-        </div>
+            </div>
     );
 }
 
-export default NewRestaurantForm;
+export default EditCoffeeCard;

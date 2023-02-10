@@ -1,51 +1,66 @@
-import { useState, useContext } from 'react';
-import { useHistory } from 'react-router-dom';
-import { UserContext } from '../context/UserProvider';
+import { useContext, useState } from 'react';
 import { RestaurantContext } from '../context/RestaurantProvider';
+import { UserContext } from '../context/UserProvider';
 
-function NewRestaurantForm({onClose}) {
-
+function EditRestaurantCard({restaurant, onClose}) {
     let {user} = useContext(UserContext)
+    let {restaurants, setRestaurants} = useContext(RestaurantContext)
 
-    let {setRestaurants} = useContext(RestaurantContext);
+    const [eateryName, setEateryName] = useState(restaurant.eatery_name);
+    const [eateryAddress, setEateryAddress] =useState(restaurant.eatery_address);
+    const [eateryNeighborhood, setEateryNeighborhood] = useState(restaurant.eatery_neighborhood);
+    const [eateryType, setEateryType] = useState(restaurant.eatery_type);
 
-    const [eateryName, setEateryName] = useState("");
-    const [eateryAddress, setEateryAddress] =useState("");
-    const [eateryNeighborhood, setEateryNeighborhood] = useState("");
-    const [eateryType, setEateryType] = useState("");
+    // function editedArray(updatedEatery) {
+    //     setRestaurants((prev) => {
+    //         const filtered = prev.filter(
+    //             (restaurant) => restaurant.id !== updatedEatery.id
+    //         )
+    //         return [...filtered, updatedEatery]
+    //     })
+    // }
 
-    function handleNewEatery(e) {
+    function editedArray(updatedEatery){
+        const updatedArray = restaurants.map((eatery) => {
+            if(eatery.id === updatedEatery.id) {
+                return updatedEatery
+            } else {
+                return eatery
+            }
+        })
+        setRestaurants(updatedArray)
+    }
+
+    function handleEdit(e){
         e.preventDefault();
 
-        const formData ={
+        const formData = {
             eatery_name: eateryName,
             eatery_address: eateryAddress,
             eatery_neighborhood: eateryNeighborhood,
             eatery_category: "Restaurant",
             eatery_type: eateryType,
             user_id: user.id,
-            have_visited: true
         }
 
-        fetch(`/eateries`, {
-            method: "POST",
+        fetch(`/eateries/${restaurant.id}`, {
+            method: "PATCH",
             headers: {
-                "Content-Type": "application/json",
+                "Content-Type": "application/json"
             },
             body: JSON.stringify(formData)
         })
             .then((r) => r.json())
-            .then((newEatery) => {
-                setRestaurants((prevEateries) => [...prevEateries, newEatery])
-            })
+            .then((updatedData) => editedArray(updatedData))
+
             onClose()
     }
 
-return (
-        <div className="back-drop">
-            <div className="dialog">
-            <h1>New Restaurant</h1>
-            <form onSubmit={handleNewEatery}>
+    return (
+            <div className="back-drop">
+                <div className="dialog">
+                <h1>Edit Form</h1>
+                <form onSubmit={handleEdit}>
                 <div>
                     <label>Restaurant Name: </label>
                     <input
@@ -89,12 +104,12 @@ return (
 
                 <div className='dialog-buttons'>
                     <button className="secondary-button" onClick={onClose}>Cancel</button>
-                    <button>Add Restaurant</button>
+                    <button>Update</button>
                 </div>
             </form>
             </div>
-        </div>
+            </div>
     );
 }
 
-export default NewRestaurantForm;
+export default EditRestaurantCard;

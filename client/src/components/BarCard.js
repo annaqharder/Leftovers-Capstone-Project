@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { BarContext } from '../context/BarProvider';
-import BarStockImg from '../images/bar-stock.jpeg'
+import BarStockImg from '../images/bar-stock.jpeg';
+import EditBarCard from './EditBarCard';
 
 function BarCard({ bar }) {
-
     let {bars, setBars} = useContext(BarContext)
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
 
     function handleDelete(){
         fetch(`/eateries/${bar.id}`, {
@@ -38,6 +39,23 @@ function BarCard({ bar }) {
                         Delete 🗑️
                     </button>
                 </div>
+
+                <button
+                type="button"
+                className="secondary-button"
+                onClick={() => setIsPopupOpen(true)}
+                >
+                    Edit
+                </button>
+
+            <div>
+                {isPopupOpen ? (
+                    <EditBarCard
+                        onClose={() => setIsPopupOpen(false)}
+                        bar={bar}
+                    />
+                ) : null}
+            </div>
             </div>
         </div>
     );

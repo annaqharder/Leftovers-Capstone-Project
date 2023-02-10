@@ -8,7 +8,7 @@ const colors = {
     grey: "a9a9a9"
 }
 
-function EditVisitEntry({visit, onClose, onEditVisit}) {
+function EditVisitEntry({visit, onClose}) {
 
     const [error, setError] = useState("");
     const [date, setDate] = useState(visit.date)
@@ -22,7 +22,7 @@ function EditVisitEntry({visit, onClose, onEditVisit}) {
     const [rating, setRating] = useState(visit.rating)
     const [image, setImage] = useState(visit.visit_img)
 
-    const {visits, setVisits} = useContext(VisitContext)
+    const {setVisits} = useContext(VisitContext)
 
     const [hoverValue, setHoverValue] = useState(undefined)
 

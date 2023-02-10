@@ -1,13 +1,13 @@
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { RestaurantContext } from '../context/RestaurantProvider';
-import RestaurantStockImg from "../images/restaurant-stock.jpg"
+import RestaurantStockImg from "../images/restaurant-stock.jpg";
+import EditRestaurantCard from './EditRestaurantCard';
+
 
 function RestaurantCard({ restaurant }) {
-    const [image] = useState("")
-
     let {restaurants, setRestaurants} = useContext(RestaurantContext)
-
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
 
     function handleDelete(){
         fetch(`/eateries/${restaurant.id}`, {
@@ -20,7 +20,6 @@ function RestaurantCard({ restaurant }) {
         const updatedRestaurantList = restaurants.filter(deletedRestaurant => {
             return deletedRestaurant.id !== restaurant.id
         })
-
         setRestaurants(updatedRestaurantList)
     }
 
@@ -40,6 +39,24 @@ function RestaurantCard({ restaurant }) {
                         Delete 🗑️
                     </button>
                 </div>
+
+                <button
+                type="button"
+                className="secondary-button"
+                onClick={() => setIsPopupOpen(true)}
+                >
+                    Edit
+                </button>
+
+            <div>
+                {isPopupOpen ? (
+                    <EditRestaurantCard
+                        onClose={() => setIsPopupOpen(false)}
+                        restaurant={restaurant}
+                    />
+                ) : null}
+            </div>
+
             </div>
         </div>
     );

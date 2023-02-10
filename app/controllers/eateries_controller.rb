@@ -6,16 +6,6 @@ class EateriesController < ApplicationController
 
     def index
         eateries = user_eateries
-
-        # @markers = eateries.geocoded.map do |place|
-        #     {
-        #         id: eateries.id,
-        #         lat: eateries.latitude,
-        #         lng: eateries.longitude,
-        #         name: eateries.eatery_name,
-        #         address: eateries.eatery_address
-        #     }
-
         render json: eateries, status: :ok
     end
 
@@ -48,7 +38,7 @@ private
     end
 
     def eatery_params
-        params.permit(:eatery_location, :eatery_name, :eatery_address, :eatery_category, :eatery_type, :have_visited, :user_id, :id, :eatery_img, :eatery_notes)
+        params.permit(:eatery_location, :eatery_name, :eatery_address, :eatery_category, :eatery_type, :have_visited, :user_id, :id, :eatery_img, :eatery_notes, :eatery_neighborhood)
     end
 
 end

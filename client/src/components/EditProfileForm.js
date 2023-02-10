@@ -14,7 +14,7 @@ function EditProfileForm({onClose}) {
         location: user.location,
         bio: user.bio,
         avatar: user.avatar,
-        placeId: user.placeId
+        // placeId: user.placeId
     })
 
     function handleEditProfile(e) {

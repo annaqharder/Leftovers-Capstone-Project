@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { CoffeeContext } from '../context/CoffeeProvider';
-import CoffeeStockImg from "../images/cafe-stock.jpeg"
+import CoffeeStockImg from "../images/cafe-stock.jpeg";
+import EditCoffeeCard from "./EditCoffeeCard";
 
 function CoffeeCard({ coffee }) {
-
     let {coffees, setCoffees} = useContext(CoffeeContext)
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
 
     function handleDelete(){
         fetch(`/eateries/${coffee.id}`, {
@@ -37,6 +38,24 @@ function CoffeeCard({ coffee }) {
                     Delete 🗑️
                 </button>
             </div>
+
+            <button
+                type="button"
+                className="secondary-button"
+                onClick={() => setIsPopupOpen(true)}
+                >
+                    Edit
+                </button>
+
+            <div>
+                {isPopupOpen ? (
+                    <EditCoffeeCard
+                        onClose={() => setIsPopupOpen(false)}
+                        coffee={coffee}
+                    />
+                ) : null}
+            </div>
+
         </div>
     );
 }

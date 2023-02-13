@@ -31,7 +31,7 @@ const NavBar = () => {
         <div class="flex justify-between p-4 pb-8">
             {!user ? (
                 <h3>
-                    <span class="pl-3 font-sans text-8xl weight-bold tracking-tight">LEFTOVERS</span>
+                    <span class="pl-3 font-sans text-8xl weight-bold tracking-tight">LEFTOVERS <span class="text-xl font-medium">|</span><span class="text-sm font-medium"> track & manage your favorite eateries</span></span>
                 </h3>
             ): (
                 <h3>

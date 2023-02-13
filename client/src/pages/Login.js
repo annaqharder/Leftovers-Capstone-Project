@@ -64,21 +64,21 @@ function Login() {
 
     return (
         <section class="container p-0 ml-6 mr-2">
-            <div >
+            <div>
                 <div class= "p-0 flex justify-around items-start flex-wrap h-full text-gray-800 w-screen">
                     <div class="md:w-8/12 lg:w-6/12 mb-12 md:mb-0">
                         <img src="./images/restaurant13.webp" alt="loginImg"/>
                     </div>
                     <div class="md:w-8/12 lg:w-4/12 mb-12 mr-28 p-20 mt-44">
                         <div>
-                            <h2 class="font-sans font-family:'Raleway' text-4xl tracking-tight">Please Log In</h2>
+                            <h2 class="font-sans font-family:'Raleway' text-4xl tracking-tight">please log in</h2>
                         </div>
                         <div>
                             <form onSubmit={handleSubmit}>
                                 <div>
                                     <br></br>
                                     <div>
-                                        <div class="mb-6">
+                                        <div class="mb-2">
                                             <input
                                                 class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red focus:outline-none"
                                                 type="text"
@@ -95,7 +95,7 @@ function Login() {
                                 <div>
                                     <br></br>
                                     <div>
-                                        <div class="mb-6 flex" >
+                                        <div class="mb-4 flex">
                                             <input
                                                 class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red focus:outline-none"
                                                 type={type}
@@ -106,7 +106,7 @@ function Login() {
                                                 autoComplete="current-password"
 
                                             />
-                                            <span class="flex justify-around items-center" onClick={handleToggle}><Icon class="absolute pr-10" icon={icon} size={25}/></span>
+                                            <span class="flex justify-around items-center" onClick={handleToggle}><Icon class="absolute mr-10" icon={icon} size={25}/></span>
                                         </div>
                                     </div>
                                 </div>

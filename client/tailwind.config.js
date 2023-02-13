@@ -5,7 +5,8 @@ module.exports = {
     colors: {
       'zinc': '#171717',
       'red': '#B23822',
-      'white': '#fafafa'
+      'white': '#fafafa',
+      'green': '#57644F'
     },
 
     extend: {},

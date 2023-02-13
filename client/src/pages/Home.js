@@ -52,7 +52,7 @@ function Home() {
             setImageIndex(prev => (
                 prev === restaurantImgArray.length - 1 ? 0 : prev + 1
             ))
-        }, 10000)
+        }, 100000)
     }, [])
 
     // console.log(imageIndex)
@@ -86,30 +86,34 @@ function Home() {
 
 
     return (
-        <div className="homeContainer">
-            <div className="imgContainer">
-                <img className="homeImg" src={restaurantImgArray[imageIndex]}/>
+        <section class="container p-0 ml-6 mr-2 overflow-hidden">
+            <div>
+        <div class="p-0 flex justify-around items-start h-full w-screen">
+            <div class="md:w-8/12 lg:w-6/12 mb-12 md:mb-0 mt-10">
+                <img src={restaurantImgArray[imageIndex]}/>
             </div>
-            <div className="homeLabels">
-                <div className="homeLabel">
+            <div class="md:w-8/12 lg:w-4/12">
+                <div class="font-sans text-8xl mr-28 mt-36">
                     <Link to={`/all-restaurants`} >
-                        <h1>Restaurants</h1>
+                        <h1 class="tracking-tighter"> Restaurants</h1>
                     </Link>
                 </div>
 
-                <div className="homeLabel">
+                <div class="text-8xl mr-28 mt-36">
                     <Link to={`/all-coffee`} >
-                        <h1>Cafes/Coffee Shops</h1>
+                        <h1 class="tracking-tighter">Cafes & Coffee Shops</h1>
                     </Link>
                 </div>
 
-                <div className="homeLabel">
+                <div class="text-8xl mr-28 mt-36">
                     <Link to={`/all-bars`} >
-                        <h1>Bars</h1>
+                        <h1 class="tracking-tighter">Bars</h1>
                     </Link>
                 </div>
             </div>
         </div>
+        </div>
+    </section>
     );
 }
 

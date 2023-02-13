@@ -66,9 +66,9 @@ function Signup() {
     }
 
     return (
-        <section class="container p-0 ml-6 mr-2">
+        <section class="container p-0 ml-6 mr-2 overflow-hidden">
         <div class= "p-0 flex justify-around items-start flex-wrap h-full text-gray-800 w-screen">
-            <div class="md:w-8/12 lg:w-6/12 mb-12 md:mb-0">
+            <div class="md:w-8/12 lg:w-6/12 mb-12 md:mb-0 mt-10">
                 <img src="./images/restaurant11.webp" alt="signupImg"/>
             </div>
             <div class="md:w-8/12 lg:w-4/12 mb-12 mr-28 p-20 mt-44">
@@ -156,7 +156,7 @@ function Signup() {
                     </div>
                         <br></br>
 
-                    <div>
+                    <div class="font-bold">
                         {errors.map((err) => (
                             <p key={err}>{err}</p>
                         ))}
@@ -164,7 +164,7 @@ function Signup() {
 
                     <button
                         type="submit"
-                        class="inline-block px-7 py-3 mt-4 bg-green text-white font-bold text-sm leading-snug uppercase rounded shadow-md hover:bg-green hover:shadow-lg focus:bg-green focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green active:shadow-lg transition duration-150 ease-in-out w-full"
+                        class="inline-block px-7 py-3 mt-4 bg-green text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-green hover:shadow-lg focus:bg-green focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green active:shadow-lg transition duration-150 ease-in-out w-full"
                     >Create Account</button>
                         <br></br>
                         <br></br>

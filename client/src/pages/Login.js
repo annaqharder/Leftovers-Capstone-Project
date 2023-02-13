@@ -63,10 +63,10 @@ function Login() {
     }
 
     return (
-        <section class="container p-0 ml-6 mr-2">
+        <section class="container p-0 ml-6 mr-2 overflow-hidden">
             <div>
-                <div class= "p-0 flex justify-around items-start flex-wrap h-full text-gray-800 w-screen">
-                    <div class="md:w-8/12 lg:w-6/12 mb-12 md:mb-0">
+                <div class="p-0 flex justify-around items-start flex-wrap h-full text-gray-800 w-screen">
+                    <div class="md:w-8/12 lg:w-6/12 mb-12 md:mb-0 mt-10">
                         <img src="./images/restaurant13.webp" alt="loginImg"/>
                     </div>
                     <div class="md:w-8/12 lg:w-4/12 mb-12 mr-28 p-20 mt-44">
@@ -123,10 +123,10 @@ function Login() {
 
                                 <button
                                     type="submit"
-                                    class="inline-block px-7 py-3 mt-4 bg-red text-white font-bold text-sm leading-snug uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out w-full"
+                                    class="inline-block px-7 py-3 mt-4 bg-red text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out w-full"
                                 >LOG IN</button>
 
-                            <div class="pt-2 ">
+                            <div class="pt-2 font-bold ">
                                 {errors.map((err) => (
                                     <p key={err}>{err}</p>
                                 ))}

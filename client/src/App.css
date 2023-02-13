@@ -47,16 +47,16 @@
 
 /* ------------------ */
 
-.appName {
+/* .appName {
   font-size: 80px;
   font-family: 'DM Serif Display', serif;
   font-weight: 100;
   letter-spacing: 4px;
-}
+} */
 
 .NavBarDropdownBtn {
   border-radius: 100px;
-  max-height: 50px;
+  max-height: 70px;
   cursor: pointer;
   margin-right: 15px;
 }

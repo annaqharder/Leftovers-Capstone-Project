@@ -31,7 +31,7 @@ const NavBar = () => {
         <div class="flex justify-between p-4 pb-8">
             {!user ? (
                 <h3>
-                    <span class="pl-3 font-sans text-8xl weight-bold tracking-tight" className="appName">LEFTOVERS</span>
+                    <span class="pl-3 font-sans text-8xl weight-bold tracking-tight">LEFTOVERS</span>
                 </h3>
             ): (
                 <h3>
@@ -62,7 +62,7 @@ const NavBar = () => {
                             <NavLink className="NavRoute" exact to="/" onClick={handleLogoutClick}>LOGOUT</NavLink>
                         </nav>
                     </div>
-                    <div>
+                    <div class="flex items-center">
                         <h2>HELLO, {user.first_name}!</h2>
                     </div>
                 </div>

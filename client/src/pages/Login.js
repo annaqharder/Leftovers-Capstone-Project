@@ -67,7 +67,7 @@ function Login() {
             <div >
                 <div class= "p-0 flex justify-around items-start flex-wrap h-full text-gray-800 w-screen">
                     <div class="md:w-8/12 lg:w-6/12 mb-12 md:mb-0">
-                        <img class="h-full" src="./images/restaurant13.webp" alt="loginImg"/>
+                        <img src="./images/restaurant13.webp" alt="loginImg"/>
                     </div>
                     <div class="md:w-8/12 lg:w-4/12 mb-12 mr-28 p-20 mt-44">
                         <div>

@@ -44,10 +44,10 @@ function Restaurants() {
                     </div>
                     <div class="text-right pr-14 text-xl">
                         <button
-                                class="uppercase p-2 font-bold border-2"
-                                type="button"
-                                onClick={() => setIsPopupOpen(true)}
-                            >
+                            class="uppercase p-2 font-bold border-2"
+                            type="button"
+                            onClick={() => setIsPopupOpen(true)}
+                        >
                                 ➕ New Restaurant
                         </button>
                     </div>
@@ -66,22 +66,20 @@ function Restaurants() {
                 </div>
             </section>
 
-        <section>
-            <div>
-                {isPopupOpen ? (
-                    <NewRestaurantForm
-                        onClose={() => setIsPopupOpen(false)}
+            <section>
+                <div>
+                    {isPopupOpen ? (
+                        <NewRestaurantForm
+                            onClose={() => setIsPopupOpen(false)}
+                        />
+                    ) : null}
+                </div>
+                <div>
+                    <RestaurantList
+                    restaurants={filteredEateries}
                     />
-                ) : null}
-            </div>
-            <div>
-                <RestaurantList
-                restaurants={filteredEateries}
-                />
-            </div>
-        </section>
-
-
+                </div>
+            </section>
         </div>
     );
 }

@@ -25,36 +25,38 @@ function CoffeeCard({ coffee }) {
 
     return (
         <div>
-            <div>
-                <Link to={`/coffee/cafes/${coffee.id}`} >
-                    <h2>{coffee.eatery_name}</h2>
-                </Link>
-                <h3>{coffee.eatery_type}</h3>
-                <h4>{coffee.eatery_address}</h4>
-                <img className="eateryImg" src={CoffeeStockImg}  />
-            </div>
-            <div>
-                <button
-                    type="button"
-                    className="secondary-button"
-                    onClick={() => setIsPopupOpen(true)}
-                >
-                        Edit
-                </button>
-                <button onClick={() => {window.confirm( `Are you sure you want to delete ${coffee.eatery_name}?`, ) && handleDelete(coffee.id)}}> 
-                    Delete 🗑️
-                </button>
-            </div>
-
-            <div>
+            <div class="flex py-4 mb-6 border-2 hover:shadow-xl">
+                <div class="px-4">
+                    <Link to={`/coffee/cafes/${coffee.id}`} >
+                        <h2 class="font-bold text-3xl">{coffee.eatery_name}</h2>
+                    </Link>
+                    <h3 class="font-bold text-xl">{coffee.eatery_type}</h3>
+                    <h4 class="font-bold text-xl">{coffee.eatery_address}</h4>
+                    <div class="flex justify-around pt-20">
+                        <button
+                            type="button"
+                            className="secondary-button"
+                            onClick={() => setIsPopupOpen(true)}
+                        >
+                            ✏️ Edit
+                        </button>
+                        <button onClick={() => {window.confirm( `Are you sure you want to delete ${coffee.eatery_name}?`, ) && handleDelete(coffee.id)}}> 
+                            🗑️ Delete
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <img className="eateryImg" src={CoffeeStockImg}  />
+                </div>
+                <div>
                 {isPopupOpen ? (
                     <EditCoffeeCard
                         onClose={() => setIsPopupOpen(false)}
                         coffee={coffee}
                     />
                 ) : null}
+                </div>
             </div>
-
         </div>
     );
 }

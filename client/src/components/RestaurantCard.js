@@ -41,25 +41,25 @@ function RestaurantCard({ restaurant }) {
                         >
                             ✏️ Edit
                         </button>
-
                         <button
                         onClick={() => { window.confirm( `Are you sure you want to delete ${restaurant.eatery_name}?`, ) && handleDelete(restaurant.id)}}>
                             🗑️ Delete
                         </button>
                     </div>
                 </div>
+
                 <div>
                     <img className="eateryImg" src={RestaurantStockImg} alt="eateryImg"/>
                 </div>
-            <div>
-                {isPopupOpen ? (
-                    <EditRestaurantCard
-                        onClose={() => setIsPopupOpen(false)}
-                        restaurant={restaurant}
-                    />
-                ) : null}
-            </div>
 
+                <div>
+                    {isPopupOpen ? (
+                        <EditRestaurantCard
+                            onClose={() => setIsPopupOpen(false)}
+                            restaurant={restaurant}
+                        />
+                    ) : null}
+                </div>
             </div>
         </div>
     );

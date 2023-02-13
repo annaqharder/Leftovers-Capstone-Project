@@ -40,11 +40,22 @@ function Coffee() {
 
     return (
         <div>
-            <div>
-                <h1>My Cafes & Coffee Shops</h1>
-            </div>
-
-            <div>
+            <section class="flex flex-row-reverse justify-between">
+                <div>
+                    <div class="text-7xl font-bold p-4 pr-12">
+                        <h1 class="tracking-tight text-right uppercase">Cafes & Coffee Shops</h1>
+                    </div>
+                    <div  class="text-right pr-14 text-xl">
+                        <button
+                            class="uppercase p-2 font-bold border-2"
+                            type="button"
+                            onClick={() => setIsPopupOpen(true)}
+                        >
+                            ➕ New Cafe or Coffee Shop
+                        </button>
+                    </div>
+                </div>
+                <div class="p-8">
                     <EaterySearch
                         searchQuery={searchQuery}
                         setSearchQuery={setSearchQuery}
@@ -53,54 +64,26 @@ function Coffee() {
                         sortBy={sortBy}
                         setSortBy={setSortBy}
                     />
-            </div>
+                </div>
+            </section>
 
-            <button
-                type="button"
-                className="secondary-button"
-                onClick={() => setIsPopupOpen(true)}
-            >
-                New Cafe/Coffee Shop
-            </button>
-
-            <div>
-                {isPopupOpen ? (
-                    <NewCoffeeForm
-                        onClose={() => setIsPopupOpen(false)}
-                    />
-                ) : null}
-            </div>
-
-            <div className="coffeeContainer">
+            <section>
                 <div>
+                    {isPopupOpen ? (
+                        <NewCoffeeForm
+                            onClose={() => setIsPopupOpen(false)}
+                        />
+                    ) : null}
                 </div>
                 <div>
-                <CoffeeList
-                    coffees={filteredCoffees}
-                />
-            </div>
-            </div>
-        <div>
-
-            {/* <div>
-                {showForm? (
-                    <div>
-                        <NewCoffeeForm />
-                    </div>) : (
-                    <div>
-                        <button onClick={() => setShowForm(true)}> Add Cafe/Coffee Shop</button>
-                    </div>
-                )}
-            </div>
-        <div>
-            {showForm ?
-                (<button onClick={() => setShowForm(false)}>Cancel</button>)
-            : null}
-        </div> */}
-            </div>
-
-
+                    <CoffeeList
+                        coffees={filteredCoffees}
+                    />
+                </div>
+            </section>
         </div>
+
+
     );
 }
 

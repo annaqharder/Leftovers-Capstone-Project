@@ -63,23 +63,24 @@ function Login() {
     }
 
     return (
-        <section>
-            <div class="container px-6 py-12 h-full">
-                <div class = "flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
+        <section class="container p-0 ml-6 mr-2">
+            <div >
+                <div class= "p-0 flex justify-around items-start flex-wrap h-full text-gray-800 w-screen">
                     <div class="md:w-8/12 lg:w-6/12 mb-12 md:mb-0">
-                        <img src="./images/restaurant13.webp" alt="loginImg"/>
+                        <img class="h-full" src="./images/restaurant13.webp" alt="loginImg"/>
                     </div>
-                    <div>
+                    <div class="md:w-8/12 lg:w-4/12 mb-12 mr-28 p-20 mt-44">
                         <div>
-                            <h2>Please Sign In</h2>
+                            <h2 class="font-sans font-family:'Raleway' text-4xl tracking-tight">Please Log In</h2>
                         </div>
                         <div>
                             <form onSubmit={handleSubmit}>
                                 <div>
                                     <br></br>
-                                    <div className="wrapper">
-                                        <div className="input-field">
+                                    <div>
+                                        <div class="mb-6">
                                             <input
+                                                class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red focus:outline-none"
                                                 type="text"
                                                 inputMode="email"
                                                 name="email"
@@ -93,53 +94,56 @@ function Login() {
 
                                 <div>
                                     <br></br>
-                                    <div className="wrapper">
-                                        <div className='input-field'>
+                                    <div>
+                                        <div class="mb-6 flex" >
                                             <input
+                                                class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red focus:outline-none"
                                                 type={type}
                                                 name="password"
                                                 placeholder="Password"
                                                 value={credentials.password}
                                                 onChange={handleChange}
                                                 autoComplete="current-password"
+
                                             />
-                                            <span onClick={handleToggle}><Icon icon={icon} size={25}/></span>
+                                            <span class="flex justify-around items-center" onClick={handleToggle}><Icon class="absolute pr-10" icon={icon} size={25}/></span>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div>
+                                <div class="flex justify-between">
                                     <div>
                                         <input
                                             type="checkbox"
                                         />
-                                        <label>Remember me</label>
+                                        <label>  Remember me</label>
                                     </div>
                                     <a href="#!"> Forgot Password?</a>
                                 </div>
 
                                 <button
                                     type="submit"
-                                    class="inline-block px-7 py-3 bg-zinc text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-red hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out w-full"
+                                    class="inline-block px-7 py-3 mt-4 bg-red text-white font-bold text-sm leading-snug uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out w-full"
                                 >LOG IN</button>
+
+                            <div class="pt-2 ">
+                                {errors.map((err) => (
+                                    <p key={err}>{err}</p>
+                                ))}
+                            </div>
+
                             </form>
                         </div>
 
                         <br></br>
-                        <div>
+                        <div class="flex">
                             <label>Don't have an account?</label>
-                            <Link onClick={handleToSignupPage}>Sign up</Link>
+                            <Link onClick={handleToSignupPage} class="ml-2"> Sign up</Link>
                         </div>
                         </div>
                         </div>
 
-                        <div>
-                            {errors.map((err) => (
-                                <p key={err}>{err}</p>
-                            ))}
-                        </div>
-
-                    </div>
+                </div>
         </section>
     );
 }

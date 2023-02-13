@@ -28,20 +28,20 @@ const NavBar = () => {
 
     return (
         <>
-        <div className="NavBar">
+        <div class="flex justify-between p-4 pb-8">
             {!user ? (
                 <h3>
-                    <span className="appName">LEFTOVERS</span>
+                    <span class="pl-3 font-sans text-8xl weight-bold tracking-tight" className="appName">LEFTOVERS</span>
                 </h3>
             ): (
                 <h3>
-                <span className="appName" onClick={handleHome}>LEFTOVERS</span>
+                <span class="pl-3 font-sans text-8xl weight-bold tracking-tight" onClick={handleHome}>LEFTOVERS</span>
                 </h3>
             )}
 
             {!user ? (
-            <div>
-                <NavLink exact to="/" onClick={handleToLoginClick}>LOGIN</NavLink>
+            <div class="flex items-center px-8">
+                <NavLink class="font-bold" exact to="/" onClick={handleToLoginClick}>LOGIN</NavLink>
             </div>)
             : (
             <div className="NavBarRoutes">

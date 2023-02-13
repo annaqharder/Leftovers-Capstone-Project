@@ -37,28 +37,36 @@ function Restaurants() {
 
     return (
         <div>
-            <div>
-                <h1>My Restaurants</h1>
-            </div>
-
-            <div>
-                    <EaterySearch
-                        searchQuery={searchQuery}
-                        setSearchQuery={setSearchQuery}
-                        filterBy={filterBy}
-                        setFilterBy={setFilterBy}
-                        sortBy={sortBy}
-                        setSortBy={setSortBy}
-                    />
+            <section class="flex flex-row-reverse justify-between">
+                <div>
+                    <div class="text-7xl font-bold p-4 pr-12">
+                        <h1 class="tracking-tight text-right uppercase">Restaurants</h1>
+                    </div>
+                    <div class="text-right pr-14 text-xl">
+                        <button
+                                class="uppercase p-2 font-bold border-2"
+                                type="button"
+                                onClick={() => setIsPopupOpen(true)}
+                            >
+                                ➕ New Restaurant
+                        </button>
+                    </div>
                 </div>
-            <button
-                type="button"
-                className="secondary-button"
-                onClick={() => setIsPopupOpen(true)}
-            >
-                New Restaurant
-            </button>
+                <div>
+                    <div class="p-8">
+                        <EaterySearch
+                            searchQuery={searchQuery}
+                            setSearchQuery={setSearchQuery}
+                            filterBy={filterBy}
+                            setFilterBy={setFilterBy}
+                            sortBy={sortBy}
+                            setSortBy={setSortBy}
+                        />
+                    </div>
+                </div>
+            </section>
 
+        <section>
             <div>
                 {isPopupOpen ? (
                     <NewRestaurantForm
@@ -66,14 +74,12 @@ function Restaurants() {
                     />
                 ) : null}
             </div>
-
-        <div className="restaurantContainer">
             <div>
                 <RestaurantList
                 restaurants={filteredEateries}
                 />
             </div>
-        </div>
+        </section>
 
 
         </div>

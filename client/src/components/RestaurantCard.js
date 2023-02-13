@@ -25,29 +25,32 @@ function RestaurantCard({ restaurant }) {
 
     return (
         <div>
-            <div>
-                <Link to={`/restaurants/${restaurant.id}`} >
-                    <h2>{restaurant.eatery_name}</h2>
-                </Link>
-                <h3>{restaurant.eatery_type}</h3>
-                <h4>{restaurant.eatery_address}</h4>
-                {/* <p>Notes: {restaurant.eatery_notes}</p> */}
-                <img className="eateryImg" src={RestaurantStockImg} alt="eateryImg"/>
-                <div>
-                    <button
-                    type="button"
-                    className="secondary-button"
-                    onClick={() => setIsPopupOpen(true)}
-                    >
-                        Edit
-                    </button>
+            <div class="flex py-4 mb-6 border-2 hover:shadow-xl">
+                <div class="px-4">
+                    <Link to={`/restaurants/${restaurant.id}`} >
+                        <h2 class="font-bold text-3xl">{restaurant.eatery_name}</h2>
+                    </Link>
+                    <h3 class="font-bold text-xl">{restaurant.eatery_type}</h3>
+                    <h4 class="font-bold text-xl">{restaurant.eatery_address}</h4>
+                    {/* <p>Notes: {restaurant.eatery_notes}</p> */}
+                    <div class="flex justify-around pt-20">
+                        <button
+                        type="button"
+                        className="secondary-button"
+                        onClick={() => setIsPopupOpen(true)}
+                        >
+                            ✏️ Edit
+                        </button>
 
-                    <button
-                    onClick={() => { window.confirm( `Are you sure you want to delete ${restaurant.eatery_name}?`, ) && handleDelete(restaurant.id)}}>
-                        Delete 🗑️
-                    </button>
+                        <button
+                        onClick={() => { window.confirm( `Are you sure you want to delete ${restaurant.eatery_name}?`, ) && handleDelete(restaurant.id)}}>
+                            🗑️ Delete
+                        </button>
+                    </div>
                 </div>
-
+                <div>
+                    <img className="eateryImg" src={RestaurantStockImg} alt="eateryImg"/>
+                </div>
             <div>
                 {isPopupOpen ? (
                     <EditRestaurantCard

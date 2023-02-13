@@ -17,10 +17,12 @@ function EaterySearch({searchQuery, setSearchQuery, filterBy, setFilterBy, sortB
 
 
     return (
-        <>
+        <section>
             <div>
-                <div> Search for Restaurant Name or Location: </div>
+                <div class="text-2xl mb-2 font-bold"> Search:  </div>
                     <input
+                        class="px-4 py-3 text-xl border border-solid focus:text-gray-700"
+                        placeholder='Name or Location'
                         id="searchbar"
                         type="text"
                         value={searchQuery}
@@ -42,29 +44,32 @@ function EaterySearch({searchQuery, setSearchQuery, filterBy, setFilterBy, sortB
             </div> */}
 
             <div>
-            <div> Sort by:</div>
-            <label>
-                <input
-                type="radio"
-                value="Alphabetically"
-                name="sort"
-                checked={sortBy === "Alphabetically"}
-                onChange={handleSortChange}
-                />
-                Alphabetically
-            </label>
-            <label>
-                <input
-                type="radio"
-                value="Neighborhood"
-                name="sort"
-                checked={sortBy === "Neighborhood"}
-                onChange={handleSortChange}
-                />
-                Neighborhood
-            </label>
+            <div class="text-2xl pt-4 font-bold"> Sort by:</div>
+                <label class="text-xl">
+                    <input
+                    class="mr-1 mb-3"
+                    type="radio"
+                    value="Alphabetically"
+                    name="sort"
+                    checked={sortBy === "Alphabetically"}
+                    onChange={handleSortChange}
+                    />
+                    Alphabetically
+                </label>
+                <br></br>
+                <label class="text-xl">
+                    <input
+                    class="mr-1"
+                    type="radio"
+                    value="Neighborhood"
+                    name="sort"
+                    checked={sortBy === "Neighborhood"}
+                    onChange={handleSortChange}
+                    />
+                    Neighborhood
+                </label>
             </div>
-        </>)
+        </section>)
     ;
 }
 

@@ -236,14 +236,14 @@
   position: fixed;
   inset: 0;
   z-index: 999;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(218, 213, 213, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .dialog {
-  background-color: #242a31;
+  background-color: #a8cde6;
   padding: 20px;
   margin: 30px;
   border-radius: 10px;
@@ -256,7 +256,8 @@
 
 .eateryImg{
   max-width: 300px;
-  border-radius: 20px;
+  /* border-radius: 10px; */
+  /* border: solid; */
 }
 
 a:link {

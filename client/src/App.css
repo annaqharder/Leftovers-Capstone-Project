@@ -236,22 +236,23 @@
   position: fixed;
   inset: 0;
   z-index: 999;
-  background-color: rgba(218, 213, 213, 0.7);
+  background-color: rgba(218, 213, 213, 0.783);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .dialog {
-  background-color: #a8cde6;
-  padding: 20px;
-  margin: 30px;
+  background-color: #bfbab6;
+  padding: 40px;
+  margin: 10px;
   border-radius: 10px;
+  width: 40%
 }
 
 .dialog-buttons {
   display: flex;
-  gap: 20px;
+  gap: 50px;
 }
 
 .eateryImg{

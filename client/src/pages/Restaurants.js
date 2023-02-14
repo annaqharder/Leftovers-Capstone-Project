@@ -46,7 +46,7 @@ function Restaurants() {
             </section>
 
             <div class="flex justify-between">
-                <div class="p-8">
+                <div class="py-3 px-8">
                     <EaterySearch
                         searchQuery={searchQuery}
                         setSearchQuery={setSearchQuery}

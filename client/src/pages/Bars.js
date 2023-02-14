@@ -37,13 +37,15 @@ function Bars() {
     return (
         <div>
             <section class="bg-bar bg-cover flex justify-between pb-80 shadow-lg">
-                <div class="text-9xl font-bold p-2 pr-8 bg-red w-fit bg-opacity-60">
-                    <h1 class="tracking-tight text-left uppercase text-white">Bars</h1>
+                <div>
+                    <div class="text-9xl font-bold p-2 pr-8 bg-red w-fit bg-opacity-60">
+                        <h1 class="tracking-tight text-left uppercase text-white">Bars</h1>
+                    </div>
                 </div>
             </section>
 
             <div class="flex justify-between">
-                <div class="p-8">
+                <div class="py-3 px-8">
                     <EaterySearch
                         searchQuery={searchQuery}
                         setSearchQuery={setSearchQuery}

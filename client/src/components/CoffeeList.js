@@ -10,7 +10,6 @@ function CoffeeList({ coffees }) {
         />
     ))
 
-    console.log(CoffeeArray)
     return (
         <div>
             <div class="mx-20 my-10 grid grid-cols-2 gap-8">

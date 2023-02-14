@@ -37,10 +37,10 @@ function Restaurants() {
 
     return (
         <div>
-            <section class="bg-restaurant justify-between pb-80 shadow-lg">
+            <section class="bg-restaurant justify-between pb-80 shadow-xl">
                 <div>
-                    <div class="text-8xl font-bold p-2 bg-tan w-fit bg-opacity-70">
-                        <h1 class="tracking-tight text-left uppercase text-white">Restaurants</h1>
+                    <div class="text-6xl font-bold p-2 bg-tan bg-opacity-70">
+                        <h1 class="font-sans font-family:'Raleway' tracking-tight text-center uppercase text-white">Restaurants</h1>
                     </div>
                 </div>
             </section>

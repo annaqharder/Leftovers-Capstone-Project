@@ -81,6 +81,7 @@ function EditVisitEntry({visit, onClose}) {
                         <div>
                             <label>Visit Date: </label>
                             <input
+                                class="indent-2 w-4/6 rounded border border-solid border-gray-300"
                                 type="date"
                                 name="date"
                                 value={date}
@@ -90,6 +91,7 @@ function EditVisitEntry({visit, onClose}) {
                         <div>
                             <label>Visit Occasion: </label>
                             <input
+                                class="indent-2 w-4/6 rounded border border-solid border-gray-300"
                                 type="text"
                                 name="occasion"
                                 value={occasion}
@@ -99,6 +101,7 @@ function EditVisitEntry({visit, onClose}) {
                         <div>
                             <label>Visit Notes: </label>
                             <textarea
+                                class="indent-2 w-4/6 rounded border border-solid border-gray-300"
                                 type="textarea"
                                 rows="6"
                                 cols="40"
@@ -110,6 +113,7 @@ function EditVisitEntry({visit, onClose}) {
                         <div>
                             <label>Drink: </label>
                             <input
+                                class="indent-2 w-4/6 rounded border border-solid border-gray-300"
                                 type="text"
                                 name="drinks"
                                 value={drink}
@@ -119,6 +123,7 @@ function EditVisitEntry({visit, onClose}) {
                         <div>
                             <label>Appetizer: </label>
                             <input
+                                class="indent-2 w-4/6 rounded border border-solid border-gray-300"
                                 type="text"
                                 name="appetizer"
                                 value={appetizer}
@@ -128,6 +133,7 @@ function EditVisitEntry({visit, onClose}) {
                         <div>
                             <label>Food: </label>
                             <input
+                                class="indent-2 w-4/6 rounded border border-solid border-gray-300"
                                 type="text"
                                 name="food"
                                 value={food}
@@ -137,6 +143,7 @@ function EditVisitEntry({visit, onClose}) {
                         <div>
                             <label>Dessert: </label>
                             <input
+                                class="indent-2 w-4/6 rounded border border-solid border-gray-300"
                                 type="text"
                                 name="dessert"
                                 value={dessert}
@@ -146,6 +153,7 @@ function EditVisitEntry({visit, onClose}) {
                         <div>
                             <label>Other Food/Drink: </label>
                             <input
+                                class="indent-2 w-4/6 rounded border border-solid border-gray-300"
                                 type="text"
                                 name="other_consumables"
                                 value={other_consumables}

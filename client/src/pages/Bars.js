@@ -36,10 +36,10 @@ function Bars() {
 
     return (
         <div>
-            <section class="bg-bar bg-cover flex justify-between pb-80 shadow-lg">
+            <section class="bg-bar bg-cover justify-between pb-80 shadow-xl">
                 <div>
-                    <div class="text-8xl font-bold p-2 pr-8 bg-red w-fit bg-opacity-70">
-                        <h1 class="tracking-tight text-left uppercase text-white">Bars</h1>
+                    <div class="text-6xl font-bold p-2 pr-12 bg-red bg-opacity-80">
+                        <h1 class="font-sans font-family:'Raleway' tracking-tight text-center uppercase text-white">Bars</h1>
                     </div>
                 </div>
             </section>

@@ -11,15 +11,15 @@ function Profile() {
     return (
         <div>
             <div>
-                <div class="text-9xl font-bold p-4 pr-12 bg-green bg-opacity-70">
-                    <h1 class="tracking-tight text-right uppercase text-white">Profile</h1>
+                <div class="text-7xl font-bold p-4 pr-12 bg-green bg-opacity-70">
+                    <h1 class="font-sans font-family:'Raleway' tracking-tight text-right uppercase text-white">Profile</h1>
                 </div>
             </div>
 
             <div class="flex">
                 <div class="md:w-8/12 lg:w-5/12 p-6 pt-16">
                     <div>
-                        <img class="ml-28 rounded-full" src={user.avatar ? user.avatar : NavImg }/>
+                        <img class="rounded-full ml-auto mr-auto" src={user.avatar ? user.avatar : NavImg }/>
                         <h1 class="text-center text-3xl font-bold uppercase py-3">{user.first_name} {user.last_name}</h1>
                         <h2 class="text-center text-xl font-bold">{user.location}</h2>
                         <h4 class="text-center pt-3">{user.bio}</h4>
@@ -43,12 +43,12 @@ function Profile() {
                 </div>
 
                 <div class="container grid grid-cols-3 gap-2 mx-auto pt-2 pr-2">
-                    <img src="./images/cafe6.webp"/>
-                    <img src="./images/restaurant5.webp"/>
-                    <img src="./images/cafe7.webp"/>
-                    <img src="./images/restaurant1.webp"/>
-                    <img src="./images/bar1.webp"/>
-                    <img src="./images/restaurant6.webp"/>
+                    <img class="shadow-2xl" src="./images/cafe6.webp"/>
+                    <img class="shadow-2xl" src="./images/restaurant5.webp"/>
+                    <img class="shadow-2xl"src="./images/cafe7.webp"/>
+                    <img class="shadow-2xl" src="./images/restaurant1.webp"/>
+                    <img class="shadow-2xl" src="./images/bar1.webp"/>
+                    <img class="shadow-2xl" src="./images/restaurant6.webp"/>
                 </div>
             </div>
         </div>

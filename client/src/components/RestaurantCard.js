@@ -25,7 +25,7 @@ function RestaurantCard({ restaurant }) {
 
     return (
         <div>
-            <div class="flex py-4 mb-6 border-2 hover:shadow-xl">
+            <div class="flex justify-between py-4 mb-6 border-2 hover:shadow-xl">
                 <div class="px-4">
                     <Link to={`/restaurants/${restaurant.id}`} >
                         <h2 class="font-bold text-3xl">{restaurant.eatery_name}</h2>
@@ -49,7 +49,7 @@ function RestaurantCard({ restaurant }) {
                 </div>
 
                 <div>
-                    <img className="eateryImg" src={RestaurantStockImg} alt="eateryImg"/>
+                    <img class="w-80" className="eateryImg" src={RestaurantStockImg} alt="eateryImg"/>
                 </div>
 
                 <div>

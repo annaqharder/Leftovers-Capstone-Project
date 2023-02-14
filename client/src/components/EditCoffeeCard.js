@@ -64,7 +64,7 @@ function EditCoffeeCard({coffee, onClose}) {
                 <div class="flex py-2">
                     <label class="text-lg font-bold pr-2">Coffee Name: </label>
                     <input
-                        class="indent-2 w-4/6 rounded"
+                        class="indent-2 w-4/6 rounded border border-solid border-gray-300"
                         type="text"
                         name="eatery_name"
                         value={eateryName}
@@ -75,7 +75,7 @@ function EditCoffeeCard({coffee, onClose}) {
                 <div class="flex py-2">
                     <label class="text-lg font-bold pr-2">Coffee Address: </label>
                     <input
-                        class="indent-2 w-4/6 rounded"
+                        class="indent-2 w-4/6 rounded border border-solid border-gray-300"
                         type="text"
                         name="eatery_address"
                         value={eateryAddress}
@@ -86,7 +86,7 @@ function EditCoffeeCard({coffee, onClose}) {
                 <div class="flex py-2">
                     <label class="text-lg font-bold pr-2">Coffee Neighborhood: </label>
                     <input
-                        class="indent-2 w-3/6 rounded"
+                        class="indent-2 w-3/6 rounded border border-solid border-gray-300"
                         type="text"
                         name="eatery_neighborhood"
                         value={eateryNeighborhood}
@@ -97,7 +97,7 @@ function EditCoffeeCard({coffee, onClose}) {
                 <div class="flex py-2">
                     <label class="text-lg font-bold pr-2">Coffee Type: </label>
                     <input
-                        class="indent-2 w-4/6 rounded"
+                        class="indent-2 w-4/6 rounded border border-solid border-gray-300"
                         type="text"
                         name="eatery_type"
                         placeholder="French Cafe, Bakery, Tea House..."

@@ -257,6 +257,7 @@
 
 .eateryImg{
   max-width: 300px;
+  float: right
   /* border-radius: 10px; */
   /* border: solid; */
 }

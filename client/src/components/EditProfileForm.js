@@ -52,7 +52,7 @@ function EditProfileForm({onClose}) {
                 <div class="flex py-2">
                         <label class="text-lg font-bold pr-2">First Name: </label>
                         <input
-                            class="indent-2 w-4/6 rounded"
+                            class="indent-2 w-4/6 rounded border border-solid border-gray-300"
                             type="text"
                             name="first_name"
                             value={profile.first_name}
@@ -63,7 +63,7 @@ function EditProfileForm({onClose}) {
                     <div class="flex py-2">
                         <label class="text-lg font-bold pr-2">Last Name: </label>
                         <input
-                            class="indent-2 w-4/6 rounded"
+                            class="indent-2 w-4/6 rounded border border-solid border-gray-300"
                             type="text"
                             name="last_name"
                             value={profile.last_name}
@@ -74,7 +74,7 @@ function EditProfileForm({onClose}) {
                     <div class="flex py-2">
                         <label class="text-lg font-bold pr-2">Email: </label>
                         <input
-                            class="indent-2 w-4/6 rounded"
+                            class="indent-2 w-4/6 rounded border border-solid border-gray-300"
                             type="text"
                             name="email"
                             value={profile.email}
@@ -85,7 +85,7 @@ function EditProfileForm({onClose}) {
                     <div class="flex py-2">
                         <label class="text-lg font-bold pr-2">Location: </label>
                         <input
-                            class="indent-2 w-4/6 rounded"
+                            class="indent-2 w-4/6 rounded border border-solid border-gray-300"
                             type="text"
                             name="location"
                             value={profile.location}
@@ -96,7 +96,7 @@ function EditProfileForm({onClose}) {
                     <div class="flex py-2">
                         <label class="text-lg font-bold pr-2">Bio: </label>
                         <textarea
-                            class="indent-2 w-5/6 rounded"
+                            class="indent-2 w-5/6 rounded border border-solid border-gray-300"
                             rows="4"
                             cols="20"
                             type="text"
@@ -109,7 +109,7 @@ function EditProfileForm({onClose}) {
                     <div class="flex py-2">
                         <label class="text-lg font-bold pr-2">Profile Picture: </label>
                         <input
-                            class="indent-2 w-4/6 rounded"
+                            class="indent-2 w-4/6 rounded border border-solid border-gray-300"
                             type="text"
                             name="avatar"
                             value={profile.avatar}
@@ -120,7 +120,7 @@ function EditProfileForm({onClose}) {
                     <div class="flex py-2">
                         <label class="text-lg font-bold pr-2">New Password: </label>
                         <input
-                            class="indent-2 w-4/6 rounded"
+                            class="indent-2 w-4/6 rounded border border-solid border-gray-300"
                             type="new-password"
                             name="password"
                             value={profile.password}

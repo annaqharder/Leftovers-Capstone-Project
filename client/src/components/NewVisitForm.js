@@ -79,30 +79,33 @@ function NewVisitForm({onClose}) {
     return (
         <div className="back-drop">
             <div className="dialog">
-            <h1>Add Visit</h1>
+            <h1 class="text-4xl font-bold py-2 mb-4 text-center uppercase">Add Visit</h1>
             <div>
                     <form onSubmit={handleNewVisit}>
-                    <div>
-                        <label>Visit Date: </label>
+                    <div class="flex py-2">
+                        <label class="text-lg font-bold pr-2">Visit Date: </label>
                         <input
+                            class="indent-2 w-4/6 rounded border border-solid border-gray-300"
                             type="date"
                             name="date"
                             value={date}
                             onChange={(e) => setDate(e.target.value)}
                         />
                     </div>
-                    <div>
-                        <label>Visit Occasion: </label>
+                    <div class="flex py-2" >
+                        <label class="text-lg font-bold pr-2">Visit Occasion: </label>
                         <input
+                            class="indent-2 w-4/6 rounded border border-solid border-gray-300"
                             type="text"
                             name="occasion"
                             value={occasion}
                             onChange={(e) => setOccasion(e.target.value)}
                         />
                     </div>
-                    <div>
-                        <label>Visit Notes: </label>
+                    <div class="flex py-2">
+                        <label class="text-lg font-bold pr-2">Visit Notes: </label>
                         <textarea
+                            class="indent-2 w-4/6 rounded border border-solid border-gray-300"
                             type="textarea"
                             rows="6"
                             cols="40"
@@ -111,57 +114,61 @@ function NewVisitForm({onClose}) {
                             onChange={(e) => setNotes(e.target.value)}
                         />
                     </div>
-                    <div>
-                        <label>Drink: </label>
+                    <div class="flex py-2">
+                        <label class="text-lg font-bold pr-2">Drink: </label>
                         <input
+                            class="indent-2 w-5/6 rounded border border-solid border-gray-300"
                             type="text"
                             name="drinks"
                             value={drink}
                             onChange={(e) => setDrink(e.target.value)}
                         />
                     </div>
-                    <div>
-                        <label>Appetizer: </label>
+                    <div class="flex py-2">
+                        <label class="text-lg font-bold pr-2">Appetizer: </label>
                         <input
+                            class="indent-2 w-5/6 rounded border border-solid border-gray-300"
                             type="text"
                             name="appetizer"
                             value={appetizer}
                             onChange={(e) => setAppetizer(e.target.value)}
                         />
                     </div>
-                    <div>
-                        <label>Food: </label>
+                    <div class="flex py-2">
+                        <label class="text-lg font-bold pr-2">Food: </label>
                         <input
+                            class="indent-2 w-5/6 rounded border border-solid border-gray-300"
                             type="text"
                             name="food"
                             value={food}
                             onChange={(e) => setFood(e.target.value)}
                         />
                     </div>
-                    <div>
-                        <label>Dessert: </label>
+                    <div class="flex py-2">
+                        <label class="text-lg font-bold pr-2">Dessert: </label>
                         <input
+                            class="indent-2 w-5/6 rounded border border-solid border-gray-300"
                             type="text"
                             name="dessert"
                             value={dessert}
                             onChange={(e) => setDessert(e.target.value)}
                         />
                     </div>
-                    <div>
-                        <label>Other Food/Drink: </label>
+                    <div class="flex py-2">
+                        <label class="text-lg font-bold pr-2">Other Food/Drink: </label>
                         <input
+                            class="indent-2 w-4/6 rounded border border-solid border-gray-300"
                             type="text"
                             name="other_consumables"
                             value={other_consumables}
                             onChange={(e) => setOther_consumables(e.target.value)}
                         />
                     </div>
-                    <div>
-                        <label>Visit Rating: </label>
+                    <div class="flex py-2" >
+                        <label class="flex text-lg font-bold pr-2">Visit Rating: </label>
                         {stars.map((_, index) => {
                                 return (
                                     <FaStar
-                                        className="stars"
                                         key={index}
                                         size={24}
                                         value={rating}
@@ -174,9 +181,10 @@ function NewVisitForm({onClose}) {
                                 )
                             })}
                         </div>
-                    <div>
-                        <label>Visit Images: </label>
+                    <div class="flex py-2">
+                        <label class="text-lg font-bold pr-2">Visit Images: </label>
                         <input
+                            class="indent-2 w-4/6 rounded border border-solid border-gray-300"
                             type="images"
                             name="image"
                             value={image}
@@ -184,9 +192,19 @@ function NewVisitForm({onClose}) {
                         />
                     </div>
 
-                <div className='dialog-buttons'>
-                    <button className="secondary-button" onClick={onClose}>Cancel</button>
-                    <button>Create Visit</button>
+
+                    <div class="flex justify-between">
+                    <button
+                        class="inline-block px-7 py-3 mt-4 bg-green text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out w-half"
+                    >
+                        Create Visit
+                    </button>
+                    <button
+                        class="inline-block px-7 py-3 mt-4 bg-red text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out w-half"
+                        onClick={onClose}
+                    >
+                        Cancel
+                    </button>
                 </div>
 
                 </form>

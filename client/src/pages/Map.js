@@ -62,94 +62,113 @@ const Map = () => {
     // })
 
     return isLoaded ? (
-        <div>
-            <GoogleMap
-            mapContainerStyle={containerStyle}
-            center={center}
-            // center={currentPosition}
-            zoom={10}
-            >
-
-            {restaurants.map((marker) => (
-                <Marker
-                    id="marker"
-                    key={marker.eatery_name}
-                    position={{ lat:marker.latitude, lng: marker.longitude }}
-                    icon={{
-                        url: "http://maps.google.com/mapfiles/ms/icons/purple-dot.png"
-                    }}
-                    animation={2}
-                    onMouseOver={()=>{
-                        setSelected(marker);
-                    }}
-                />
-            ))}
-
-            {coffees.map((marker) => (
-                <Marker
-                    id="marker"
-                    key={marker.eatery_name}
-                    position={{ lat:marker.latitude, lng: marker.longitude }}
-                    icon={{
-                        url: "http://maps.google.com/mapfiles/ms/icons/pink-dot.png"
-                    }}
-                    animation={2}
-                    onMouseOver={()=>{
-                        setSelected(marker);
-                    }}
-                />
-            ))}
-
-            {bars.map((marker) => (
-                <Marker
-                    id="marker"
-                    key={marker.eatery_name}
-                    position={{ lat:marker.latitude, lng: marker.longitude }}
-                    icon={{
-                        url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png"
-                    }}
-                    animation={2}
-                    onMouseOver={()=>{
-                        setSelected(marker);
-                    }}
-                />
-            ))}
-
-            {eateries.map((marker) => (
-                <Marker
-                    id="marker"
-                    key={marker.eatery_name}
-                    position={{ lat:marker.latitude, lng: marker.longitude }}
-                    icon={{
-                        url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png"
-                    }}
-                    animation={2}
-                    onMouseOver={()=>{
-                        setSelected(marker);
-                    }}
-                />
-            ))}
-
-            { selected ? (
-                <InfoWindow position={{ lat: selected.latitude, lng: selected.longitude }} onCloseClick={() => setSelected(null)}>
-                    <div>
-                        <Link to={`/${selected.eatery_category}s/${selected.id}`}>
-                            <h2>{selected.eatery_name}</h2>
-                        </Link>
-                            <p>{selected.eatery_category}: {selected.eatery_type}</p>
-                            <p>{selected.eatery_address}</p>
-                    </div>
-                </InfoWindow>
-            ) : null}
-            <> </>
-            </GoogleMap>
+        <section class="flex justify-around p-6 items-center">
             <div>
-                <img src="http://maps.google.com/mapfiles/ms/icons/purple-dot.png"/><span>Restaurants</span>
-                <img src="http://maps.google.com/mapfiles/ms/icons/pink-dot.png"/><span>Cafes & Coffee Shops</span>
-                <img src="http://maps.google.com/mapfiles/ms/icons/green-dot.png"/><span>Bars</span>
-                <img src="http://maps.google.com/mapfiles/ms/icons/yellow-dot.png"/><span>Want To Visit</span>
+                <GoogleMap
+                mapContainerStyle={containerStyle}
+                center={center}
+                // center={currentPosition}
+                zoom={10}
+                >
+
+                {restaurants.map((marker) => (
+                    <Marker
+                        id="marker"
+                        key={marker.eatery_name}
+                        position={{ lat:marker.latitude, lng: marker.longitude }}
+                        icon={{
+                            url: "http://maps.google.com/mapfiles/ms/icons/purple-dot.png"
+                        }}
+                        animation={2}
+                        onMouseOver={()=>{
+                            setSelected(marker);
+                        }}
+                    />
+                ))}
+
+                {coffees.map((marker) => (
+                    <Marker
+                        id="marker"
+                        key={marker.eatery_name}
+                        position={{ lat:marker.latitude, lng: marker.longitude }}
+                        icon={{
+                            url: "http://maps.google.com/mapfiles/ms/icons/pink-dot.png"
+                        }}
+                        animation={2}
+                        onMouseOver={()=>{
+                            setSelected(marker);
+                        }}
+                    />
+                ))}
+
+                {bars.map((marker) => (
+                    <Marker
+                        id="marker"
+                        key={marker.eatery_name}
+                        position={{ lat:marker.latitude, lng: marker.longitude }}
+                        icon={{
+                            url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png"
+                        }}
+                        animation={2}
+                        onMouseOver={()=>{
+                            setSelected(marker);
+                        }}
+                    />
+                ))}
+
+                {eateries.map((marker) => (
+                    <Marker
+                        id="marker"
+                        key={marker.eatery_name}
+                        position={{ lat:marker.latitude, lng: marker.longitude }}
+                        icon={{
+                            url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png"
+                        }}
+                        animation={2}
+                        onMouseOver={()=>{
+                            setSelected(marker);
+                        }}
+                    />
+                ))}
+
+                { selected ? (
+                    <InfoWindow position={{ lat: selected.latitude, lng: selected.longitude }} onCloseClick={() => setSelected(null)}>
+                        <div>
+                            <Link to={`/${selected.eatery_category}s/${selected.id}`}>
+                                <h2>{selected.eatery_name}</h2>
+                            </Link>
+                                <p>{selected.eatery_category}: {selected.eatery_type}</p>
+                                <p>{selected.eatery_address}</p>
+                        </div>
+                    </InfoWindow>
+                ) : null}
+                <> </>
+                </GoogleMap>
             </div>
-        </div>
+
+            <div class="drop-shadow-2xl">
+                <h1 class="text-5xl font-bold py-4 text-left tracking-widest">KEY</h1>
+                <div class="flex py-2">
+                    <img src="http://maps.google.com/mapfiles/ms/icons/purple-dot.png"/>
+                    <h1 class="uppercase text-lg font-bold pt-1">Restaurants</h1>
+                </div>
+
+                <div class="flex py-2">
+                    <img src="http://maps.google.com/mapfiles/ms/icons/pink-dot.png"/>
+                    <h1 class="uppercase text-lg font-bold pt-1">Cafes & Coffee Shops</h1>
+                </div>
+
+                <div class="flex py-2">
+                    <img src="http://maps.google.com/mapfiles/ms/icons/green-dot.png"/>
+                    <h1 class="uppercase text-lg font-bold pt-1">Bars</h1>
+                </div>
+
+                <div class="flex py-2">
+                    <img src="http://maps.google.com/mapfiles/ms/icons/yellow-dot.png"/>
+                    <h1 class="uppercase text-lg font-bold pt-1">Want To Visit</h1>
+                </div>
+            </div>
+        </section>
     ) : (<></>)
 
 }

@@ -20,13 +20,15 @@ function Profile() {
                 </div>
             </div>
 
-            <button
-                type="button"
-                className="secondary-button"
-                onClick={() => setIsPopupOpen(true)}
-            >
-                Edit Profile
-            </button>
+            <div class="text-left pt-4 pr-14 text-xl">
+                <button
+                    class="uppercase p-2 font-bold border-2"
+                    type="button"
+                    onClick={() => setIsPopupOpen(true)}
+                >
+                    Edit Profile
+                </button>
+            </div>
 
             <div>
                 {isPopupOpen ? (

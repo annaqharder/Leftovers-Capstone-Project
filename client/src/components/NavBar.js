@@ -31,11 +31,11 @@ const NavBar = () => {
         <div class="flex justify-between p-4 pb-8 shadow-md">
             {!user ? (
                 <h3>
-                    <span class="pl-3 font-sans text-7xl weight-bold tracking-tighter">LEFTOVERS <span class="text-xl font-medium">|</span><span class="text-sm font-medium"> track & manage your favorite eateries</span></span>
+                    <span class="pl-3 font-sans text-7xl weight-bold tracking-tight">LEFTOVERS <span class="text-xl font-medium">|</span><span class="text-sm font-medium"> track & manage your favorite eateries</span></span>
                 </h3>
             ): (
                 <h3>
-                <span class="pl-3 font-sans text-7xl weight-bold tracking-tighter" onClick={handleHome}>LEFTOVERS</span>
+                <span class="pl-3 font-sans text-7xl weight-bold tracking-tight" onClick={handleHome}>LEFTOVERS</span>
                 </h3>
             )}
 

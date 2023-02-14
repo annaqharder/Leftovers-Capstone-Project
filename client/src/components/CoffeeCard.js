@@ -32,7 +32,7 @@ function CoffeeCard({ coffee }) {
                     </Link>
                     <h3 class="font-bold text-xl">{coffee.eatery_type}</h3>
                     <h4 class="font-bold text-xl">{coffee.eatery_address}</h4>
-                    <div class="flex justify-around pt-20">
+                    <div class="flex justify-around pt-24">
                         <button
                             type="button"
                             className="secondary-button"

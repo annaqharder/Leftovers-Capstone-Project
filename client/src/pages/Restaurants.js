@@ -37,34 +37,35 @@ function Restaurants() {
 
     return (
         <div>
-            <section class="flex flex-row-reverse justify-between">
+            <section class="bg-restaurant justify-between pb-80 shadow-lg">
                 <div>
-                    <div class="text-7xl font-bold p-4 pr-12">
-                        <h1 class="tracking-tight text-right uppercase">Restaurants</h1>
-                    </div>
-                    <div class="text-right pr-14 text-xl">
-                        <button
-                            class="uppercase p-2 font-bold border-2"
-                            type="button"
-                            onClick={() => setIsPopupOpen(true)}
-                        >
-                                ➕ New Restaurant
-                        </button>
-                    </div>
-                </div>
-                <div>
-                    <div class="p-8">
-                        <EaterySearch
-                            searchQuery={searchQuery}
-                            setSearchQuery={setSearchQuery}
-                            filterBy={filterBy}
-                            setFilterBy={setFilterBy}
-                            sortBy={sortBy}
-                            setSortBy={setSortBy}
-                        />
+                    <div class="text-9xl font-bold p-2 bg-tan w-fit bg-opacity-60">
+                        <h1 class="tracking-tight text-left uppercase text-white">Restaurants</h1>
                     </div>
                 </div>
             </section>
+
+            <div class="flex justify-between">
+                <div class="p-8">
+                    <EaterySearch
+                        searchQuery={searchQuery}
+                        setSearchQuery={setSearchQuery}
+                        filterBy={filterBy}
+                        setFilterBy={setFilterBy}
+                        sortBy={sortBy}
+                        setSortBy={setSortBy}
+                    />
+                </div>
+                <div class="text-left pt-4 pr-14 text-xl">
+                    <button
+                        class="uppercase p-2 font-bold border-2"
+                        type="button"
+                        onClick={() => setIsPopupOpen(true)}
+                    >
+                            ➕ New Restaurant
+                    </button>
+                </div>
+            </div>
 
             <section>
                 <div>

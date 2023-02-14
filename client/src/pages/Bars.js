@@ -36,21 +36,13 @@ function Bars() {
 
     return (
         <div>
-            <section class="flex flex-row-reverse justify-between">
-                <div>
-                    <div class="text-7xl font-bold p-4 pr-12">
-                        <h1 class="tracking-tight text-right uppercase">Bars</h1>
-                    </div>
-                    <div class="text-right pr-14 text-xl">
-                        <button
-                            class="uppercase p-2 font-bold border-2"
-                            type="button"
-                            onClick={() => setIsPopupOpen(true)}
-                        >
-                            ➕ New Bar or Brewery
-                        </button>
-                    </div>
+            <section class="bg-bar bg-cover flex justify-between pb-80 shadow-lg">
+                <div class="text-9xl font-bold p-2 pr-8 bg-red w-fit bg-opacity-60">
+                    <h1 class="tracking-tight text-left uppercase text-white">Bars</h1>
                 </div>
+            </section>
+
+            <div class="flex justify-between">
                 <div class="p-8">
                     <EaterySearch
                         searchQuery={searchQuery}
@@ -61,7 +53,16 @@ function Bars() {
                         setSortBy={setSortBy}
                     />
                 </div>
-            </section>
+                <div class="text-right pt-4 pr-14 text-xl">
+                        <button
+                            class="uppercase p-2 font-bold border-2"
+                            type="button"
+                            onClick={() => setIsPopupOpen(true)}
+                        >
+                            ➕ New Bar or Brewery
+                        </button>
+                </div>
+            </div>
 
             <section>
                 <div>

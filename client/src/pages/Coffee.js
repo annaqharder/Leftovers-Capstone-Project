@@ -40,22 +40,16 @@ function Coffee() {
 
     return (
         <div>
-            <section class="flex flex-row-reverse justify-between">
+            <section class="bg-coffee bg-cover justify-between pb-80 shadow-lg">
                 <div>
-                    <div class="text-7xl font-bold p-4 pr-12">
-                        <h1 class="tracking-tight text-right uppercase">Cafes & Coffee Shops</h1>
-                    </div>
-                    <div  class="text-right pr-14 text-xl">
-                        <button
-                            class="uppercase p-2 font-bold border-2"
-                            type="button"
-                            onClick={() => setIsPopupOpen(true)}
-                        >
-                            ➕ New Cafe or Coffee Shop
-                        </button>
+                    <div class="text-9xl font-bold p-4 pr-12 bg-green w-fit bg-opacity-70">
+                        <h1  class="tracking-tight text-center uppercase text-white">Cafes & Coffee Shops</h1>
                     </div>
                 </div>
-                <div class="p-8">
+            </section>
+
+            <div class="flex justify-between">
+                <div>
                     <EaterySearch
                         searchQuery={searchQuery}
                         setSearchQuery={setSearchQuery}
@@ -65,7 +59,16 @@ function Coffee() {
                         setSortBy={setSortBy}
                     />
                 </div>
-            </section>
+                <div class="text-right pt-4 pr-14 text-xl">
+                    <button
+                        class="uppercase p-2 font-bold border-2"
+                        type="button"
+                        onClick={() => setIsPopupOpen(true)}
+                    >
+                        ➕ New Cafe or Coffee Shop
+                    </button>
+                </div>
+            </div>
 
             <section>
                 <div>

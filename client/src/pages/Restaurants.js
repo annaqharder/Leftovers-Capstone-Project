@@ -39,7 +39,7 @@ function Restaurants() {
         <div>
             <section class="bg-restaurant justify-between pb-80 shadow-lg">
                 <div>
-                    <div class="text-9xl font-bold p-2 bg-tan w-fit bg-opacity-60">
+                    <div class="text-8xl font-bold p-2 bg-tan w-fit bg-opacity-70">
                         <h1 class="tracking-tight text-left uppercase text-white">Restaurants</h1>
                     </div>
                 </div>

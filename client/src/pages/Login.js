@@ -63,13 +63,14 @@ function Login() {
     }
 
     return (
-        <section class="container p-0 ml-6 mr-2 overflow-hidden">
+        <section class="container p-0 ml-6 mr-2">
             <div>
                 <div class="p-0 flex justify-around items-start flex-wrap h-full text-gray-800 w-screen">
-                    <div class="md:w-8/12 lg:w-6/12 mb-12 md:mb-0 mt-10">
+                    {/* <div class="md:w-8/12 lg:w-6/12 mb-12 md:mb-0 mt-10"> */}
+                    <div class="object-cover w-96 scale-125 pt-28 ml-12 mb-28">
                         <img src="./images/restaurant13.webp" alt="loginImg"/>
                     </div>
-                    <div class="md:w-8/12 lg:w-4/12 mb-12 mr-28 p-20 mt-44">
+                    <div class="md:w-8/12 lg:w-4/12 mb-12 mr-28 pt-24">
                         <div>
                             <h2 class="font-sans font-family:'Raleway' text-4xl tracking-tight">please log in</h2>
                         </div>

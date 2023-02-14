@@ -42,7 +42,7 @@ function Coffee() {
         <div>
             <section class="bg-coffee bg-cover justify-between pb-80 shadow-lg">
                 <div>
-                    <div class="text-9xl font-bold p-4 pr-12 bg-green w-fit bg-opacity-70">
+                    <div class="text-8xl font-bold p-4 pr-12 bg-green w-fit bg-opacity-80">
                         <h1  class="tracking-tight text-center uppercase text-white">Cafes & Coffee Shops</h1>
                     </div>
                 </div>

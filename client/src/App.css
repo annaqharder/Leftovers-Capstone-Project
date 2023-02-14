@@ -243,7 +243,7 @@
 }
 
 .dialog {
-  background-color: #bfbab6;
+  background-color: #c9c4c0;
   padding: 40px;
   margin: 10px;
   border-radius: 10px;
@@ -265,10 +265,11 @@ a:link {
   text-decoration: none;
 }
 
-a:hover {
+a.displayNavRoute:hover {
   text-decoration: underline;
 }
 
-a:visited {
-  color: black
+a.NavRoute:hover {
+  text-decoration: underline;
 }
+

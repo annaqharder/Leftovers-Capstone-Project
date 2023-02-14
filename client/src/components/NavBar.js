@@ -27,7 +27,7 @@ const NavBar = () => {
     }
 
     return (
-        <>
+        <div class="dark:bg-gray-900">
         <div class="flex justify-between p-4 pb-8 shadow-md">
             {!user ? (
                 <h3>
@@ -69,7 +69,7 @@ const NavBar = () => {
             </div>
             )}
         </div>
-        </>
+        </div>
         )
     }
 

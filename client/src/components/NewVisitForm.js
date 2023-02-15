@@ -164,7 +164,7 @@ function NewVisitForm({onClose}) {
                             onChange={(e) => setOther_consumables(e.target.value)}
                         />
                     </div>
-                    <div class="flex py-2" >
+                    <div class="flex py-2">
                         <label class="flex text-lg font-bold pr-2">Visit Rating: </label>
                         {stars.map((_, index) => {
                                 return (

@@ -81,7 +81,7 @@ function Login() {
                                     <div>
                                         <div class="mb-2">
                                             <input
-                                                class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red focus:outline-none"
+                                                class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-cyan-800 focus:outline-none"
                                                 type="text"
                                                 inputMode="email"
                                                 name="email"
@@ -98,7 +98,7 @@ function Login() {
                                     <div>
                                         <div class="mb-4 flex">
                                             <input
-                                                class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red focus:outline-none"
+                                                class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-cyan-800 focus:outline-none"
                                                 type={type}
                                                 name="password"
                                                 placeholder="Password"
@@ -119,12 +119,12 @@ function Login() {
                                         />
                                         <label>  Remember me</label>
                                     </div>
-                                    <a href="#!"> Forgot Password?</a>
+                                    <a class="no-underline hover:underline" href="#!"> Forgot Password?</a>
                                 </div>
 
                                 <button
                                     type="submit"
-                                    class="inline-block px-7 py-3 mt-4 bg-red text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out w-full"
+                                    class="inline-block px-7 py-3 mt-4 bg-red-700 text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-red-800 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out w-full"
                                 >LOG IN</button>
 
                             <div class="pt-2 font-bold ">
@@ -139,7 +139,7 @@ function Login() {
                         <br></br>
                         <div class="flex">
                             <label>Don't have an account?</label>
-                            <Link onClick={handleToSignupPage} class="ml-2"> Sign up</Link>
+                            <Link onClick={handleToSignupPage} class="ml-2 no-underline hover:underline"> Sign up</Link>
                         </div>
                         </div>
                         </div>

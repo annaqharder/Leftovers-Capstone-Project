@@ -41,7 +41,7 @@ const NavBar = () => {
 
             {!user ? (
             <div class="flex items-center px-8">
-                <NavLink class="font-bold" exact to="/" onClick={handleToLoginClick}>LOGIN</NavLink>
+                <NavLink class="font-bold no-underline hover:underline" exact to="/" onClick={handleToLoginClick}>LOGIN</NavLink>
             </div>)
             : (
             <div className="NavBarRoutes">

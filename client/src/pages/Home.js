@@ -125,13 +125,13 @@ function Home() {
                     <img class="shadow-2xl" src="./images/restaurant4.webp"/>
                 </div>
                 <Link to={`/all-restaurants`} >
-                    <h1 class="font-sans font-family:'Raleway' text-7xl p-8 text-center mt-2 pt-36 bg-tan bg-opacity-70 font-bold text-white no-underline hover:underline hover:shadow-2xl"> Restaurants</h1>
+                    <h1 class="font-sans font-family:'Raleway' text-7xl p-8 text-center mt-2 pt-36 bg-amber-600 bg-opacity-70 font-bold text-white no-underline hover:underline hover:shadow-2xl"> Restaurants</h1>
                 </Link>
             </div>
 
             <div class="flex">
                 <Link to={`/all-coffee`} >
-                    <h1 class="font-sans font-family:'Raleway' text-7xl p-8 text-center pt-24 mt-2 mr-2 bg-green bg-opacity-70 font-bold text-white no-underline hover:underline hover:shadow-2xl">Cafes & Coffee Shops</h1>
+                    <h1 class="font-sans font-family:'Raleway' text-7xl p-8 text-center pt-24 mt-2 mr-2 bg-emerald-700 bg-opacity-70 font-bold text-white no-underline hover:underline hover:shadow-2xl">Cafes & Coffee Shops</h1>
                 </Link>
                 <div class="container grid grid-cols-3 gap-2 mx-auto pt-2 pr-2">
                     <img class="shadow-2xl" src="./images/cafe4.jpeg"/>
@@ -147,7 +147,7 @@ function Home() {
                     <img class="shadow-2xl" src="./images/bar6.webp"/>
                 </div>
                 <Link to={`/all-bars`} >
-                    <h1 class="font-sans font-family:'Raleway' text-7xl p-8 text-center mt-2 pt-24 bg-red bg-opacity-70 font-bold text-white no-underline hover:underline hover:shadow-2xl">Bars & Drinks</h1>
+                    <h1 class="font-sans font-family:'Raleway' text-7xl p-8 text-center mt-2 pt-24 bg-red-700 bg-opacity-70 font-bold text-white no-underline hover:underline hover:shadow-2xl">Bars & Drinks</h1>
                 </Link>
             </div>
     </section>

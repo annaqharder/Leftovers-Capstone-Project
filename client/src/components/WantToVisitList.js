@@ -17,7 +17,7 @@ function WantToVisitList() {
     }
 
     return (
-        <div>
+        <div class="mx-20 my-10 grid grid-cols-2 gap-8">
             {eateryArray}
         </div>
     );

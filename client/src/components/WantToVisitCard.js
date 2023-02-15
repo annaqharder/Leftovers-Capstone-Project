@@ -53,24 +53,34 @@ function WantToVisitCard({eatery}) {
 
     return (
         <div>
-            <div>
-                <h1>{eatery.eatery_name}</h1>
-                <h3>{eatery.eatery_category} - {eatery.eatery_type}</h3>
-                <h4>{eatery.eatery_address}</h4>
-                {notes ? ( <p><span>Notes:</span> {eatery.eatery_notes}</p>) : null}
-                <img src={imagesrc} className="visitImg"/>
+            <div class="flex py-4 mb-6 border-2 hover:shadow-xl rounded">
+                <div>
+                    <div class="px-4">
+                        <h1 class="font-bold text-3xl">{eatery.eatery_name}</h1>
+                        <h3 class="font-bold text-xl">{eatery.eatery_category} - {eatery.eatery_type}</h3>
+                        <h4 class="font-bold text-lg">{eatery.eatery_address}</h4>
+                        {notes ? ( <p><span class="font-bold text-md">Notes:</span> {eatery.eatery_notes}</p>) : null}
+                    </div>
+                    <form onSubmit={handleUpdate}>
+                        <input
+                            class="ml-4"
+                            type="checkbox"
+                            name="have_visited"
+                            checked={haveVisited}
+                            onChange={(e) => setHaveVisited(e.target.checked)}
+                        />
+                            <label class="text-lg p-2">Visited?</label>
+                            <button
+                                class="inline-block px-2 py-2 mt-4 bg-green text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-green hover:shadow-lg focus:bg-green focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green active:shadow-lg transition duration-150 ease-in-out w-1/3"
+                            >
+                                Update
+                            </button>
+                    </form>
+                </div>
+                <div>
+                    <img src={imagesrc} className="visitImg"/>
+                </div>
             </div>
-
-            <form onSubmit={handleUpdate}>
-                <input
-                    type="checkbox"
-                    name="have_visited"
-                    checked={haveVisited}
-                    onChange={(e) => setHaveVisited(e.target.checked)}
-                />
-                    <label>Visited?</label>
-                    <button>Update</button>
-            </form>
         </div>
     );
 }

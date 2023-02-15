@@ -167,12 +167,12 @@ function Signup() {
 
                     <button
                         type="submit"
-                        class="inline-block px-7 py-3 mt-4 bg-green text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-green hover:shadow-lg focus:bg-green focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green active:shadow-lg transition duration-150 ease-in-out w-full"
+                        class="inline-block px-7 py-3 mt-4 bg-green text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-emerald-800 hover:shadow-lg focus:bg-green focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green active:shadow-lg transition duration-150 ease-in-out w-full"
                     >Create Account</button>
                         <br></br>
                         <br></br>
                     <label>Already have an account?</label>
-                    <Link onClick={handleToLoginPage} class="ml-2">Login</Link>
+                    <Link onClick={handleToLoginPage} class="no-underline hover:underline ml-2">Login</Link>
                 </form>
             </div>
         </div>

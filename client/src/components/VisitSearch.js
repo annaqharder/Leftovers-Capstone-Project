@@ -17,10 +17,11 @@ function VisitSearch({searchQuery, setSearchQuery, filterBy, setFilterBy, sortBy
     }
 
     return (
-        <div>
-            <div>
-                <div> Search: </div>
+        <div class="rounded p-8 shadow-xl mt-3">
+            <div class="flex p-3">
+                <div class="font-sans font-family:'Raleway' text-xl my-2 mr-3"> Search: </div>
                     <input
+                        class="px-6 text-lg border border-solid focus:text-gray-700 rounded"
                         id="searchbar"
                         type="text"
                         value={searchQuery}
@@ -28,44 +29,49 @@ function VisitSearch({searchQuery, setSearchQuery, filterBy, setFilterBy, sortBy
                     />
             </div>
 
-            <div>
-                <label>Sort By:</label>
-                <select onChange={handleSortByPriceChange}>
+            <div class="p-3">
+                <label class="font-sans font-family:'Raleway' text-xl mr-3 my-2">Sort By:</label>
+                <select
+                    onChange={handleSortByPriceChange}
+                    class="px-6 py-1 text-lg border border-solid focus:text-gray-700 rounded"
+                    >
                 <option></option>
                 <option value="lowest">Lowest Rating</option>
                 <option value="highest">Highest Rating</option>
                 </select>
             </div>
 
-            <div>
+            {/* <div>
                 <label>Sort By:</label>
                 <select onChange={handleSortByPriceChange}>
                 <option></option>
                 <option value="highest">Most Recent</option>
                 <option value="lowest">Least Recent</option>
                 </select>
-            </div>
+            </div> */}
 
 
-            <div>
-                <div> Filter by:</div>
-                <label>
+            <div class="flex p-3">
+                <div class="font-sans font-family:'Raleway' text-xl mr-1 my-2"> Filter by:</div>
+                <label class="font-sans font-family:'Raleway' text-lg m-2">
                     <input
-                    type="radio"
-                    value="Date"
-                    name="sort"
-                    checked={sortBy === "Date"}
-                    onChange={handleSortChange}
+                        class="mr-1"
+                        type="radio"
+                        value="Date"
+                        name="sort"
+                        checked={sortBy === "Date"}
+                        onChange={handleSortChange}
                     />
                     Date
                 </label>
-                <label>
+                <label class="font-sans font-family:'Raleway' text-lg m-2">
                     <input
-                    type="radio"
-                    value="Occasion"
-                    name="sort"
-                    checked={sortBy === "Occasion"}
-                    onChange={handleSortChange}
+                        class="mr-1"
+                        type="radio"
+                        value="Occasion"
+                        name="sort"
+                        checked={sortBy === "Occasion"}
+                        onChange={handleSortChange}
                     />
                     Occasion
                 </label>

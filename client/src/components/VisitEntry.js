@@ -108,20 +108,14 @@ function VisitEntry({visit}) {
 
 
     return (
+        <div class="my-4 rounded px-6 py-3 shadow-lg hover:shadow-2xl">
         <div>
-
-        <div className="visitCard">
-            <div className="visitDetails">
-                {date ? (<h2> {formattedDate} </h2>) : null}
-                {occasion ? (<p><span className="visitDetailTitles">Occasion:</span> {occasion} </p>) : null}
-                {drink ? (<p><span className="visitDetailTitles">Drink:</span> {drink} </p>) : null}
-                {appetizer ? ( <p><span className="visitDetailTitles">Appetizer:</span> {appetizer} </p>) : null}
-                {food ? (<p><span className="visitDetailTitles">Food: </span>{food} </p>) : null}
-                {dessert ? (<p><span className="visitDetailTitles">Dessert:</span> {dessert} </p>) : null}
-                {other_consumables ? (<p><span className="visitDetailTitles">Other Consumables:</span> {other_consumables}</p>) : null}
-                {notes ? ( <p><span className="visitDetailTitles">Notes:</span> {notes}</p>) : null}
-                <div>
-                    <p><span className="visitDetailTitles">Rating: </span>{rating} Star</p>
+            <div>
+                <div class="flex justify-between items-center">
+                    {date ? (<h2 class="font-sans font-family:'Raleway' text-3xl font-semibold "> {formattedDate} </h2>) : null}
+                    {occasion ? (<p class="text-lg mr-4"><span class="font-semibold uppercase">Occasion:</span> {occasion} </p>) : null}
+                </div>
+                <div class="flex py-2">
                         {stars.map((_, index) => {
                             return (
                                 <FaStar
@@ -132,41 +126,51 @@ function VisitEntry({visit}) {
                                 />
                             )
                         })}
+                    <p class="mx-2">({rating} Stars)</p>
                 </div>
+
+                {drink ? (<p><span class="text-lg font-semibold uppercase">Drink:</span> {drink} </p>) : null}
+                {appetizer ? ( <p><span class="text-lg font-semibold uppercase">Appetizer:</span> {appetizer} </p>) : null}
+                {food ? (<p><span class="text-lg font-semibold uppercase">Food: </span>{food} </p>) : null}
+                {dessert ? (<p><span class="text-lg font-semibold uppercase">Dessert:</span> {dessert} </p>) : null}
+                {other_consumables ? (<p><span class="text-lg font-semibold uppercase">Other Consumables:</span> {other_consumables}</p>) : null}
+                {notes ? ( <p><span class="text-lg font-semibold uppercase">Notes:</span> {notes}</p>) : null}
+
                 <div>
                     {image ? (<img className="visitImg" src={image} />) : null}
                 </div>
             </div>
-            <div>
-                <button onClick={() => {window.confirm( `Are you sure you want to delete this visit?`, ) && handleDeleteVisit(visit.id)}}> 
-                    Delete 🗑️
-                </button>
-            </div>
 
-        {showForm ? (
+            <div class="flex justify-between">
+
+            {showForm ? (
                         <div>
+                        <hr class="my-2 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-4" />
                         <form onSubmit={handleUpdateVisit}>
-                        <div>
-                            <label>Visit Date: </label>
+                        <div class="flex py-2">
+                            <label class="font-sans font-family:'Raleway' text-lg pr-2">Visit Date: </label>
                             <input
+                                class="indent-2 w-6/6 rounded border border-solid border-gray-300"
                                 type="date"
                                 name="date"
                                 value={date}
                                 onChange={(e) => setDate(e.target.value)}
                             />
                         </div>
-                        <div>
-                            <label>Visit Occasion: </label>
+                        <div class="flex py-2">
+                            <label class="font-sans font-family:'Raleway' text-lg bold pr-2">Visit Occasion: </label>
                             <input
+                                class="indent-2 w-4/6 rounded border border-solid border-gray-300"
                                 type="text"
                                 name="occasion"
                                 value={occasion}
                                 onChange={(e) => setOccasion(e.target.value)}
                             />
                         </div>
-                        <div>
-                            <label>Visit Notes: </label>
+                        <div >
+                            <label class="font-sans font-family:'Raleway' text-lg  pr-2">Visit Notes: </label>
                             <textarea
+                                class="indent-2 w-/6 rounded border border-solid border-gray-300"
                                 type="textarea"
                                 rows="4"
                                 cols="40"
@@ -175,53 +179,58 @@ function VisitEntry({visit}) {
                                 onChange={(e) => setNotes(e.target.value)}
                             />
                         </div>
-                        <div>
-                            <label>Drink: </label>
+                        <div class="flex py-2">
+                            <label class="font-sans font-family:'Raleway' text-lg pr-2">Drink: </label>
                             <input
+                                class="indent-2 w-4/6 rounded border border-solid border-gray-300"
                                 type="text"
                                 name="drinks"
                                 value={drink}
                                 onChange={(e) => setDrink(e.target.value)}
                             />
                         </div>
-                        <div>
-                            <label>Appetizer: </label>
+                        <div class="flex py-2">
+                            <label class="font-sans font-family:'Raleway' text-lg pr-2">Appetizer: </label>
                             <input
+                                class="indent-2 w-4/6 rounded border border-solid border-gray-300"
                                 type="text"
                                 name="appetizer"
                                 value={appetizer}
                                 onChange={(e) => setAppetizer(e.target.value)}
                             />
                         </div>
-                        <div>
-                            <label>Food: </label>
+                        <div class="flex py-2">
+                            <label class="font-sans font-family:'Raleway' text-lg pr-2">Food: </label>
                             <input
+                                class="indent-2 w-4/6 rounded border border-solid border-gray-300"
                                 type="text"
                                 name="food"
                                 value={food}
                                 onChange={(e) => setFood(e.target.value)}
                             />
                         </div>
-                        <div>
-                            <label>Dessert: </label>
+                        <div class="flex py-2">
+                            <label class="font-sans font-family:'Raleway' text-lg pr-2">Dessert: </label>
                             <input
+                                class="indent-2 w-4/6 rounded border border-solid border-gray-300"
                                 type="text"
                                 name="dessert"
                                 value={dessert}
                                 onChange={(e) => setDessert(e.target.value)}
                             />
                         </div>
-                        <div>
-                            <label>Other Food/Drink: </label>
+                        <div class="flex py-2">
+                            <label class="font-sans font-family:'Raleway' text-lg pr-2">Other Food & Drink: </label>
                             <input
+                                class="indent-2 w-5/6 rounded border border-solid border-gray-300"
                                 type="text"
                                 name="other_consumables"
                                 value={other_consumables}
                                 onChange={(e) => setOther_consumables(e.target.value)}
                             />
                         </div>
-                        <div>
-                            <label>Visit Rating: </label>
+                        <div class="flex py-2">
+                            <label class="font-sans font-family:'Raleway' text-lg pr-2">Visit Rating: </label>
                             {stars.map((_, index) => {
                                     return (
                                         <FaStar
@@ -237,7 +246,7 @@ function VisitEntry({visit}) {
                                     )
                                 })}
                         </div>
-                        <div>
+                        {/* <div>
                             <label>Visit Images: </label>
                             <input
                                 type="images"
@@ -245,21 +254,37 @@ function VisitEntry({visit}) {
                                 value={image}
                                 onChange={(e) => setImage(e.target.value)}
                             />
-                        </div>
-                        <button>Update Visit</button>
+                        </div> */}
+                        <button
+                            class="inline-block px-7 py-2 mt-4 bg-green text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out w-half"
+                        >Update Visit</button>
                     </form>
                 </div>
             ) : (
                 <div>
-                <button onClick={() => setShowForm(true)}> Update Visit</button>
+                <button
+                    class="inline-block px-7 py-2 mt-4 bg-red text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out w-half"
+                    onClick={() => setShowForm(true)}> Edit Visit</button>
             </div>
             )}
+            <div>
+                <button
+                    onClick={() => {window.confirm( `Are you sure you want to delete this visit?`, ) && handleDeleteVisit(visit.id)}}
+                    class="inline-block px-7 py-2 mt-4 bg-red text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out w-half"
+                >
+                    Delete
+                </button>
+            </div>
+        </div>
 
             <div>
                 {showForm ?
-                    (<button onClick={() => setShowForm(false)}>Cancel</button>)
+                    (<button
+                        class="inline-block px-7 py-2 mt-4 bg-red text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out w-half"
+                        onClick={() => setShowForm(false)}>Cancel</button>)
                 : null}
             </div>
+
         </div>
 
 

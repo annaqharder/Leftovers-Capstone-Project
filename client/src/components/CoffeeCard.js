@@ -25,36 +25,42 @@ function CoffeeCard({ coffee }) {
 
     return (
         <div>
-            <div>
-                <Link to={`/coffee/cafes/${coffee.id}`} >
-                    <h2>{coffee.eatery_name}</h2>
-                </Link>
-                <h3>{coffee.eatery_type}</h3>
-                <h4>{coffee.eatery_address}</h4>
-                <img className="eateryImg" src={CoffeeStockImg}  />
-            </div>
-            <div>
-                <button
-                    type="button"
-                    className="secondary-button"
-                    onClick={() => setIsPopupOpen(true)}
-                >
-                        Edit
-                </button>
-                <button onClick={() => {window.confirm( `Are you sure you want to delete ${coffee.eatery_name}?`, ) && handleDelete(coffee.id)}}> 
-                    Delete 🗑️
-                </button>
-            </div>
-
-            <div>
+            <div class="py-4 mb-6 border-2 rounded hover:shadow-xl">
+                <div class="px-4">
+                <div class="flex justify-between items-center">
+                    <Link to={`/coffee/cafes/${coffee.id}`} >
+                        <h2 class="font-bold text-3xl">{coffee.eatery_name}</h2>
+                    </Link>
+                    <h3 class="font-bold text-xl">{coffee.eatery_type}</h3>
+                </div>
+                    <h4 class="font-bold text-lg">{coffee.eatery_address}</h4>
+                </div>
+                {/* <div>
+                    <img className="eateryImg" src={CoffeeStockImg}  />
+                </div> */}
+                <div>
                 {isPopupOpen ? (
                     <EditCoffeeCard
                         onClose={() => setIsPopupOpen(false)}
                         coffee={coffee}
                     />
                 ) : null}
+                </div>
+                <div class="flex justify-around">
+                    <button
+                        type="button"
+                        class="inline-block px-2 py-2 mt-4 bg-stone-500 text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-stone-600 hover:shadow-lg focus:bg-slate-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-slate-600 active:shadow-lg transition duration-150 ease-in-out w-1/4"
+                        onClick={() => setIsPopupOpen(true)}
+                    >
+                        Edit
+                    </button>
+                    <button
+                    class="inline-block px-2 py-2 mt-4 bg-red-800 text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-red-900 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-700 active:shadow-lg transition duration-150 ease-in-out w-1/4"
+                    onClick={() => {window.confirm( `Are you sure you want to delete ${coffee.eatery_name}?`, ) && handleDelete(coffee.id)}}>
+                        Delete
+                    </button>
+                </div>
             </div>
-
         </div>
     );
 }

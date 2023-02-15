@@ -52,7 +52,7 @@ function Home() {
             setImageIndex(prev => (
                 prev === restaurantImgArray.length - 1 ? 0 : prev + 1
             ))
-        }, 10000)
+        }, 100000)
     }, [])
 
     // console.log(imageIndex)
@@ -85,31 +85,72 @@ function Home() {
     // console.log(img)
 
 
+    // return (
+    //     <section class="container p-0 ml-6 mr-2">
+    //         <div>
+    //     <div class="flex justify-around items-start h-full w-screen">
+    //         <div class="object-cover w-96 scale-125 pt-24 ml-12">
+    //             <img class="" src={restaurantImgArray[imageIndex]}/>
+    //         </div>
+    //         <div class="md:w-8/12 lg:w-4/12 mr-32">
+    //             <div class="font-sans text-8xl mr-28 mt-36">
+    //                 <Link to={`/all-restaurants`} >
+    //                     <h1 class="tracking-tighter"> Restaurants</h1>
+    //                 </Link>
+    //             </div>
+
+    //             <div class="text-8xl mr-28 mt-36">
+    //                 <Link to={`/all-coffee`} >
+    //                     <h1 class="tracking-tighter">Cafes & Coffee Shops</h1>
+    //                 </Link>
+    //             </div>
+
+    //             <div class="text-8xl mr-28 mt-36">
+    //                 <Link to={`/all-bars`} >
+    //                     <h1 class="tracking-tighter">Bars</h1>
+    //                 </Link>
+    //             </div>
+    //         </div>
+    //     </div>
+    //     </div>
+    // </section>
+    // );
+
     return (
-        <div className="homeContainer">
-            <div className="imgContainer">
-                <img className="homeImg" src={restaurantImgArray[imageIndex]}/>
+        <section class="">
+            <div class="flex">
+                <div class="container grid grid-cols-3 gap-2 mx-auto pt-2 pr-2">
+                    <img class="shadow-2xl" src="./images/cafe11.webp"/>
+                    <img class="shadow-2xl" src="./images/restaurant2.webp"/>
+                    <img class="shadow-2xl" src="./images/restaurant4.webp"/>
+                </div>
+                <Link to={`/all-restaurants`} >
+                    <h1 class="font-sans font-family:'Raleway' text-7xl p-8 text-center mt-2 pt-36 bg-amber-600 bg-opacity-70 font-bold text-white no-underline hover:underline hover:shadow-2xl"> Restaurants</h1>
+                </Link>
             </div>
-            <div className="homeLabels">
-                <div className="homeLabel">
-                    <Link to={`/all-restaurants`} >
-                        <h1>Restaurants</h1>
-                    </Link>
-                </div>
 
-                <div className="homeLabel">
-                    <Link to={`/all-coffee`} >
-                        <h1>Cafes/Coffee Shops</h1>
-                    </Link>
-                </div>
-
-                <div className="homeLabel">
-                    <Link to={`/all-bars`} >
-                        <h1>Bars</h1>
-                    </Link>
+            <div class="flex">
+                <Link to={`/all-coffee`} >
+                    <h1 class="font-sans font-family:'Raleway' text-7xl p-8 text-center pt-24 mt-2 mr-2 bg-emerald-700 bg-opacity-70 font-bold text-white no-underline hover:underline hover:shadow-2xl">Cafes & Coffee Shops</h1>
+                </Link>
+                <div class="container grid grid-cols-3 gap-2 mx-auto pt-2 pr-2">
+                    <img class="shadow-2xl" src="./images/cafe4.jpeg"/>
+                    <img class="shadow-2xl" src="./images/cafe1.webp"/>
+                    <img class="shadow-2xl" src="./images/cafe10.webp"/>
                 </div>
             </div>
-        </div>
+
+            <div class="flex justify-center">
+                <div class="container grid grid-cols-3 gap-2 mx-auto pt-2 pr-2">
+                    <img class="shadow-2xl" src="./images/bar12.jpg"/>
+                    <img class="shadow-2xl" src="./images/bar9.jpg"/>
+                    <img class="shadow-2xl" src="./images/bar6.webp"/>
+                </div>
+                <Link to={`/all-bars`} >
+                    <h1 class="font-sans font-family:'Raleway' text-7xl p-8 text-center mt-2 pt-24 bg-red-700 bg-opacity-70 font-bold text-white no-underline hover:underline hover:shadow-2xl">Bars & Drinks</h1>
+                </Link>
+            </div>
+    </section>
     );
 }
 

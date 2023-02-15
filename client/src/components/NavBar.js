@@ -27,21 +27,21 @@ const NavBar = () => {
     }
 
     return (
-        <>
-        <div className="NavBar">
+        <div class="dark:bg-gray-900">
+        <div class="flex justify-between p-4 pb-8 shadow-md">
             {!user ? (
                 <h3>
-                    <span className="appName">LEFTOVERS</span>
+                    <span class="font-sans font-family:'Raleway' pl-3 font-sans text-6xl weight-bold">LEFTOVERS <span class="text-xl font-medium">|</span><span class="text-sm font-medium"> track & manage your favorite eateries</span></span>
                 </h3>
             ): (
-                <h3>
-                <span className="appName" onClick={handleHome}>LEFTOVERS</span>
-                </h3>
+                <div>
+                    <h3 class="font-sans font-family:'Raleway' pl-3 font-sans text-6xl weight-bold" onClick={handleHome}>LEFTOVERS</h3>
+                </div>
             )}
 
             {!user ? (
-            <div>
-                <NavLink exact to="/" onClick={handleToLoginClick}>LOGIN</NavLink>
+            <div class="flex items-center px-8">
+                <NavLink class="font-bold no-underline hover:underline" exact to="/" onClick={handleToLoginClick}>LOGIN</NavLink>
             </div>)
             : (
             <div className="NavBarRoutes">
@@ -55,21 +55,22 @@ const NavBar = () => {
                 </div>
                 <div className="dropdownNavBar">
                     <div className="dropdown">
-                        <img className="NavBarDropdownBtn" src={user.avatar ? user.avatar : NavImg }/>
+                        {/* <img className="NavBarDropdownBtn" src={user.avatar ? user.avatar : NavImg }/> */}
+                        <img className="NavBarDropdownBtn" src="./letter-l.png"/>
                         <nav className="dropdown-content">
                             <NavLink className="NavRoute" exact to="/want-to-visit">WANT TO VISIT</NavLink>
                             <NavLink className="NavRoute" exact to="/profile">PROFILE</NavLink>
                             <NavLink className="NavRoute" exact to="/" onClick={handleLogoutClick}>LOGOUT</NavLink>
                         </nav>
                     </div>
-                    <div>
+                    <div class="flex items-center">
                         <h2>HELLO, {user.first_name}!</h2>
                     </div>
                 </div>
             </div>
             )}
         </div>
-        </>
+        </div>
         )
     }
 

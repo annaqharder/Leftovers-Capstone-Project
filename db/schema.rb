@@ -41,7 +41,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_09_175643) do
     t.string "avatar"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "placeId"
   end
 
   create_table "visits", force: :cascade do |t|

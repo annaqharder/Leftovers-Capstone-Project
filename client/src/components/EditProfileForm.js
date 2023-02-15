@@ -47,11 +47,12 @@ function EditProfileForm({onClose}) {
     return (
         <div className='back-drop'>
             <div className="dialog">
-            <h1>Edit Your Profile</h1>
+            <h1 class="text-4xl font-bold py-2 mb-4 text-center uppercase">Edit Your Profile</h1>
                 <form onSubmit={handleEditProfile}>
-                <div>
-                        <label>First Name: </label>
+                <div class="flex py-2">
+                        <label class="text-lg font-bold pr-2">First Name: </label>
                         <input
+                            class="indent-2 w-4/6 rounded border border-solid border-gray-300"
                             type="text"
                             name="first_name"
                             value={profile.first_name}
@@ -59,9 +60,10 @@ function EditProfileForm({onClose}) {
                         />
                     </div>
 
-                    <div>
-                        <label>Last Name: </label>
+                    <div class="flex py-2">
+                        <label class="text-lg font-bold pr-2">Last Name: </label>
                         <input
+                            class="indent-2 w-4/6 rounded border border-solid border-gray-300"
                             type="text"
                             name="last_name"
                             value={profile.last_name}
@@ -69,9 +71,10 @@ function EditProfileForm({onClose}) {
                         />
                     </div>
 
-                    <div>
-                        <label>Email: </label>
+                    <div class="flex py-2">
+                        <label class="text-lg font-bold pr-2">Email: </label>
                         <input
+                            class="indent-2 w-4/6 rounded border border-solid border-gray-300"
                             type="text"
                             name="email"
                             value={profile.email}
@@ -79,9 +82,10 @@ function EditProfileForm({onClose}) {
                         />
                     </div>
 
-                    <div>
-                        <label>Location: </label>
+                    <div class="flex py-2">
+                        <label class="text-lg font-bold pr-2">Location: </label>
                         <input
+                            class="indent-2 w-4/6 rounded border border-solid border-gray-300"
                             type="text"
                             name="location"
                             value={profile.location}
@@ -89,9 +93,10 @@ function EditProfileForm({onClose}) {
                         />
                     </div>
 
-                    <div>
-                        <label>Bio: </label>
+                    <div class="flex py-2">
+                        <label class="text-lg font-bold pr-2">Bio: </label>
                         <textarea
+                            class="indent-2 w-5/6 rounded border border-solid border-gray-300"
                             rows="4"
                             cols="20"
                             type="text"
@@ -101,9 +106,10 @@ function EditProfileForm({onClose}) {
                         />
                     </div>
 
-                    <div>
-                        <label>Profile Picture: </label>
+                    <div class="flex py-2">
+                        <label class="text-lg font-bold pr-2">Profile Picture: </label>
                         <input
+                            class="indent-2 w-4/6 rounded border border-solid border-gray-300"
                             type="text"
                             name="avatar"
                             value={profile.avatar}
@@ -111,9 +117,10 @@ function EditProfileForm({onClose}) {
                         />
                     </div>
 
-                    <div>
-                        <label>New Password: </label>
+                    <div class="flex py-2">
+                        <label class="text-lg font-bold pr-2">New Password: </label>
                         <input
+                            class="indent-2 w-4/6 rounded border border-solid border-gray-300"
                             type="new-password"
                             name="password"
                             value={profile.password}
@@ -122,9 +129,18 @@ function EditProfileForm({onClose}) {
                     </div>
                         <br></br>
 
-                <div className='dialog-buttons'>
-                    <button className="secondary-button" onClick={onClose}>Cancel</button>
-                    <button>Save Profile</button>
+                <div class="flex justify-between">
+                    <button
+                        class="inline-block px-7 py-3 mt-4 bg-green text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-emerald-900 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out w-half"
+                    >
+                        Save Profile
+                    </button>
+                    <button
+                        class="inline-block px-7 py-3 mt-4 bg-red-800 text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-red-900 hover:shadow-lg focus:bg-red-800 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out w-half"
+                        onClick={onClose}
+                    >
+                        Cancel
+                    </button>
                 </div>
 
                 </form>

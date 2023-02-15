@@ -20,6 +20,7 @@ import { VisitProvider } from "./context/VisitProvider";
 import { useHistory } from "react-router-dom";
 import NewVisitForm from "./components/NewVisitForm";
 import { EateryProvider } from "./context/EateryProvider";
+import Footer from "./components/Footer";
 
 function App() {
 
@@ -73,6 +74,7 @@ function App() {
           </VisitProvider>
           </RestaurantProvider>
         </Switch>
+        <Footer />
     </EateryProvider>
     </UserProvider>
   );

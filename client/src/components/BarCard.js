@@ -25,35 +25,45 @@ function BarCard({ bar }) {
 
     return (
         <div>
-            <div>
-                <Link to={`/bars/${bar.id}`} >
-                    <h2>{bar.eatery_name}</h2>
-                </Link>
-                <h3>{bar.eatery_type}</h3>
-                <h4>{bar.eatery_address}</h4>
-                {/* <p>Notes: {bar.eatery_notes}</p> */}
-                <img className="eateryImg" src={BarStockImg} alt="eateryImg"/>
+            <div class="py-4 mb-6 border-2 rounded hover:shadow-xl">
                 <div>
-                    <button
-                        type="button"
-                        className="secondary-button"
-                        onClick={() => setIsPopupOpen(true)}
-                    >
-                        Edit
-                    </button>
-                    <button
-                    onClick={() => { window.confirm( `Are you sure you want to delete ${bar.eatery_name}?`, ) && handleDelete(bar.id)}}>
-                        Delete 🗑️
-                    </button>
+                    <div class="px-4">
+                    <div class="flex justify-between items-center">
+                        <Link to={`/bars/${bar.id}`} >
+                            <h2 class="font-bold text-3xl">{bar.eatery_name}</h2>
+                        </Link>
+                        <h3 class="font-bold text-xl">{bar.eatery_type}</h3>
+                    </div>
+                        <h4 class="font-bold text-lg">{bar.eatery_address}</h4>
+                        {/* <p>Notes: {bar.eatery_notes}</p> */}
+                    </div>
+                    {/*
+                    <div>
+                        <img className="eateryImg" src={BarStockImg} alt="eateryImg"/>
+                    </div> */}
+                    <div>
+                        {isPopupOpen ? (
+                            <EditBarCard
+                                onClose={() => setIsPopupOpen(false)}
+                                bar={bar}
+                            />
+                        ) : null}
+                    </div>
                 </div>
-            <div>
-                {isPopupOpen ? (
-                    <EditBarCard
-                        onClose={() => setIsPopupOpen(false)}
-                        bar={bar}
-                    />
-                ) : null}
-            </div>
+                <div class="flex justify-around">
+                        <button
+                            type="button"
+                            class="inline-block px-2 py-2 mt-4 bg-stone-500 text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-stone-600 hover:shadow-lg focus:bg-slate-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-slate-600 active:shadow-lg transition duration-150 ease-in-out w-1/4"
+                            onClick={() => setIsPopupOpen(true)}
+                        >
+                            Edit
+                        </button>
+                        <button
+                        class="inline-block px-2 py-2 mt-4 bg-red-800 text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-red-900 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-700 active:shadow-lg transition duration-150 ease-in-out w-1/4"
+                        onClick={() => { window.confirm( `Are you sure you want to delete ${bar.eatery_name}?`, ) && handleDelete(bar.id)}}>
+                            Delete
+                        </button>
+                </div>
             </div>
         </div>
     );

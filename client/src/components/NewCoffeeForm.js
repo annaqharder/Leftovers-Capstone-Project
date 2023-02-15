@@ -46,11 +46,12 @@ function NewEateryForm({onClose}) {
 return (
         <div className="back-drop">
             <div className="dialog">
-            <h1>New Cafe/Coffee Shop</h1>
+            <h1 class="text-4xl font-bold py-2 mb-4 text-center uppercase">New Cafe/Coffee Shop</h1>
             <form onSubmit={handleNewEatery}>
-                <div>
-                    <label>Cafe/Coffee Shop Name: </label>
+                <div class="flex py-2">
+                    <label class="text-lg font-bold pr-2">Cafe Name: </label>
                     <input
+                        class="indent-2 w-4/6 rounded border border-solid border-gray-300"
                         type="text"
                         name="eatery_name"
                         value={eateryName}
@@ -58,9 +59,10 @@ return (
                     />
                 </div>
 
-                <div>
-                    <label>Cafe/Coffee Shop Address: </label>
+                <div class="flex py-2">
+                    <label class="text-lg font-bold pr-2">Cafe Address: </label>
                     <input
+                        class="indent-2 w-4/6 rounded border border-solid border-gray-300"
                         type="text"
                         name="eatery_address"
                         value={eateryAddress}
@@ -68,21 +70,23 @@ return (
                     />
                 </div>
 
-                <div>
-                    <label>Cafe/Coffee Shop Neighborhood: </label>
+                <div class="flex py-2">
+                    <label class="text-lg font-bold pr-2">Cafe Neighborhood: </label>
                     <input
+                        class="indent-2 w-3/6 rounded border border-solid border-gray-300"
                         type="text"
                         name="eatery_neighborhood"
                         value={eateryNeighborhood}
                         onChange={(e) => setEateryNeighborhood(e.target.value)}
                     />
                 </div>
-                <div>
-                    <label>Cafe/Coffee Shop Type: </label>
+                <div class="flex py-2">
+                    <label class="text-lg font-bold pr-2">Cafe Type: </label>
                     <input
+                        class="indent-2 w-4/6 rounded border border-solid border-gray-300"
                         type="text"
                         name="eatery_type"
-                        placeholder="Drive Thru, French Cafe, Tea House..."
+                        placeholder="ex: Drive Thru, French Cafe, Tea House..."
                         value={eateryType}
                         onChange={(e) => setEateryType(e.target.value)}
                     />
@@ -98,9 +102,18 @@ return (
                     />
                 </div> */}
 
-                <div className='dialog-buttons'>
-                    <button className="secondary-button" onClick={onClose}>Cancel</button>
-                    <button>Add Cafe/Coffee Shop</button>
+                <div class="flex justify-between">
+                    <button
+                        class="inline-block px-7 py-3 mt-4 bg-green text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out w-half"
+                    >
+                        Add Cafe/Coffee Shop
+                    </button>
+                    <button
+                        class="inline-block px-7 py-3 mt-4 bg-red text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out w-half"
+                        onClick={onClose}
+                    >
+                        Cancel
+                    </button>
                 </div>
 
             </form>

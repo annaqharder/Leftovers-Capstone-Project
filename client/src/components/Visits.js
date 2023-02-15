@@ -75,39 +75,43 @@ function Visits(){
     return (
         <div>
 
-            <div>
-                <VisitSearch
-                    searchQuery={searchQuery}
-                    setSearchQuery={setSearchQuery}
-                    filterBy={filterBy}
-                    setFilterBy={setFilterBy}
-                    sortBy={sortBy}
-                    setSortBy={setSortBy}
-                />
+        <div class="flex justify-between m-4">
+            <div class="ml-6">
+                <h1 class="font-bold text-6xl">{eatery.eatery_name}</h1>
+                <h3 class="font-bold text-2xl">{eatery.eatery_address}</h3>
+                <p class="font-bold text-md"> {eatery.eatery_notes} </p>
             </div>
+            <div class="text-right pt-4 pr-14 text-xl">
+                <button
+                    class="inline-block px-4 py-3 mt-4 bg-amber-700 text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-amber-800 hover:shadow-lg focus:bg-amber-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-amber-700 active:shadow-lg transition duration-150 ease-in-out w-full"
+                    type="button"
+                    onClick={() => setIsPopupOpen(true)}
+                >
+                    Add New Visit
+                </button>
+                <div>
+                    {isPopupOpen ? (
+                        <NewVisitForm
+                            onClose={() => setIsPopupOpen(false)}
+                        />
+                    ) : null}
+                </div>
+            </div>
+        </div>
 
-            <button
-                type="button"
-                className="secondary-button"
-                onClick={() => setIsPopupOpen(true)}
-            >
-                New Visit
-            </button>
-
-            <div>
-                {isPopupOpen ? (
-                    <NewVisitForm
-                        onClose={() => setIsPopupOpen(false)}
+            <section class="flex grid-cols-2 m-8">
+                <div>
+                    <VisitSearch
+                        searchQuery={searchQuery}
+                        setSearchQuery={setSearchQuery}
+                        filterBy={filterBy}
+                        setFilterBy={setFilterBy}
+                        sortBy={sortBy}
+                        setSortBy={setSortBy}
                     />
-                ) : null}
-            </div>
-
-            <div>
-                <h1>{eatery.eatery_name}</h1>
-                <h3>{eatery.eatery_address}</h3>
-                <p> {eatery.eatery_notes} </p>
-                <div className='visitContainer'>{mappedVisits}</div>
-            </div>
+                </div>
+                <div class="w-2/3 ml-24 ">{mappedVisits}</div>
+            </section>
 
         </div>
     );

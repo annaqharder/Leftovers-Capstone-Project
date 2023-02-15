@@ -1,16 +1,45 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import WantToVisitForm from '../components/NewWantToVisitForm';
 import WantToVisitList from '../components/WantToVisitList';
+import WantToVisitSearch from '../components/WantToVisitSearch';
+import { EateryContext } from '../context/EateryProvider';
 
 function WantToVisit() {
-
+    const {eateries} = useContext(EateryContext)
     const [isPopupOpen, setIsPopupOpen] = useState(false);
+    const [searchQuery, setSearchQuery] = useState("")
+    const [filterBy, setFilterBy] = useState("All")
+    const [sortBy, setSortBy] = useState("");
+
+    const sortedEateries = [...eateries].sort((eatery1, eatery2) => {
+        if (sortBy === "Alphabetically") {
+            return eatery1.eatery_name.localeCompare(eatery2.eatery_name);
+        } else if (sortBy === "Neighborhood") {
+            return eatery1.eatery_neighborhood.localeCompare(eatery2.eatery_neighborhood);
+        } else {
+            return null
+        }
+    });
+
+    const filteredEateries = sortedEateries.filter((eatery) => {
+        if (filterBy === "All") return true;
+        return (eatery.eatery_category.toLowerCase()) === filterBy.toLowerCase()});
+
+    const searchEateries = filteredEateries
+    .filter((eatery) => {
+        return (
+            eatery.eatery_name.toLowerCase().includes(searchQuery.toLowerCase())
+            || eatery.eatery_neighborhood.toLowerCase().includes(searchQuery.toLowerCase())
+            || eatery.eatery_address.toLowerCase().includes(searchQuery.toLowerCase())
+            || eatery.eatery_type.toLowerCase().includes(searchQuery.toLowerCase())
+        )
+    })
 
     return (
         <div>
             <section class="">
                 <div>
-                    <div class="text-7xl font-bold p-4 pr-12 bg-green bg-opacity-70">
+                    <div class="text-7xl font-bold p-4 pr-12 bg-amber-700 bg-opacity-70">
                         <h1 class="font-sans font-family:'Raleway' tracking-tight text-right uppercase text-white">Eateries I Want To Visit</h1>
                     </div>
                 </div>
@@ -26,10 +55,19 @@ function WantToVisit() {
                 </div>
 
                 <div>
-                    <WantToVisitList/>
+                    <WantToVisitList
+                        eateries={searchEateries}/>
                 </div>
 
-
+                <div>
+                    <WantToVisitSearch
+                        searchQuery={searchQuery}
+                        setSearchQuery={setSearchQuery}
+                        filterBy={filterBy}
+                        setFilterBy={setFilterBy}
+                        sortBy={sortBy}
+                        setSortBy={setSortBy}/>
+                </div>
 
                 <div>
                     {isPopupOpen? (

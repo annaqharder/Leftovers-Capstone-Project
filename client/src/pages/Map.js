@@ -63,7 +63,7 @@ const Map = () => {
 
     return isLoaded ? (
         <section class="flex justify-around p-6 items-center">
-            <div>
+            <div class="drop-shadow-xl">
                 <GoogleMap
                 mapContainerStyle={containerStyle}
                 center={center}
@@ -146,7 +146,7 @@ const Map = () => {
                 </GoogleMap>
             </div>
 
-            <div class="drop-shadow-2xl border rounded px-4 py-2 bg-stone-200">
+            <div class="drop-shadow-xl border rounded px-4 py-2 bg-stone-200">
                 <h1 class="text-5xl font-bold py-4 text-left tracking-widest">KEY</h1>
                 <div class="flex py-2">
                     <img src="http://maps.google.com/mapfiles/ms/icons/purple-dot.png"/>

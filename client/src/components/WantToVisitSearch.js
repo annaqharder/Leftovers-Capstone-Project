@@ -1,7 +1,6 @@
-import React, {useState, useContext} from 'react';
+import React from 'react'
 
-
-function EaterySearch({searchQuery, setSearchQuery, filterBy, setFilterBy, sortBy, setSortBy}) {
+function WantToVisitSearch({searchQuery, setSearchQuery, filterBy, setFilterBy, sortBy, setSortBy}) {
 
     function handleSearchChange(event){
         setSearchQuery(event.target.value)
@@ -15,9 +14,9 @@ function EaterySearch({searchQuery, setSearchQuery, filterBy, setFilterBy, sortB
         setSortBy(event.target.value);
     }
 
-
     return (
-        <section class="flex p-1">
+        <>
+                <section class="flex p-1">
             <div class="flex px-4">
                 <div class="font-sans font-family:'Raleway' text-2xl my-2 mr-4"> Search:</div>
                     <input
@@ -30,18 +29,15 @@ function EaterySearch({searchQuery, setSearchQuery, filterBy, setFilterBy, sortB
                     />
             </div>
 
-            {/* <div className="filter-container">
-                <label>
-                    <strong> Filter by Category : </strong>
+            <div className="filter-container">
+                <label>Filter by Category :</label>
                     <select onChange={handleFilterChange} value={filterBy} id="filterbar">
                     <option>All</option>
-                        <option value="American">American</option>
-                        <option value="Asian">Asian</option>
-                        <option value="Egyptian">Egyptian</option>
-                        <option value="European Paintings">European Paintings</option>
+                        <option value="Restaurant">Restaurants</option>
+                        <option value="Coffee/Cafe">Cafes/Coffee Shops</option>
+                        <option value="Bar">Bars</option>
                     </select>
-                </label>
-            </div> */}
+            </div>
 
             <div class="flex px-4">
                 <div class="font-sans font-family:'Raleway' text-2xl my-2"> Sort by:</div>
@@ -70,7 +66,8 @@ function EaterySearch({searchQuery, setSearchQuery, filterBy, setFilterBy, sortB
                     </label>
             </div>
         </section>
+        </>
     );
 }
 
-export default EaterySearch;
+export default WantToVisitSearch;

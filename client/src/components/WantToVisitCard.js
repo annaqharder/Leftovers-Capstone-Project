@@ -71,7 +71,7 @@ function WantToVisitCard({eatery}) {
                         />
                             <label class="text-lg p-2">Visited?</label>
                             <button
-                                class="inline-block px-2 py-2 mt-4 bg-green text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-emerald-900 hover:shadow-lg focus:bg-green focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green active:shadow-lg transition duration-150 ease-in-out w-1/3"
+                                class="inline-block px-2 py-2 mt-4 bg-amber-700 text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-amber-800 hover:shadow-lg focus:bg-amber-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-amber-700 active:shadow-lg transition duration-150 ease-in-out w-1/3"
                             >
                                 Update
                             </button>

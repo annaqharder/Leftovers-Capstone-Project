@@ -99,9 +99,9 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        'restaurant': "url('/Users/annaharder/Development/code/final-project/final-project/client/public/images/restaurant20.jpg')",
-        'bar':"url('/Users/annaharder/Development/code/final-project/final-project/client/public/images/bar20.jpg')",
-        'coffee': "url('/Users/annaharder/Development/code/final-project/final-project/client/public/images/coffee20.jpg')"
+        'restaurant': "url('../public/images/restaurant20.jpg')",
+        'bar':"url('../public/images/bar20.jpg')",
+        'coffee': "url('../public/images/coffee20.jpg')"
       }
     },
   plugins: [],

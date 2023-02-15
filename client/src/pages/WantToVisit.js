@@ -44,21 +44,7 @@ function WantToVisit() {
                     </div>
                 </div>
 
-                <div class="text-right pt-4 pr-14 text-xl">
-                    <button
-                        class="inline-block px-7 py-3 mt-4 bg-stone-600 text-white font-bold text-lg leading-snug uppercase rounded shadow-lg hover:bg-stone-700 hover:shadow-lg focus:bg-stone-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-stone-700 active:shadow-lg transition duration-150 ease-in-out"
-                        type="button"
-                        onClick={() => setIsPopupOpen(true)}
-                    >
-                        Add Eatery
-                    </button>
-                </div>
-
-                <div>
-                    <WantToVisitList
-                        eateries={searchEateries}/>
-                </div>
-
+            <div>
                 <div>
                     <WantToVisitSearch
                         searchQuery={searchQuery}
@@ -67,6 +53,22 @@ function WantToVisit() {
                         setFilterBy={setFilterBy}
                         sortBy={sortBy}
                         setSortBy={setSortBy}/>
+                </div>
+
+                <div class="text-right pr-14 text-xl">
+                    <button
+                        class="inline-block px-7 py-3 mt-4 bg-stone-600 text-white font-bold text-lg leading-snug uppercase rounded shadow-lg hover:bg-stone-700 hover:shadow-lg focus:bg-stone-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-stone-700 active:shadow-lg transition duration-150 ease-in-out"
+                        type="button"
+                        onClick={() => setIsPopupOpen(true)}
+                    >
+                        Add Eatery
+                    </button>
+                </div>
+            </div>
+
+                <div>
+                    <WantToVisitList
+                        eateries={searchEateries}/>
                 </div>
 
                 <div>

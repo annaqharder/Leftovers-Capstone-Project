@@ -16,7 +16,7 @@ function WantToVisitSearch({searchQuery, setSearchQuery, filterBy, setFilterBy, 
 
     return (
         <>
-                <section class="flex p-1">
+        <section class="flex p-3 justify-center">
             <div class="flex px-4">
                 <div class="font-sans font-family:'Raleway' text-2xl my-2 mr-4"> Search:</div>
                     <input
@@ -29,14 +29,16 @@ function WantToVisitSearch({searchQuery, setSearchQuery, filterBy, setFilterBy, 
                     />
             </div>
 
-            <div className="filter-container">
-                <label>Filter by Category :</label>
-                    <select onChange={handleFilterChange} value={filterBy} id="filterbar">
-                    <option>All</option>
-                        <option value="Restaurant">Restaurants</option>
-                        <option value="Coffee/Cafe">Cafes/Coffee Shops</option>
-                        <option value="Bar">Bars</option>
-                    </select>
+            <div class="flex px-4">
+                <div class="font-sans font-family:'Raleway' text-2xl my-2">
+                    <label class="font-sans font-family:'Raleway' text-2xl">Filter by Category:</label>
+                        <select class="px-4 py-2 ml-3 text-xl border border-solid focus:text-gray-700 rounded" onChange={handleFilterChange} value={filterBy} id="filterbar">
+                        <option>All</option>
+                            <option value="Restaurant">Restaurants</option>
+                            <option value="Coffee/Cafe">Cafes/Coffee Shops</option>
+                            <option value="Bar">Bars</option>
+                        </select>
+                </div>
             </div>
 
             <div class="flex px-4">

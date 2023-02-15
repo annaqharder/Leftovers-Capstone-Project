@@ -135,7 +135,7 @@ const Map = () => {
                     <InfoWindow position={{ lat: selected.latitude, lng: selected.longitude }} onCloseClick={() => setSelected(null)}>
                         <div>
                             <Link to={`/${selected.eatery_category}s/${selected.id}`}>
-                                <h2>{selected.eatery_name}</h2>
+                                <h2 class="no-underline hover:underline">{selected.eatery_name}</h2>
                             </Link>
                                 <p>{selected.eatery_category}: {selected.eatery_type}</p>
                                 <p>{selected.eatery_address}</p>
@@ -146,7 +146,7 @@ const Map = () => {
                 </GoogleMap>
             </div>
 
-            <div class="drop-shadow-2xl">
+            <div class="drop-shadow-2xl border rounded px-4 py-2 bg-stone-200">
                 <h1 class="text-5xl font-bold py-4 text-left tracking-widest">KEY</h1>
                 <div class="flex py-2">
                     <img src="http://maps.google.com/mapfiles/ms/icons/purple-dot.png"/>

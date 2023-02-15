@@ -25,42 +25,46 @@ function RestaurantCard({ restaurant }) {
 
     return (
         <div>
-            <div class="flex justify-between py-4 mb-6 border-2 hover:shadow-xl">
-                <div class="px-4">
-                    <Link to={`/restaurants/${restaurant.id}`} >
-                        <h2 class="font-bold text-3xl">{restaurant.eatery_name}</h2>
-                    </Link>
-                    <h3 class="font-bold text-xl">{restaurant.eatery_type}</h3>
-                    <h4 class="font-bold text-lg">{restaurant.eatery_address}</h4>
-                    {/* <p>Notes: {restaurant.eatery_notes}</p> */}
-                    <div class="flex justify-around pt-20">
+            <div class="py-4 mb-6 border-2 rounded hover:shadow-xl">
+                <div>
+                    <div class="px-4">
+                        <div class="flex justify-between items-center">
+                            <Link to={`/restaurants/${restaurant.id}`} >
+                                <h2 class="font-bold text-3xl">{restaurant.eatery_name}</h2>
+                            </Link>
+                            <h3 class="font-bold text-xl">{restaurant.eatery_type}</h3>
+                        </div>
+                        <h4 class="font-bold text-lg">{restaurant.eatery_address}</h4>
+                        {/* <p>Notes: {restaurant.eatery_notes}</p> */}
+                    </div>
+
+                    {/* <div>
+                        <img class="w-80" className="eateryImg" src={RestaurantStockImg} alt="eateryImg"/>
+                    </div> */}
+
+                    <div>
+                        {isPopupOpen ? (
+                            <EditRestaurantCard
+                                onClose={() => setIsPopupOpen(false)}
+                                restaurant={restaurant}
+                            />
+                        ) : null}
+                    </div>
+                </div>
+                <div class="flex justify-around">
                         <button
                         type="button"
-                        class="inline-block px-2 py-2 mt-4 bg-tan text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-green hover:shadow-lg focus:bg-green focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green active:shadow-lg transition duration-150 ease-in-out w-1/3"
+                        class="inline-block px-2 py-2 mt-4 bg-stone-500 text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-stone-600 hover:shadow-lg focus:bg-slate-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-slate-600 active:shadow-lg transition duration-150 ease-in-out w-1/4"
                         onClick={() => setIsPopupOpen(true)}
                         >
                             Edit
                         </button>
                         <button
-                        class="inline-block px-2 py-2 mt-4 bg-tan text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-green hover:shadow-lg focus:bg-green focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green active:shadow-lg transition duration-150 ease-in-out w-1/3"
+                        class="inline-block px-2 py-2 mt-4 bg-red-800 text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-red-900 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-700 active:shadow-lg transition duration-150 ease-in-out w-1/4"
                         onClick={() => { window.confirm( `Are you sure you want to delete ${restaurant.eatery_name}?`, ) && handleDelete(restaurant.id)}}>
                             Delete
                         </button>
                     </div>
-                </div>
-
-                <div>
-                    <img class="w-80" className="eateryImg" src={RestaurantStockImg} alt="eateryImg"/>
-                </div>
-
-                <div>
-                    {isPopupOpen ? (
-                        <EditRestaurantCard
-                            onClose={() => setIsPopupOpen(false)}
-                            restaurant={restaurant}
-                        />
-                    ) : null}
-                </div>
             </div>
         </div>
     );

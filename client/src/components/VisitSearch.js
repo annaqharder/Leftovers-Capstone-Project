@@ -17,7 +17,7 @@ function VisitSearch({searchQuery, setSearchQuery, filterBy, setFilterBy, sortBy
     }
 
     return (
-        <div class="rounded p-8 shadow-xl mt-3">
+        <div class="bg-stone-200 border rounded p-8 shadow-xl ml-2 mt-3">
             <div class="flex p-3">
                 <div class="font-sans font-family:'Raleway' text-xl my-2 mr-3"> Search: </div>
                     <input

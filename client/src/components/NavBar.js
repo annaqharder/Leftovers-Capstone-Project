@@ -31,11 +31,11 @@ const NavBar = () => {
         <div class="flex justify-between p-4 pb-8 shadow-md">
             {!user ? (
                 <h3>
-                    <span class="pl-3 font-sans text-7xl weight-bold tracking-tight">LEFTOVERS <span class="text-xl font-medium">|</span><span class="text-sm font-medium"> track & manage your favorite eateries</span></span>
+                    <span class="font-sans font-family:'Raleway' pl-3 font-sans text-6xl weight-bold">LEFTOVERS <span class="text-xl font-medium">|</span><span class="text-sm font-medium"> track & manage your favorite eateries</span></span>
                 </h3>
             ): (
                 <div>
-                    <h3 class="pl-3 font-sans text-7xl weight-bold tracking-tight" onClick={handleHome}>LEFTOVERS</h3>
+                    <h3 class="font-sans font-family:'Raleway' pl-3 font-sans text-6xl weight-bold" onClick={handleHome}>LEFTOVERS</h3>
                 </div>
             )}
 
@@ -55,7 +55,8 @@ const NavBar = () => {
                 </div>
                 <div className="dropdownNavBar">
                     <div className="dropdown">
-                        <img className="NavBarDropdownBtn" src={user.avatar ? user.avatar : NavImg }/>
+                        {/* <img className="NavBarDropdownBtn" src={user.avatar ? user.avatar : NavImg }/> */}
+                        <img className="NavBarDropdownBtn" src="./letter-l.png"/>
                         <nav className="dropdown-content">
                             <NavLink className="NavRoute" exact to="/want-to-visit">WANT TO VISIT</NavLink>
                             <NavLink className="NavRoute" exact to="/profile">PROFILE</NavLink>

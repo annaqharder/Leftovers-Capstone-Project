@@ -108,7 +108,7 @@ function VisitEntry({visit}) {
 
 
     return (
-        <div class="my-4 rounded px-6 py-3 shadow-lg hover:shadow-2xl">
+        <div class="my-4 border rounded px-6 py-3 shadow-lg hover:shadow-2xl">
         <div>
             <div>
                 <div class="flex justify-between items-center">
@@ -256,21 +256,21 @@ function VisitEntry({visit}) {
                             />
                         </div> */}
                         <button
-                            class="inline-block px-7 py-2 mt-4 bg-green text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out w-half"
+                            class="inline-block px-7 py-3 mt-4 bg-stone-600 text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-stone-700 hover:shadow-lg focus:bg-stone-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-stone-800 active:shadow-lg transition duration-150 ease-in-out w-half"
                         >Update Visit</button>
                     </form>
                 </div>
             ) : (
                 <div>
                 <button
-                    class="inline-block px-7 py-2 mt-4 bg-red text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out w-half"
+                    class="inline-block px-7 py-3 mt-4 bg-stone-600 text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-stone-700 hover:shadow-lg focus:bg-stone-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-stone-800 active:shadow-lg transition duration-150 ease-in-out w-half"
                     onClick={() => setShowForm(true)}> Edit Visit</button>
             </div>
             )}
             <div>
                 <button
                     onClick={() => {window.confirm( `Are you sure you want to delete this visit?`, ) && handleDeleteVisit(visit.id)}}
-                    class="inline-block px-7 py-2 mt-4 bg-red text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out w-half"
+                    class="inline-block px-7 py-3 mt-4 bg-red-800 text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-red-900 hover:shadow-lg focus:bg-red-800 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out w-half"
                 >
                     Delete
                 </button>
@@ -280,7 +280,7 @@ function VisitEntry({visit}) {
             <div>
                 {showForm ?
                     (<button
-                        class="inline-block px-7 py-2 mt-4 bg-red text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out w-half"
+                        class="inline-block px-7 py-3 mt-4 bg-red-800 text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-red-900 hover:shadow-lg focus:bg-red-800 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out w-half"
                         onClick={() => setShowForm(false)}>Cancel</button>)
                 : null}
             </div>

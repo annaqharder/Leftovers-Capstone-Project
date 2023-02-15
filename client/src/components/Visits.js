@@ -83,7 +83,7 @@ function Visits(){
             </div>
             <div class="text-right pt-4 pr-14 text-xl">
                 <button
-                    class="inline-block px-4 py-3 mt-4 bg-green text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-green hover:shadow-lg focus:bg-green focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green active:shadow-lg transition duration-150 ease-in-out w-full"
+                    class="inline-block px-4 py-3 mt-4 bg-amber-700 text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-amber-800 hover:shadow-lg focus:bg-amber-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-amber-700 active:shadow-lg transition duration-150 ease-in-out w-full"
                     type="button"
                     onClick={() => setIsPopupOpen(true)}
                 >

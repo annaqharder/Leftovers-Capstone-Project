@@ -38,8 +38,8 @@ function Bars() {
         <div>
             <section class="bg-bar bg-cover justify-between pb-80 shadow-xl">
                 <div>
-                    <div class="text-6xl font-bold p-2 pr-12 bg-red bg-opacity-80">
-                        <h1 class="font-sans font-family:'Raleway' tracking-tight text-center uppercase text-white">Bars</h1>
+                    <div class="text-6xl font-bold p-10 pr-12 bg-red-800 bg-opacity-70">
+                        <h1 class="font-sans font-family:'Raleway' tracking-tight text-center uppercase text-grey-100">Bars</h1>
                     </div>
                 </div>
             </section>
@@ -57,11 +57,11 @@ function Bars() {
                 </div>
                 <div class="text-right pt-4 pr-14 text-xl">
                         <button
-                            class="uppercase p-2 font-bold border-2"
+                            class="inline-block px-7 py-3 mt-4 bg-stone-600 text-white font-bold text-lg leading-snug uppercase rounded shadow-lg hover:bg-stone-700 hover:shadow-lg focus:bg-stone-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-stone-700 active:shadow-lg transition duration-150 ease-in-out w-full"
                             type="button"
                             onClick={() => setIsPopupOpen(true)}
                         >
-                            ➕ New Bar or Brewery
+                            Add Bar
                         </button>
                 </div>
             </div>

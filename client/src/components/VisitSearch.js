@@ -1,11 +1,7 @@
-function VisitSearch({searchQuery, setSearchQuery, filterBy, setFilterBy, sortBy, setSortBy}) {
+function VisitSearch({searchQuery, setSearchQuery, sortBy, setSortBy}) {
 
     function handleSearchChange(event){
         setSearchQuery(event.target.value)
-    }
-
-    function handleFilterChange(event) {
-        setFilterBy(event.target.value)
     }
 
     function handleSortByPriceChange(e) {

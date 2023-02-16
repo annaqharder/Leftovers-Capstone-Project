@@ -1,5 +1,4 @@
 import React, {useState, useContext} from "react";
-import { useParams } from "react-router-dom";
 import { VisitContext } from "../context/VisitProvider";
 import { FaStar } from 'react-icons/fa'
 

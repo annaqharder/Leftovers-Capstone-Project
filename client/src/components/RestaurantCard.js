@@ -1,7 +1,6 @@
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { RestaurantContext } from '../context/RestaurantProvider';
-import RestaurantStockImg from "../images/restaurant-stock.jpg";
 import EditRestaurantCard from './EditRestaurantCard';
 
 

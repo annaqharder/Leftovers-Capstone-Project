@@ -1,14 +1,11 @@
 import React, { useContext, useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import { CoffeeContext } from '../context/CoffeeProvider';
 import CoffeeList from '../components/CoffeeList';
 import NewCoffeeForm from '../components/NewCoffeeForm';
 import EaterySearch from '../components/EaterySearch';
 
 function Coffee() {
-    const [showForm, setShowForm] = useState(false);
     const { coffees } = useContext(CoffeeContext);
-    let history = useHistory();
     const [sortBy, setSortBy] = useState("");
     const [searchQuery, setSearchQuery] = useState("");
     const [filterBy, setFilterBy] = useState("All");

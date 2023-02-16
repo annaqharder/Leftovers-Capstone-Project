@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext} from 'react'
+import React, { useState, useContext} from 'react'
 import { Link } from 'react-router-dom';
 import { GoogleMap, useJsApiLoader, Marker, InfoWindow } from '@react-google-maps/api';
 import { CoffeeContext } from '../context/CoffeeProvider';
@@ -149,22 +149,22 @@ const Map = () => {
             <div class="drop-shadow-xl border border-stone-300 rounded px-4 py-2 bg-stone-100 bg-opacity-70">
                 {/* <h1 class="text-3xl font-bold py-4 text-center tracking-widest">KEY</h1> */}
                 <div class="flex py-2">
-                    <img src="http://maps.google.com/mapfiles/ms/icons/purple-dot.png"/>
+                    <img src="http://maps.google.com/mapfiles/ms/icons/purple-dot.png" alt="mapMarkerPurple"/>
                     <h1 class="uppercase text-lg font-bold pt-1">Restaurants</h1>
                 </div>
 
                 <div class="flex py-2">
-                    <img src="http://maps.google.com/mapfiles/ms/icons/pink-dot.png"/>
+                    <img src="http://maps.google.com/mapfiles/ms/icons/pink-dot.png" alt="mapMarkerPink"/>
                     <h1 class="uppercase text-lg font-bold pt-1">Cafes & Coffee Shops</h1>
                 </div>
 
                 <div class="flex py-2">
-                    <img src="http://maps.google.com/mapfiles/ms/icons/green-dot.png"/>
+                    <img src="http://maps.google.com/mapfiles/ms/icons/green-dot.png" alt="mapMarkerGreen"/>
                     <h1 class="uppercase text-lg font-bold pt-1">Bars</h1>
                 </div>
 
                 <div class="flex py-2">
-                    <img src="http://maps.google.com/mapfiles/ms/icons/yellow-dot.png"/>
+                    <img src="http://maps.google.com/mapfiles/ms/icons/yellow-dot.png" alt="mapMarkerYellow"/>
                     <h1 class="uppercase text-lg font-bold pt-1">Want To Visit</h1>
                 </div>
             </div>

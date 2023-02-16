@@ -1,5 +1,4 @@
 import React, {useState, useContext} from "react";
-import { useParams } from "react-router-dom";
 import { VisitContext } from "../context/VisitProvider";
 import { FaStar } from 'react-icons/fa'
 
@@ -20,7 +19,7 @@ function VisitEntry({visit}) {
     const [dessert, setDessert] = useState(visit.dessert)
     const [other_consumables, setOther_consumables] = useState(visit.other_consumables)
     const [rating, setRating] = useState(visit.rating)
-    const [image, setImage] = useState(visit.visit_img)
+    const [image] = useState(visit.visit_img)
 
     const [hoverValue, setHoverValue] = useState(undefined)
     const [showForm, setShowForm] = useState(false)
@@ -137,7 +136,7 @@ function VisitEntry({visit}) {
                 {notes ? ( <p><span class="text-lg font-semibold uppercase">Notes:</span> {notes}</p>) : null}
 
                 <div>
-                    {image ? (<img className="visitImg" src={image} />) : null}
+                    {image ? (<img className="visitImg" src={image} alt="visitImg"/>) : null}
                 </div>
             </div>
 

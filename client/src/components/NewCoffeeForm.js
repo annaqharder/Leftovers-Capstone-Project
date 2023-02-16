@@ -1,5 +1,4 @@
 import { useState, useContext } from 'react';
-import { useHistory } from 'react-router-dom';
 import { UserContext } from '../context/UserProvider';
 import { CoffeeContext } from '../context/CoffeeProvider';
 
@@ -13,7 +12,7 @@ function NewEateryForm({onClose}) {
     const [eateryAddress, setEateryAddress] =useState("");
     const [eateryNeighborhood, setEateryNeighborhood] = useState("");
     const [eateryType, setEateryType] = useState("");
-    const [eateryImg, setEateryImg] = useState("")
+    const [eateryImg] = useState("")
 
     function handleNewEatery(e) {
         e.preventDefault();

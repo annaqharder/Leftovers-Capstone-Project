@@ -1,6 +1,5 @@
 import React, { useContext, createContext, useState, useEffect } from 'react';
 import { EateryContext } from './EateryProvider';
-import { useParams } from 'react-router-dom';
 
 const VisitContext = createContext();
 

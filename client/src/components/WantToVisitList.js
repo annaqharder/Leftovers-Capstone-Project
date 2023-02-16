@@ -1,6 +1,5 @@
 import WantToVisitCard from "./WantToVisitCard";
-import { EateryContext } from '../context/EateryProvider';
-import React, {useContext} from "react";
+import React from "react";
 
 function WantToVisitList({eateries}) {
     // const {eateries} = useContext(EateryContext)

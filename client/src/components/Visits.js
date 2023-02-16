@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from 'react';
-import { useParams, useHistory, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import VisitEntry from './VisitEntry';
 import NewVisitForm from './NewVisitForm';
 import { VisitContext } from '../context/VisitProvider';
@@ -8,7 +8,7 @@ import VisitSearch from './VisitSearch';
 
 function Visits(){
 
-    const {visits, setVisits} = useContext(VisitContext)
+    const {visits} = useContext(VisitContext)
     const [searchQuery, setSearchQuery] = useState("")
     const [filterBy, setFilterBy] = useState("All")
     const [sortBy, setSortBy] = useState("");

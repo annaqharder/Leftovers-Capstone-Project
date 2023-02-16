@@ -1,5 +1,4 @@
 import { useState, useContext } from 'react';
-import { useHistory } from 'react-router-dom';
 import { UserContext } from '../context/UserProvider';
 import { RestaurantContext } from '../context/RestaurantProvider';
 

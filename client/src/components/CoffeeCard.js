@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import { CoffeeContext } from '../context/CoffeeProvider';
-import CoffeeStockImg from "../images/cafe-stock.jpeg";
 import EditCoffeeCard from "./EditCoffeeCard";
 
 function CoffeeCard({ coffee }) {

@@ -3,7 +3,6 @@ import { UserContext } from '../context/UserProvider'
 
 
 function EditProfileForm({onClose}) {
-    const [error, setError] = useState("");
     let {user, setUser} = useContext(UserContext)
 
     const [profile, setProfile] = useState({

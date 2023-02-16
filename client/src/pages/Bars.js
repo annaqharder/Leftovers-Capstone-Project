@@ -1,14 +1,11 @@
 import React, { useContext, useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import { BarContext } from '../context/BarProvider';
 import BarList from '../components/BarList';
 import NewBarForm from '../components/NewBarForm';
 import EaterySearch from '../components/EaterySearch';
 
 function Bars() {
-    const [showForm, setShowForm] = useState(false)
     const { bars } = useContext(BarContext);
-    let history = useHistory();
     const [searchQuery, setSearchQuery] = useState("")
     const [filterBy, setFilterBy] = useState("All")
     const [sortBy, setSortBy] = useState("");

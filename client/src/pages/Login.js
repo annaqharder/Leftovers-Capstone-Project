@@ -8,7 +8,7 @@ import {Icon} from 'react-icons-kit';
 
 function Login() {
     const [errors, setErrors] = useState([]);
-    let { user, setUser } = useContext(UserContext);
+    let { setUser } = useContext(UserContext);
     let history = useHistory();
 
 

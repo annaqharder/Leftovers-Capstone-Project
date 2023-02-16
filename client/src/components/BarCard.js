@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import { BarContext } from '../context/BarProvider';
-import BarStockImg from '../images/bar-stock.jpeg';
 import EditBarCard from './EditBarCard';
 
 function BarCard({ bar }) {

@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import { RestaurantContext } from '../context/RestaurantProvider';
 import RestaurantList from '../components/RestaurantList';
 import NewRestaurantForm from '../components/NewRestaurantForm';
@@ -7,7 +6,6 @@ import EaterySearch from '../components/EaterySearch';
 
 function Restaurants() {
     const {restaurants} = useContext(RestaurantContext)
-    let history = useHistory();
     const [searchQuery, setSearchQuery] = useState("")
     const [filterBy, setFilterBy] = useState("All")
     const [sortBy, setSortBy] = useState("");

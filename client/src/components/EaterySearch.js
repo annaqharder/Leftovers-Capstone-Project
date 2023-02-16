@@ -1,14 +1,10 @@
-import React, {useState, useContext} from 'react';
+import React from 'react';
 
 
 function EaterySearch({searchQuery, setSearchQuery, filterBy, setFilterBy, sortBy, setSortBy}) {
 
     function handleSearchChange(event){
         setSearchQuery(event.target.value)
-    }
-
-    function handleFilterChange(event) {
-        setFilterBy(event.target.value)
     }
 
     function handleSortChange(event) {
@@ -29,19 +25,6 @@ function EaterySearch({searchQuery, setSearchQuery, filterBy, setFilterBy, sortB
                         onChange={handleSearchChange}
                     />
             </div>
-
-            {/* <div className="filter-container">
-                <label>
-                    <strong> Filter by Category : </strong>
-                    <select onChange={handleFilterChange} value={filterBy} id="filterbar">
-                    <option>All</option>
-                        <option value="American">American</option>
-                        <option value="Asian">Asian</option>
-                        <option value="Egyptian">Egyptian</option>
-                        <option value="European Paintings">European Paintings</option>
-                    </select>
-                </label>
-            </div> */}
 
             <div class="flex px-4">
                 <div class="font-sans font-family:'Raleway' text-2xl my-2"> Sort by:</div>

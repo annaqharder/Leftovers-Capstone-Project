@@ -6,7 +6,6 @@ class CreateEateries < ActiveRecord::Migration[7.0]
       t.string :eatery_neighborhood
       t.string :eatery_category
       t.string :eatery_type
-      t.boolean :have_visited
       t.string :eatery_img
       t.belongs_to :user
 

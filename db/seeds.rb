@@ -34,6 +34,7 @@ E22 = Eatery.create!(eatery_name: "Room for Milly", eatery_address: "1615 Platte
 E23 = Eatery.create!(eatery_name: "Señor Bear", eatery_address: "3301 Tejon St. Denver, CO 802011", eatery_neighborhood: "Highlands", eatery_category: "Restaurant", eatery_type: "Latin American", user_id: anna.id, have_visited: false, eatery_img: "")
 E24 = Eatery.create!(eatery_name: "Honey Elixer Bar", eatery_address: "2636 Walnut St. #104 Denver, CO 80205", eatery_neighborhood: "RiNo", eatery_category: "Bar", eatery_type: "cocktail", user_id: anna.id, have_visited: true, eatery_img: "")
 E25 = Eatery.create!(eatery_name: "Dimestore Delibar", eatery_address: "1575 Boulder St. Unit A Denver, CO 80211", eatery_neighborhood: "Highlands", eatery_category: "Restaurant", eatery_type: "Deli", user_id: anna.id, have_visited: true, eatery_img: "")
+E26 = Eatery.create!(eatery_name: "Fort Greene", eatery_address: "321 E 445th Ave. Denver, CO 80216", eatery_neighborhood: "RiNo", eatery_category: "Bar", eatery_type: "Cocktail", user_id: anna.id, have_visited: true, eatery_img: "")
 
 
 
@@ -65,5 +66,6 @@ V24 = Visit.create!(user_id: anna.id, eatery_id: E18.id, date: "2020-01-27", occ
 V25 = Visit.create!(user_id: anna.id, eatery_id: E19.id, date: "2019-10-12", occasion: "Drinks w/ Sydney, Megan, & Mattea", notes: "very fun cocktail concept", drink: "Deny Our Programming, Peach Gnar, Of the Earth Beetroot", appetizer: "", food: "", dessert: "", other_consumables: "", visit_img:"", rating: 4)
 V26 = Visit.create!(user_id: anna.id, eatery_id: E24.id, date: "2023-11-14", occasion: "Drinks", notes: "very fun cocktail concept", drink: "Princess Peach w/ coconut milk, This is My Jam", appetizer: "", food: "", dessert: "", other_consumables: "", visit_img:"", rating: 4)
 V27 = Visit.create!(user_id: anna.id, eatery_id: E25.id, date: "2022-10-07", occasion: "Lunch with Sydney & Coral", notes: "Spicy tuna dimeroll and Lychee Martini were amazing", drink: "Limoncello Spritz, Lychee Martini", appetizer: "", food: "Spicy Tuna Dimeroll, Chicken Parmesan sandwich", dessert: "", other_consumables: "Bacon Potato Salad, Housemade Salt & Vinegar chips, Smoked Chicken Salad", visit_img:"", rating: 5)
+V28 = Visit.create!(user_id: anna.id, eatery_id: E26.id, date: "2022-02-14", occasion: "First Date Party", notes: "cute, intimate vibes; limited seating", drink: "", dessert: "", other_consumables: "", visit_img:"", rating: 4)
 
 puts "Done seeding!"

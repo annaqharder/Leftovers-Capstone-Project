@@ -79,7 +79,7 @@ function NewVisitForm({onClose}) {
     return (
         <div className="back-drop">
             <div className="dialog">
-            <h1 class="text-4xl font-bold py-2 mb-4 text-center uppercase">Add Visit</h1>
+            <h1 class="font-sans font-family:'Raleway' text-4xl font-bold py-2 mb-4 text-center uppercase">Add Visit</h1>
             <div>
                     <form onSubmit={handleNewVisit}>
                     <div class="flex py-2">
@@ -195,15 +195,15 @@ function NewVisitForm({onClose}) {
 
                     <div class="flex justify-between">
                     <button
-                        class="inline-block px-7 py-3 mt-4 bg-amber-700 text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-amber-800 hover:shadow-lg focus:bg-amber-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-amber-800 active:shadow-lg transition duration-150 ease-in-out w-half"
-                    >
-                        Create Visit
-                    </button>
-                    <button
                         class="inline-block px-7 py-3 mt-4 bg-red-800 text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-red-900 hover:shadow-lg focus:bg-red-800 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out w-half"
                         onClick={onClose}
                     >
                         Cancel
+                    </button>
+                    <button
+                        class="inline-block px-7 py-3 mt-4 bg-amber-700 text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-amber-800 hover:shadow-lg focus:bg-amber-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-amber-800 active:shadow-lg transition duration-150 ease-in-out w-half"
+                    >
+                        Create Visit
                     </button>
                 </div>
 

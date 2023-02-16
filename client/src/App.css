@@ -236,14 +236,14 @@
   position: fixed;
   inset: 0;
   z-index: 999;
-  background-color: rgba(218, 213, 213, 0.783);
+  background-color: #9ca3afc2;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .dialog {
-  background-color: #c9c4c0;
+  background-color: #d1d5db;
   padding: 40px;
   margin: 10px;
   border-radius: 10px;

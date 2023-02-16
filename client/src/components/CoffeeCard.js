@@ -25,7 +25,7 @@ function CoffeeCard({ coffee }) {
 
     return (
         <div>
-            <div class="py-4 mb-6 border-2 rounded hover:shadow-xl">
+            <div class="py-4 mb-6 border border-stone-300 rounded shadow-xl hover:shadow-2xl ">
                 <div class="px-4">
                 <div class="flex justify-between items-center">
                     <Link to={`/coffee/cafes/${coffee.id}`} >
@@ -55,7 +55,7 @@ function CoffeeCard({ coffee }) {
                         Edit
                     </button>
                     <button
-                    class="inline-block px-2 py-2 mt-4 bg-red-800 text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-red-900 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-700 active:shadow-lg transition duration-150 ease-in-out w-1/4"
+                    class="inline-block px-2 py-2 mt-4 bg-green text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-emerald-900 hover:shadow-lg focus:bg-emerald-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-emerald-900 active:shadow-lg transition duration-150 ease-in-out w-1/4"
                     onClick={() => {window.confirm( `Are you sure you want to delete ${coffee.eatery_name}?`, ) && handleDelete(coffee.id)}}>
                         Delete
                     </button>

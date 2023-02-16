@@ -46,7 +46,7 @@ function NewEateryForm({onClose}) {
 return (
         <div className="back-drop">
             <div className="dialog">
-            <h1 class="text-4xl font-bold py-2 mb-4 text-center uppercase">New Bar</h1>
+            <h1 class="font-sans font-family:'Raleway' text-4xl font-bold py-2 mb-4 text-center uppercase">New Bar</h1>
             <form onSubmit={handleNewEatery}>
                 <div class="flex py-2">
                     <label class="text-lg font-bold pr-2">Bar Name: </label>
@@ -105,15 +105,15 @@ return (
 
                 <div class="flex justify-between">
                     <button
-                        class="inline-block px-7 py-3 mt-4 bg-stone-600 text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-stone-800 hover:shadow-lg focus:bg-stone-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-stone-800 active:shadow-lg transition duration-150 ease-in-out w-half"
-                    >
-                        Add Bar
-                    </button>
-                    <button
                         class="inline-block px-7 py-3 mt-4 bg-red-700 text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-red-800 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out w-half"
                         onClick={onClose}
                     >
                         Cancel
+                    </button>
+                    <button
+                        class="inline-block px-7 py-3 mt-4 bg-stone-600 text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-stone-800 hover:shadow-lg focus:bg-stone-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-stone-800 active:shadow-lg transition duration-150 ease-in-out w-half"
+                    >
+                        Add Bar
                     </button>
                 </div>
             </form>

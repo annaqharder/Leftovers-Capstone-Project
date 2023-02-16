@@ -25,7 +25,7 @@ function BarCard({ bar }) {
 
     return (
         <div>
-            <div class="py-4 mb-6 border-2 rounded hover:shadow-xl">
+            <div class="py-4 mb-6 border border-stone-300 rounded shadow-xl hover:shadow-2xl">
                 <div>
                     <div class="px-4">
                     <div class="flex justify-between items-center">

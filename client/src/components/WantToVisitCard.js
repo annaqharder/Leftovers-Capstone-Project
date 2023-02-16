@@ -53,7 +53,7 @@ function WantToVisitCard({eatery}) {
 
     return (
         <div>
-            <div class="flex py-4 mb-6 border-2 hover:shadow-xl rounded">
+            <div class="flex py-4 mb-6 border-2 shadow-xl hover:shadow-2xl rounded">
                 <div>
                     <div class="px-4">
                         <h1 class="font-bold text-3xl">{eatery.eatery_name}</h1>

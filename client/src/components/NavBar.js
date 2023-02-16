@@ -27,8 +27,8 @@ const NavBar = () => {
     }
 
     return (
-        <div class="dark:bg-gray-900">
-        <div class="flex justify-between p-4 pb-8 shadow-md">
+        <div>
+        <div class="bg-stone-100 bg-opacity-70 flex justify-between p-4 pb-8 shadow-md">
             {!user ? (
                 <h3>
                     <span class="font-sans font-family:'Raleway' pl-3 font-sans text-6xl weight-bold">LEFTOVERS <span class="text-xl font-medium">|</span><span class="text-sm font-medium"> track & manage your favorite eateries</span></span>

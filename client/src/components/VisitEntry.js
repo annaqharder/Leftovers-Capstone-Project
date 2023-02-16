@@ -108,7 +108,7 @@ function VisitEntry({visit}) {
 
 
     return (
-        <div class="my-4 border rounded px-6 py-3 shadow-lg hover:shadow-2xl">
+        <div class="my-4 border border-stone-300 rounded px-6 py-3 shadow-lg hover:shadow-2xl">
         <div>
             <div>
                 <div class="flex justify-between items-center">

@@ -46,11 +46,11 @@ function Visits(){
         const searchVisits = sortedVisits
         .filter((visit) => {
             return (
-                visit.drink.toLowerCase().includes(searchQuery.toLowerCase())
-                || visit.appetizer.toLowerCase().includes(searchQuery.toLowerCase())
-                || visit.food.toLowerCase().includes(searchQuery.toLowerCase())
-                || visit.dessert.toLowerCase().includes(searchQuery.toLowerCase())
-                || visit.other_consumables.toLowerCase().includes(searchQuery.toLowerCase())
+                visit.drink?.toLowerCase().includes(searchQuery.toLowerCase())
+                || visit.appetizer?.toLowerCase().includes(searchQuery.toLowerCase())
+                || visit.food?.toLowerCase().includes(searchQuery.toLowerCase())
+                || visit.dessert?.toLowerCase().includes(searchQuery.toLowerCase())
+                || visit.other_consumables?.toLowerCase().includes(searchQuery.toLowerCase())
             )
         })
         .sort((a, b) => {

@@ -49,7 +49,7 @@ function BarCard({ bar }) {
                         ) : null}
                     </div>
                 </div>
-                <div class="flex justify-around">
+                <div class="flex justify-between px-4">
                         <button
                             type="button"
                             class="inline-block px-2 py-2 mt-4 bg-stone-500 text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-stone-600 hover:shadow-lg focus:bg-slate-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-slate-600 active:shadow-lg transition duration-150 ease-in-out w-1/4"

@@ -2,7 +2,6 @@ import CoffeeCard from "./CoffeeCard";
 
 function CoffeeList({ coffees }) {
 
-    console.log(coffees)
     const CoffeeArray = coffees.map(coffee => (
         <CoffeeCard
             key={coffee.id}

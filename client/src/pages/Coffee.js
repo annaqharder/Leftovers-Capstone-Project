@@ -11,9 +11,6 @@ function Coffee() {
     const [filterBy, setFilterBy] = useState("All");
     const [isPopupOpen, setIsPopupOpen] = useState(false);
 
-
-
-
     const sortedCoffees = [...coffees].sort((coffee1, coffee2) => {
         if (sortBy === "Alphabetically") {
             return coffee1.eatery_name.localeCompare(coffee2.eatery_name);

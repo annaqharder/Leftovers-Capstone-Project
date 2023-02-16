@@ -37,16 +37,6 @@ function VisitSearch({searchQuery, setSearchQuery, sortBy, setSortBy}) {
                 </select>
             </div>
 
-            {/* <div>
-                <label>Sort By:</label>
-                <select onChange={handleSortByPriceChange}>
-                <option></option>
-                <option value="highest">Most Recent</option>
-                <option value="lowest">Least Recent</option>
-                </select>
-            </div> */}
-
-
             <div class="flex p-3">
                 <div class="font-sans font-family:'Raleway' text-xl mr-1 my-2"> Filter by:</div>
                 <label class="font-sans font-family:'Raleway' text-lg m-2">

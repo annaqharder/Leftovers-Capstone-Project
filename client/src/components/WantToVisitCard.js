@@ -53,17 +53,21 @@ function WantToVisitCard({eatery}) {
 
     return (
         <div>
-            <div class="flex py-4 mb-6 bg-stone-100 bg-opacity-70 border border-stone-300 shadow-lg hover:shadow-2xl rounded">
-                <div>
+            <div class="py-4 mb-6 bg-stone-100 bg-opacity-70 border border-stone-300 shadow-lg hover:shadow-2xl rounded">
+                <div class="flex justify-between pl-2 pr-6">
                     <div class="px-4">
                         <h1 class="font-bold text-3xl">{eatery.eatery_name}</h1>
                         <h3 class="font-bold text-xl">{eatery.eatery_category} - {eatery.eatery_type}</h3>
                         <h4 class="font-bold text-lg">{eatery.eatery_address}</h4>
                         {notes ? ( <p><span class="font-bold text-md">Notes:</span> {eatery.eatery_notes}</p>) : null}
                     </div>
+                    <div>
+                        <img src={imagesrc} className="visitImg"/>
+                    </div>
+                </div>
                     <form onSubmit={handleUpdate}>
                         <input
-                            class="ml-4"
+                            class="ml-6"
                             type="checkbox"
                             name="have_visited"
                             checked={haveVisited}
@@ -71,15 +75,11 @@ function WantToVisitCard({eatery}) {
                         />
                             <label class="text-lg p-2">Visited?</label>
                             <button
-                                class="inline-block px-2 py-2 mt-4 bg-amber-700 text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-amber-800 hover:shadow-lg focus:bg-amber-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-amber-700 active:shadow-lg transition duration-150 ease-in-out w-1/3"
+                                class="inline-block px-2 py-2 mt-4 bg-amber-700 text-white font-bold text-sm leading-snug uppercase rounded shadow-lg hover:bg-amber-800 hover:shadow-lg focus:bg-amber-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-amber-700 active:shadow-lg transition duration-150 ease-in-out w-1/5"
                             >
                                 Update
                             </button>
                     </form>
-                </div>
-                <div>
-                    <img src={imagesrc} className="visitImg"/>
-                </div>
             </div>
         </div>
     );

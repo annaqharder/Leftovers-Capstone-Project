@@ -1,6 +1,7 @@
 import { useState, useContext } from 'react';
 import { UserContext } from '../context/UserProvider';
-import NavImg from "../components/default-user.png";
+// import NavImg from "../components/profile.png";
+import NavImg from "../components/profile.png";
 import EditProfileForm from '../components/EditProfileForm';
 
 function Profile() {

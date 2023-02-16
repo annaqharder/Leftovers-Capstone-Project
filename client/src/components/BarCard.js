@@ -25,12 +25,12 @@ function BarCard({ bar }) {
 
     return (
         <div>
-            <div class="py-4 mb-6 border border-stone-300 rounded shadow-xl hover:shadow-2xl">
+            <div class="py-4 mb-6 bg-stone-100 bg-opacity-70 border border-stone-300 rounded shadow-lg hover:shadow-2xl">
                 <div>
                     <div class="px-4">
                     <div class="flex justify-between items-center">
                         <Link to={`/bars/${bar.id}`} >
-                            <h2 class="font-bold text-3xl">{bar.eatery_name}</h2>
+                            <h2 class="font-bold text-3xl no-underline hover:underline">{bar.eatery_name}</h2>
                         </Link>
                         <h3 class="font-bold text-xl">{bar.eatery_type}</h3>
                     </div>

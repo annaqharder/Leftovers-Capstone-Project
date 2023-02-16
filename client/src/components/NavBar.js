@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { UserContext } from "../context/UserProvider";
 import { NavLink, useHistory } from "react-router-dom";
-import NavImg from "../components/default-user.png"
 
 const NavBar = () => {
 
@@ -56,7 +55,8 @@ const NavBar = () => {
                 <div className="dropdownNavBar">
                     <div className="dropdown">
                         {/* <img className="NavBarDropdownBtn" src={user.avatar ? user.avatar : NavImg }/> */}
-                        <img className="NavBarDropdownBtn" src="./letter-l.png"/>
+                        {/* <img className="NavBarDropdownBtn" src="./letter-l.png"/> */}
+                        <img className="NavBarDropdownBtn" src="./profile.png"/>
                         <nav className="dropdown-content">
                             <NavLink className="NavRoute" exact to="/want-to-visit">WANT TO VISIT</NavLink>
                             <NavLink className="NavRoute" exact to="/profile">PROFILE</NavLink>
@@ -64,7 +64,7 @@ const NavBar = () => {
                         </nav>
                     </div>
                     <div class="flex items-center">
-                        <h2>HELLO, {user.first_name}!</h2>
+                        <h2>Hi, {user.first_name}!</h2>
                     </div>
                 </div>
             </div>

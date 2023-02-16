@@ -4,9 +4,9 @@ User.destroy_all
 Visit.destroy_all
 
 puts "Creating users..."
-anna = User.create!(first_name: "Anna", last_name: "Harder", email: "annaqharder@gmail.com", password: "123", location: "Denver, CO", bio: "", avatar: "https://static.vecteezy.com/system/resources/thumbnails/006/962/403/small/stylish-colorful-portrait-of-a-beautiful-woman-with-glasses-in-front-flat-illustration-vector.jpg")
-johnny = User.create!(first_name: "Johnny", last_name: "Turco", email: "johnnyturco@me.com", password: "123", location: "Omaha, NE", bio: "Enjoyer of fine cocktails, specifically the whiskey sour", avatar: "https://ca.slack-edge.com/T0266FRGM-U2Q173U05-g863c2a865d7-512" )
-rachel = User.create!(first_name: "Rachel", last_name: "Humes", email: "racheljhumes@gmail.com", password: "123", location: "Denver, CO", bio: "", avatar: "https://ca.slack-edge.com/T0266FRGM-U2Q173U05-g863c2a865d7-512" )
+anna = User.create!(first_name: "Anna", last_name: "Harder", email: "annaqharder@gmail.com", password: "123", location: "Denver, CO", bio: "I enjoy exploring new breweries and restaurants with friends", avatar: "https://static.vecteezy.com/system/resources/thumbnails/006/962/403/small/stylish-colorful-portrait-of-a-beautiful-woman-with-glasses-in-front-flat-illustration-vector.jpg")
+johnny = User.create!(first_name: "Johnny", last_name: "Turco", email: "johnnyturco@me.com", password: "123", location: "Omaha, NE", bio: "Enjoyer of fine cocktails, specifically the whiskey sour", avatar: "")
+rachel = User.create!(first_name: "Rachel", last_name: "Humes", email: "racheljhumes@gmail.com", password: "123", location: "Denver, CO", bio: "", avatar: "")
 
 puts "Creating eateries..."
 E1 = Eatery.create!(eatery_name: "Hop Alley", eatery_address: "3500 Larimer St. Denver, CO 80205", eatery_neighborhood: "RiNo", eatery_category: "Restaurant", eatery_type: "Modern Chinese", user_id: anna.id, have_visited: true, eatery_img: "https://goop-img.com/wp-content/uploads/2017/02/Hop-Alley-.jpg")
@@ -35,6 +35,11 @@ E23 = Eatery.create!(eatery_name: "Señor Bear", eatery_address: "3301 Tejon St.
 E24 = Eatery.create!(eatery_name: "Honey Elixer Bar", eatery_address: "2636 Walnut St. #104 Denver, CO 80205", eatery_neighborhood: "RiNo", eatery_category: "Bar", eatery_type: "cocktail", user_id: anna.id, have_visited: true, eatery_img: "")
 E25 = Eatery.create!(eatery_name: "Dimestore Delibar", eatery_address: "1575 Boulder St. Unit A Denver, CO 80211", eatery_neighborhood: "Highlands", eatery_category: "Restaurant", eatery_type: "Deli", user_id: anna.id, have_visited: true, eatery_img: "")
 E26 = Eatery.create!(eatery_name: "Fort Greene", eatery_address: "321 E 445th Ave. Denver, CO 80216", eatery_neighborhood: "RiNo", eatery_category: "Bar", eatery_type: "Cocktail", user_id: anna.id, have_visited: true, eatery_img: "")
+E27 = Eatery.create!(eatery_name: "Fiaschetteria Pistoia", eatery_address: "647 E 11th St. New York, New York 10009", eatery_neighborhood: "", eatery_category: "Restaurant", eatery_type: "Tuscan", user_id: anna.id, have_visited: false, eatery_img: "")
+E28 = Eatery.create!(eatery_name: "Forma Pasta Factory", eatery_address: "14 Belford Ave. Brooklyn, New York 11222", eatery_neighborhood: "Brooklyn", eatery_category: "Restaurant", eatery_type: "Italian/Pasta", user_id: anna.id, have_visited: false, eatery_img: "")
+E29 = Eatery.create!(eatery_name: "Between the Bagel NY", eatery_address: "31-13 30th Ave. Asotria, New York 11102", eatery_neighborhood: "", eatery_category: "Coffee/Cafe", eatery_type: "Bagels", user_id: anna.id, have_visited: false, eatery_img: "")
+E30 = Eatery.create!(eatery_name: "Som Saa", eatery_address: "43A Commercial St. London E1 6BD, United Kingdom", eatery_neighborhood: "", eatery_category: "Restaurant", eatery_type: "Thai", user_id: anna.id, have_visited: false, eatery_img: "")
+E31 = Eatery.create!(eatery_name: "Expendio de Maíz", eatery_address: "Av. Yucatan 84, Roma Nte., Cuauhtémoc, 06700 Ciudad de México, CDMX, Mexico", eatery_neighborhood: "", eatery_category: "Restaurant", eatery_type: "Mexican", user_id: anna.id, have_visited: false, eatery_img: "")
 
 
 

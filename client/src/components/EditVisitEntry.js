@@ -9,7 +9,7 @@ const colors = {
 
 function EditVisitEntry({visit, onClose}) {
 
-    const [error, setError] = useState("");
+    const [setError] = useState("");
     const [date, setDate] = useState(visit.date)
     const [occasion, setOccasion] = useState(visit.occasion)
     const [notes, setNotes] = useState(visit.notes)

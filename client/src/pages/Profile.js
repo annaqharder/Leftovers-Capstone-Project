@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
 import { UserContext } from '../context/UserProvider';
-import userImg from "../components/profile.png";
+// import userImg from ".././images/profile.png";
 import EditProfileForm from '../components/EditProfileForm';
 
 function Profile() {
@@ -19,7 +19,7 @@ function Profile() {
             <div class="flex">
                 <div class="md:w-8/12 lg:w-5/12 p-6 pt-16">
                     <div>
-                        <img class="rounded-full ml-auto mr-auto" alt="userImg" src={user.avatar ? user.avatar : userImg }/>
+                        <img class="rounded-full ml-auto mr-auto" alt="userImg" src={user.avatar ? user.avatar : "./images/profile.png" }/>
                         <h1 class="text-center text-3xl font-bold uppercase py-3">{user.first_name} {user.last_name}</h1>
                         <h2 class="text-center text-xl font-bold">{user.location}</h2>
                         <h4 class="text-center pt-3">{user.bio}</h4>

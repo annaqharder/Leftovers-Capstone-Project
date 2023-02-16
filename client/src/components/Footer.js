@@ -4,7 +4,7 @@ function Footer() {
             {/* <hr class="my-2 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-4" /> */}
             <div class="sm:flex sm:items-center sm:justify-between">
                 <a class="flex items-center mb-4 sm:mb-0">
-                    <img src="./letter-l.png" class="h-8 mr-3" alt=" Logo" />
+                    <img src="./images/letter-l.png" class="h-8 mr-3" alt=" Logo" />
                     <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white uppercase">Leftovers</span>
                 </a>
                 <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© <a class="hover:underline">Leftovers™</a>. All Rights Reserved.</span>

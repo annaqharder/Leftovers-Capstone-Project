@@ -56,7 +56,7 @@ const NavBar = () => {
                     <div className="dropdown">
                         {/* <img className="NavBarDropdownBtn" src={user.avatar ? user.avatar : NavImg }/> */}
                         {/* <img className="NavBarDropdownBtn" src="./letter-l.png"/> */}
-                        <img className="NavBarDropdownBtn" src="./profile.png"/>
+                        <img className="NavBarDropdownBtn" src="../images/profile.png"/>
                         <nav className="dropdown-content">
                             <NavLink className="NavRoute" exact to="/want-to-visit">WANT TO VISIT</NavLink>
                             <NavLink className="NavRoute" exact to="/profile">PROFILE</NavLink>

@@ -4,7 +4,7 @@ User.destroy_all
 Visit.destroy_all
 
 puts "Creating users..."
-anna = User.create!(first_name: "Anna", last_name: "Harder", email: "annaqharder@gmail.com", password: "123", location: "Denver, CO", bio: "I enjoy exploring new breweries and restaurants with friends", avatar: "https://static.vecteezy.com/system/resources/thumbnails/006/962/403/small/stylish-colorful-portrait-of-a-beautiful-woman-with-glasses-in-front-flat-illustration-vector.jpg")
+anna = User.create!(first_name: "Anna", last_name: "Harder", email: "test@test.com", password: "123", location: "Denver, CO", bio: "I enjoy exploring new breweries and restaurants with friends", avatar: "https://static.vecteezy.com/system/resources/thumbnails/006/962/403/small/stylish-colorful-portrait-of-a-beautiful-woman-with-glasses-in-front-flat-illustration-vector.jpg")
 johnny = User.create!(first_name: "Johnny", last_name: "Turco", email: "johnnyturco@me.com", password: "123", location: "Omaha, NE", bio: "Enjoyer of fine cocktails, specifically the whiskey sour", avatar: "")
 rachel = User.create!(first_name: "Rachel", last_name: "Humes", email: "racheljhumes@gmail.com", password: "123", location: "Denver, CO", bio: "", avatar: "")
 

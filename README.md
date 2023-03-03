@@ -5,12 +5,14 @@ This application is built using a Ruby on Rails/Active Record backend and a Java
 
 ## Features
 - User Authentication using sessions with bcrypt
+- Hide/show password on login and create profile pages
 - Add, edit, and delete eateries based on category
 - Add, edit, and delete visits to an eatery
 - Search and filter functionality on eateries and visits
 - Google Map functionality that pins user's eateries 
 - Want To Visit page for users to manage feature eateries they want to visit
-- Edit profile
+- Rate visits using dynamic star rating
+- Edit user profile
 
 ## Technologies used
 - React
@@ -24,7 +26,7 @@ This application is built using a Ruby on Rails/Active Record backend and a Java
 2) Install dependencies using npm install and bundle install
 3) Run rails db:create and rails db:migrate to create the database and run migrations
 4) Start the Rails server using rails s
-5) Start the React app using npm start
+5) Start the React app using npm start --prefix client
 6) Open your browser and navigate to http://localhost:4000 to view the application.
 
 ## Demo

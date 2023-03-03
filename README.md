@@ -20,6 +20,8 @@ This application is built using a Ruby on Rails/Active Record backend and a Java
 - Ruby on Rails
 - PostgreSQL
 - Bcrypt
+- Google Maps API
+- Google Geocoder API
 
 ## How to run the application
 1) Clone the repository from Github
